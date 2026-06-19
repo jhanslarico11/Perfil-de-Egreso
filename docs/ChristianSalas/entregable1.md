@@ -9,7 +9,7 @@
 * **Título del Proyecto:** CopIA
 * **Línea de Evaluación:** CE01: Gestión de TI
 * **Entregable:** CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
-* **Responsable:** Christian Salas
+* **Responsable:** ANyelo Jhans SArmuento LArico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*
