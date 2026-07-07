@@ -1,4 +1,4 @@
-# CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
+# CE0141-CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,8 +7,8 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 5: Presentación, Video pitch y Sustentación Final
+* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
+* **Entregable:** CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo

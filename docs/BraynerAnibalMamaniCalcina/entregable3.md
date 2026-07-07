@@ -1,4 +1,4 @@
-# CE0121-CE0125 - Entregable 3: Plan de Gestión del Proyecto
+# CE023 - Entregable 3: Sistema de Software Funcional Integrado
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,8 +7,8 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
-* **Entregable:** CE0125 - Entregable 3: Plan de Gestión del Proyecto
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 3: Sistema de Software Funcional Integrado
 * **Responsable:** Brayner Anibal Mamani Calcina
 
 ### Resumen Ejecutivo

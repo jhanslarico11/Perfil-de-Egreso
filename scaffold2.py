@@ -57,10 +57,10 @@ template = """# {title}
 base_dir = r"d:\PerfilDeEgresadoCopIA\docs"
 for folder, files in nav_structure.items():
     if folder == "ce01":
-        responsable = "Brayner Anibal Mamani Calcina"
+        responsable = "Christian Rafael Mamani Callata"
         linea = "CE01: Gestión de Tecnologías de Información"
     elif folder == "ce02":
-        responsable = "Christian Rafael Mamani Callata"
+        responsable = "Brayner Anibal Mamani Calcina"
         linea = "CE02: Ingeniería de Software"
     else:
         responsable = "Anyelo Jhans Sarmiento Larico"

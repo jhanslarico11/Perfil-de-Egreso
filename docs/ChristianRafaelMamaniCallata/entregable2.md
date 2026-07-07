@@ -1,4 +1,4 @@
-# CE022 - Entregable 2: Plataforma de Datos del Sistema
+# CE0113 - Entregable 2: Business Case del Proyecto
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,8 +7,8 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 2: Plataforma de Datos del Sistema
+* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
+* **Entregable:** Entregable 2: Business Case del Proyecto
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo

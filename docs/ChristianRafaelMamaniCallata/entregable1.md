@@ -1,4 +1,4 @@
-# CE021 - Entregable 1: Requerimientos y Diseño del Sistema
+# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,8 +7,8 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 1: Requerimientos y Diseño del Sistema
+* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
+* **Entregable:** CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo

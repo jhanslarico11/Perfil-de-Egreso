@@ -1,4 +1,4 @@
-# CE0131-CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
+# CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,8 +7,8 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
-* **Entregable:** CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 4: Calidad, Operación y Evolución del Sistema
 * **Responsable:** Brayner Anibal Mamani Calcina
 
 ### Resumen Ejecutivo

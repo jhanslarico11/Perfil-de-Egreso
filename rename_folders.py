@@ -3,8 +3,8 @@ import os
 base_dir = r"d:\PerfilDeEgresadoCopIA\docs"
 
 mapping = {
-    "ce01": "BraynerAnibalMamaniCalcina",
-    "ce02": "ChristianRafaelMamaniCallata",
+    "ce01": "ChristianRafaelMamaniCallata",
+    "ce02": "BraynerAnibalMamaniCalcina",
     "ce03": "AnyeloJhansSarmientoLarico"
 }
 
