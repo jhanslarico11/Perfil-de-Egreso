@@ -57,13 +57,13 @@ template = """# {title}
 base_dir = r"d:\PerfilDeEgresadoCopIA\docs"
 for folder, files in nav_structure.items():
     if folder == "ce01":
-        responsable = "Christian Salas"
+        responsable = "Brayner Anibal Mamani Calcina"
         linea = "CE01: Gestión de TI"
     elif folder == "ce02":
-        responsable = "Cristhian Llanque"
+        responsable = "Christian Rafael Mamani Callata"
         linea = "CE02: Ingeniería de Software"
     else:
-        responsable = "Frank Choquehuanca"
+        responsable = "Anyelo Jhans Sarmiento Larico"
         linea = "CE03: Infraestructura"
         
     folder_path = os.path.join(base_dir, folder)

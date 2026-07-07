@@ -1,4 +1,4 @@
-# CE0322-CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
+# CE0141-CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE03: Infraestructura
-* **Entregable:** CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
-* **Responsable:** Frank Choquehuanca
+* **Línea de Evaluación:** CE01: Gestión de TI
+* **Entregable:** CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
+* **Responsable:** Brayner Anibal Mamani Calcina
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

@@ -9,7 +9,7 @@
 * **Título del Proyecto:** CopIA
 * **Línea de Evaluación:** CE03: Infraestructura
 * **Entregable:** Entregable 1: Diseño de Red
-* **Responsable:** Frank Choquehuanca
+* **Responsable:** Anyelo Jhans Sarmiento Larico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

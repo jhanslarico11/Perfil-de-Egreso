@@ -1,4 +1,4 @@
-# CE0312-CE0313 - Entregable 1: Implementación y Testing de Red
+# CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE03: Infraestructura
-* **Entregable:** CE0313 - Entregable 1: Implementación y Testing de Red
-* **Responsable:** Frank Choquehuanca
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 5: Presentación, Video pitch y Sustentación Final
+* **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

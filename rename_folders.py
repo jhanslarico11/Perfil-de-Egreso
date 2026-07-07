@@ -3,9 +3,9 @@ import os
 base_dir = r"d:\PerfilDeEgresadoCopIA\docs"
 
 mapping = {
-    "ce01": "ChristianSalas",
-    "ce02": "CristhianLlanque",
-    "ce03": "FrankChoquehuanca"
+    "ce01": "BraynerAnibalMamaniCalcina",
+    "ce02": "ChristianRafaelMamaniCallata",
+    "ce03": "AnyeloJhansSarmientoLarico"
 }
 
 for old_name, new_name in mapping.items():

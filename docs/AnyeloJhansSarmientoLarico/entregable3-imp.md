@@ -1,4 +1,4 @@
-# CE0321 - Entregable 2: Planificación de Seguridad
+# CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -8,8 +8,8 @@
 ### Portada
 * **Título del Proyecto:** CopIA
 * **Línea de Evaluación:** CE03: Infraestructura
-* **Entregable:** Entregable 2: Planificación de Seguridad
-* **Responsable:** Frank Choquehuanca
+* **Entregable:** CE0333 - Entregable 3: Implementación y Control de Centro de Datos
+* **Responsable:** Anyelo Jhans Sarmiento Larico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

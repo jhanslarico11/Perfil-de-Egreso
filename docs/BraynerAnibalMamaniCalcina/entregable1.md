@@ -1,4 +1,4 @@
-# CE022 - Entregable 2: Plataforma de Datos del Sistema
+# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 2: Plataforma de Datos del Sistema
-* **Responsable:** Cristhian Llanque
+* **Línea de Evaluación:** CE01: Gestión de TI
+* **Entregable:** CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+* **Responsable:** Brayner Anibal Mamani Calcina
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

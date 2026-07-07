@@ -1,4 +1,4 @@
-# CE0121-CE0125 - Entregable 3: Plan de Gestión del Proyecto
+# CE0331 - Entregable 3: Diseño de Centro de Datos
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de TI
-* **Entregable:** CE0125 - Entregable 3: Plan de Gestión del Proyecto
-* **Responsable:** Christian Salas
+* **Línea de Evaluación:** CE03: Infraestructura
+* **Entregable:** Entregable 3: Diseño de Centro de Datos
+* **Responsable:** Anyelo Jhans Sarmiento Larico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

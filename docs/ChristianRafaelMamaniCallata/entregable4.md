@@ -1,4 +1,4 @@
-# CE0331 - Entregable 3: Diseño de Centro de Datos
+# CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE03: Infraestructura
-* **Entregable:** Entregable 3: Diseño de Centro de Datos
-* **Responsable:** Frank Choquehuanca
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 4: Calidad, Operación y Evolución del Sistema
+* **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

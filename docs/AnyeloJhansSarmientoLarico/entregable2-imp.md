@@ -1,4 +1,4 @@
-# CE021 - Entregable 1: Requerimientos y Diseño del Sistema
+# CE0322-CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 1: Requerimientos y Diseño del Sistema
-* **Responsable:** Cristhian Llanque
+* **Línea de Evaluación:** CE03: Infraestructura
+* **Entregable:** CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
+* **Responsable:** Anyelo Jhans Sarmiento Larico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

@@ -1,4 +1,4 @@
-# CE0141-CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
+# CE0321 - Entregable 2: Planificación de Seguridad
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de TI
-* **Entregable:** CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
-* **Responsable:** Christian Salas
+* **Línea de Evaluación:** CE03: Infraestructura
+* **Entregable:** Entregable 2: Planificación de Seguridad
+* **Responsable:** Anyelo Jhans Sarmiento Larico
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

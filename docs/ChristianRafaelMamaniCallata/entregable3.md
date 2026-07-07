@@ -1,4 +1,4 @@
-# CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
+# CE023 - Entregable 3: Sistema de Software Funcional Integrado
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -8,8 +8,8 @@
 ### Portada
 * **Título del Proyecto:** CopIA
 * **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 5: Presentación, Video pitch y Sustentación Final
-* **Responsable:** Cristhian Llanque
+* **Entregable:** Entregable 3: Sistema de Software Funcional Integrado
+* **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

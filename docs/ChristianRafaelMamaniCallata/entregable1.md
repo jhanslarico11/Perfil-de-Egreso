@@ -1,4 +1,4 @@
-# CE0113 - Entregable 2: Business Case del Proyecto
+# CE021 - Entregable 1: Requerimientos y Diseño del Sistema
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de TI
-* **Entregable:** Entregable 2: Business Case del Proyecto
-* **Responsable:** Christian Salas
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 1: Requerimientos y Diseño del Sistema
+* **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*

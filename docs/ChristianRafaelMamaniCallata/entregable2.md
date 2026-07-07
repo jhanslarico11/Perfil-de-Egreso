@@ -1,4 +1,4 @@
-# CE0131-CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
+# CE022 - Entregable 2: Plataforma de Datos del Sistema
 
 ## 1. Descripción
 *(Agrega aquí la descripción general del entregable, cuál es su propósito y qué problema resuelve)*
@@ -7,9 +7,9 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de TI
-* **Entregable:** CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
-* **Responsable:** Christian Salas
+* **Línea de Evaluación:** CE02: Ingeniería de Software
+* **Entregable:** Entregable 2: Plataforma de Datos del Sistema
+* **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
 *(Redacta un resumen ejecutivo de máximo una página explicando los hallazgos o resultados de este entregable)*
