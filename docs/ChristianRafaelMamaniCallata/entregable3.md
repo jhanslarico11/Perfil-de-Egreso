@@ -12,7 +12,7 @@ El presente entregable detalla el **Plan de Gestión del Proyecto** para **Yatiq
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo de un asistente educativo bilingüe e interactivo offline. Utilizando un enfoque híbrido, se establecen los mecanismos de control predictivo (PMI) para las restricciones del proyecto (alcance delimitado a la app Android, plazo fijo de 7 meses y presupuesto de S/. 18,500.00 autofinanciado) y metodologías ágiles (Scrum) organizadas en 4 Sprints de dos semanas para la optimización de los algoritmos de IA en el borde.
+Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo de un asistente educativo bilingüe e interactivo offline. Utilizando un enfoque híbrido, se establecen los mecanismos de control predictivo (PMI) para las restricciones del proyecto metodologías ágiles (Scrum) organizadas en 4 Sprints de dos semanas para la optimización de los algoritmos de IA en el borde.
 
 La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de ingesta del corpus lingüístico, cuantización de modelos, desarrollo nativo móvil y validación en campo. El cronograma estima la entrega del Mínimo Producto Viable (MVP) y las pruebas de campo en escuelas rurales de Puno en la semana 26. El plan de costos proyecta la curva de gasto acumulado (Curva S) con picos en la fase de cuantización y hardware móvil de prueba, mientras que el plan de riesgos formula estrategias concretas de mitigación frente a fallos de procesamiento de audio en teléfonos de gama baja y alucinaciones lingüísticas.
 
