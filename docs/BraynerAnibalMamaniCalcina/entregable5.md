@@ -7,7 +7,7 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: [Gestión de Tecnologías de Información](https://upeuoficial.github.io/planb/transcripcion/#b-area-de-gestion-de-tecnologias-de-informacion-gti)
+* **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
 * **Entregable:** CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
 * **Responsable:** Brayner Anibal Mamani Calcina
 
