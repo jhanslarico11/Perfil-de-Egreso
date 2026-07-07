@@ -1,6 +1,6 @@
-site_name: Documentación CopIA
-site_description: Documentación oficial del proyecto CopIA
-site_author: Equipo CopIA
+site_name: YatiqApp
+site_description: Asistente virtual offline para estudiantes bilingües en entornos rurales de Puno
+site_author: Equipo YatiqApp
 
 theme:
   name: material
@@ -10,19 +10,24 @@ theme:
     - navigation.sections
     - navigation.expand
     - toc.integrate
+  logo: assets/yatiqapp-logo.png
+  favicon: assets/yatiqapp-logo.png
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: green
       toggle:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: blue
+      accent: green
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
+
+extra_css:
+  - assets/styles.css
 
 nav:
   - Inicio: index.md
