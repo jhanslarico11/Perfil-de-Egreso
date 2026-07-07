@@ -6,7 +6,7 @@
 ## 2. Plantilla del Producto
 
 ### Portada
-* **Título del Proyecto:** CopIA
+* **Título del Proyecto:** YatiqApp
 * **Línea de Evaluación:** CE01: Gestión de Tecnologías de Información
 * **Entregable:** CE0125 - Entregable 3: Plan de Gestión del Proyecto
 * **Responsable:** Christian Rafael Mamani Callata
