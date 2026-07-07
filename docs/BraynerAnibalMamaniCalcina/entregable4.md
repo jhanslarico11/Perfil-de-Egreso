@@ -7,7 +7,7 @@
 
 ### Portada
 * **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE01: Gestión de TI
+* **Línea de Evaluación:** CE01: [Gestión de Tecnologías de Información](https://upeuoficial.github.io/planb/transcripcion/#b-area-de-gestion-de-tecnologias-de-informacion-gti)
 * **Entregable:** CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
 * **Responsable:** Brayner Anibal Mamani Calcina
 

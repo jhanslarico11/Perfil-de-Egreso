@@ -58,7 +58,7 @@ base_dir = r"d:\PerfilDeEgresadoCopIA\docs"
 for folder, files in nav_structure.items():
     if folder == "ce01":
         responsable = "Brayner Anibal Mamani Calcina"
-        linea = "CE01: Gestión de TI"
+        linea = "CE01: [Gestión de Tecnologías de Información](https://upeuoficial.github.io/planb/transcripcion/#b-area-de-gestion-de-tecnologias-de-informacion-gti)"
     elif folder == "ce02":
         responsable = "Christian Rafael Mamani Callata"
         linea = "CE02: Ingeniería de Software"
