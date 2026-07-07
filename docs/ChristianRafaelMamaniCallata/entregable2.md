@@ -14,7 +14,7 @@ El presente entregable detalla el **Business Case (Caso de Negocio)** para el de
 ### Resumen Ejecutivo
 Este documento sustenta el Caso de Negocio de **YatiqApp**, un asistente virtual offline para estudiantes bilingües en entornos rurales de Puno. Ante la brecha estructural de conectividad a internet en las zonas altoandinas y la falta de software interactivo adaptado a las variantes de Quechua Collao y Aymara, se justifica la necesidad de una solución de Inteligencia Artificial que se ejecute de forma nativa en el dispositivo móvil del usuario (*On-Device AI*).
 
-Tras evaluar tres alternativas tecnológicas, la arquitectura local embebida fue seleccionada por garantizar total independencia de red y costo operativo marginal cero para las escuelas públicas. El proyecto demanda una inversión inicial de S/. 18,500.00 autofinanciada por los tesistas (destinada a computación GPU de desarrollo, viáticos y smartphones de prueba). Por el contrario, los costos operativos y de mantenimiento cloud recurrentes se anulan completamente para la organización beneficiaria. Se identifican riesgos críticos de desbordamiento de memoria RAM y degradación del modelo, mitigados mediante técnicas avanzadas de cuantización a 4 bits de los Modelos de Lenguaje Pequeños (SLMs) seleccionados y arquitecturas RAG embebidas de alcance semántico controlado.
+Tras evaluar tres alternativas tecnológicas, la arquitectura local embebida fue seleccionada por garantizar total independencia de red y costo operativo marginal cero para las escuelas públicas. El proyecto demanda una inversión inicial de S/. 3,500.00 autofinanciada por los tesistas, priorizando software libre, reutilización de celulares disponibles, contenidos educativos existentes y pruebas de campo de bajo costo. Por el contrario, los costos operativos y de mantenimiento cloud recurrentes se anulan completamente para la organización beneficiaria. Se identifican riesgos críticos de desbordamiento de memoria RAM y degradación del modelo, mitigados mediante modelos livianos, recuperación RAG local y pruebas tempranas en celulares de gama baja.
 
 ### Secciones de Desarrollo
 
@@ -27,13 +27,13 @@ El sistema educativo rural bilingüe en la región de Puno enfrenta una brecha e
 * **Restricciones severas de hardware:** El parque informático disponible se reduce a smartphones familiares de gama baja/media con baja capacidad de memoria RAM y almacenamiento, incompatibles con software pesado.
 
 ##### 1.2. Objetivos del Proyecto (SMART)
-* **Objetivo General:** Desarrollar un asistente inteligente offline con soporte bilingüe (Quechua/Aymara) ejecutable en dispositivos móviles con un consumo de memoria RAM inferior a $1.5\text{ GB}$ e interactividad por voz local, incrementando el acceso a herramientas de personalización pedagógica en escuelas rurales de Puno para diciembre del 2026.
+* **Objetivo General:** Desarrollar un prototipo de asistente inteligente offline con soporte bilingüe (Quechua/Aymara), ejecutable en dispositivos móviles con un consumo de memoria RAM inferior a 1.5 GB e interactividad inicial por texto y voz local, incrementando el acceso a herramientas de personalización pedagógica en escuelas rurales de Puno dentro de un plazo de 2 meses.
 * **Objetivos Específicos:**
   * **S (Específico):** Optimizar un Modelo de Lenguaje Pequeño (SLM) mediante cuantización de post-entrenamiento a 4 bits para su ejecución en entornos Android móviles locales.
-  * **M (Medible):** Reducir la latencia de respuesta del sistema (Time-to-First-Token) a menos de $2.5\text{ segundos}$ en procesadores ARM estándar.
+  * **M (Medible):** Reducir la latencia de respuesta del sistema (Time-to-First-Token) a menos de 2.5 segundos en procesadores ARM estándar.
   * **A (Alcanzable):** Compilar una base de datos vectorial local con el corpus pedagógico bilingüe validado del MINEDU empleando una arquitectura RAG (Retrieval-Augmented Generation) embebida.
   * **R (Relevante):** Proveer una solución interactiva por voz (STT/TTS) para evitar que las barreras de alfabetización escrita limiten el uso de la IA.
-  * **T (Tiempo):** Diseñar, empaquetar en formato APK y validar el prototipo mediante una prueba piloto en un entorno rural en un plazo máximo de 7 meses.
+  * **T (Tiempo):** Diseñar, empaquetar en formato APK y validar el prototipo mediante una prueba piloto en un entorno rural en un plazo máximo de 2 meses.
 
 ##### 1.3. Beneficios Esperados
 * **Pedagógicos:** Incremento en la comprensión conceptual de los contenidos curriculares y preservación de la identidad lingüística de los usuarios.
@@ -73,8 +73,8 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
 #### III. Evaluación de Beneficios
 
 ##### 3.1. Beneficios Cuantificables (Tangibles)
-* **Ahorro en Gasto de Conectividad de Datos:** El costo de tráfico de red para la inferencia de la IA es de $\text{S/. 0.00}$.
-* **Eliminación de Costos Cloud Recurrentes:** Al procesar los datos de forma local en los terminales de los usuarios, el costo por consumo de tokens en servidores (pago mensual de AWS, Azure o APIs comerciales) se reduce a $\text{S/. 0.00}$.
+* **Ahorro en Gasto de Conectividad de Datos:** El costo de tráfico de red para la inferencia de la IA es de S/. 0.00.
+* **Eliminación de Costos Cloud Recurrentes:** Al procesar los datos de forma local en los terminales de los usuarios, el costo por consumo de tokens en servidores (pago mensual de AWS, Azure o APIs comerciales) se reduce a S/. 0.00.
 * **Costo Unitario de Despliegue Reducido:** La distribución del software mediante archivos APK reutiliza el hardware móvil preexistente en la comunidad, evitando que el proyecto demande la compra corporativa de tablets o PCs de alta gama.
 
 ##### 3.2. Beneficios Cualitativos (Intangibles)
@@ -84,9 +84,9 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
 
 ##### 3.3. Indicadores de Valor
 * **Tasa de Uso Offline (TUO):**
-  $$\text{TUO} = \left( \frac{\text{Horas de interacción local exitosa}}{\text{Total de horas de uso de la App}} \right) \times 100\% \quad [\text{Meta: } 100\%]$$
+  **TUO** = (Horas de interacción local exitosa / Total de horas de uso de la App) x 100%. **Meta:** 100%
 * **Latencia Crítica (LC):**
-  $$\text{LC} = \text{Tiempo total desde el Input (Voz/Texto) hasta el inicio del Output} \quad [\text{Meta: } \le 2.5\text{ s}]$$
+  **LC** = Tiempo total desde el input (voz/texto) hasta el inicio del output. **Meta:** <= 2.5 s
 
 ---
 
@@ -97,18 +97,19 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
 
 | Componente / Rubro | Detalle | Costo (PEN) | Recurso |
 | :--- | :--- | :---: | :--- |
-| **1. Hardware de Desarrollo e Ingeniería de IA** | Adquisición temporal / uso de estación de trabajo con GPU dedicada para Fine-Tuning y Cuantización inicial. | S/. 6,500.00 | Propios |
-| **2. Ingeniería de Software y Recopilación** | Costo de horas de desarrollo invertidas para programación, diseño UI/UX y alineación del dataset bilingüe. | S/. 10,500.00 | Propios |
-| **3. Logística y Pruebas Piloto** | Viáticos para la inserción, pruebas y validación del APK en las escuelas rurales seleccionadas en Puno. | S/. 1,500.00 | Propios |
-| **Total Inversión Inicial de TI** | | **S/. 18,500.00** | |
+| **1. Curación de contenidos y dataset EIB** | Selección, limpieza y estructuración de materiales educativos existentes en formatos simples para consulta local. | S/. 600.00 | Propios |
+| **2. Desarrollo del prototipo móvil** | Programación de la app, integración de base local, configuración RAG y pruebas técnicas con herramientas libres. | S/. 1,400.00 | Tesista |
+| **3. Equipos, almacenamiento y conectividad puntual** | Reutilización de celulares disponibles, memoria externa, cables, energía y descargas puntuales necesarias. | S/. 900.00 | Propios |
+| **4. Logística y prueba piloto rural** | Movilidad local, coordinación con docentes y validación básica del APK en una institución o comunidad cercana. | S/. 600.00 | Propios |
+| **Total Inversión Inicial de TI** | | **S/. 3,500.00** | |
 
 ##### 4.2. Costos Operativos (Para la Institución / Escuela)
-* **Consumo de Ancho de Banda / Datos Móviles:** $\text{S/. 0.00}$ anuales.
-* **Suscripciones de Software / APIs de Modelos de Lenguaje:** $\text{S/. 0.00}$ anuales.
-* **Consumo Eléctrico de Servidores de Producción:** $\text{S/. 0.00}$ anuales.
+* **Consumo de Ancho de Banda / Datos Móviles:** S/. 0.00 anuales.
+* **Suscripciones de Software / APIs de Modelos de Lenguaje:** S/. 0.00 anuales.
+* **Consumo Eléctrico de Servidores de Producción:** S/. 0.00 anuales.
 
 ##### 4.3. Costos de Mantenimiento
-* **Actualización del Sistema RAG (Nuevos contenidos pedagógicos):** Se programarán actualizaciones semestrales de la base de datos vectorial local. Este proceso se realizará de manera manual y gratuita por el equipo técnico mediante la redistribución del APK o parches de datos vía memorias físicas (MicroSD/USB), con un costo operativo proyectado para la organización de $\text{S/. 0.00}$.
+* **Actualización del Sistema RAG (Nuevos contenidos pedagógicos):** Se programarán actualizaciones semestrales de la base de datos vectorial local. Este proceso se realizará de manera manual y gratuita por el equipo técnico mediante la redistribución del APK o parches de datos vía memorias físicas (MicroSD/USB), con un costo operativo proyectado para la organización de S/. 0.00.
 
 ---
 
@@ -122,7 +123,7 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
 * **Riesgo Estratégico 2: Incompatibilidad de Arquitectura de Procesadores (Hardware Obsoleto)**
   * **Descripción:** Teléfonos inteligentes de muy baja gama con procesadores de arquitecturas ARM antiguas podrían carecer de los conjuntos de instrucciones necesarios para ejecutar las bibliotecas nativas del motor de inferencia de IA.
   * **Evaluación de Impacto:** Crítico. **Probabilidad:** Baja.
-  * **Mitigación Inicial:** Establecer en la documentación de TI una línea base de requerimientos mínimos de hardware (ej. Android 8.0 o superior, arquitectura ARM64 y mínimo $3\text{ GB}$ de RAM total).
+  * **Mitigación Inicial:** Establecer en la documentación de TI una línea base de requerimientos mínimos de hardware (ej. Android 8.0 o superior, arquitectura ARM64 y mínimo 3 GB de RAM total).
 
 ### Anexos
 *(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*

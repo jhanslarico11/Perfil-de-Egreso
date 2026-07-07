@@ -12,9 +12,9 @@ El presente entregable detalla el **Plan de Gestión del Proyecto** para **Yatiq
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo de un asistente educativo bilingüe e interactivo offline. Utilizando un enfoque híbrido, se establecen los mecanismos de control predictivo (PMI) para las restricciones del proyecto metodologías ágiles (Scrum) organizadas en 4 Sprints de dos semanas para la optimización de los algoritmos de IA en el borde.
+Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo de un prototipo educativo bilingüe e interactivo offline. Utilizando un enfoque híbrido, se establecen mecanismos de control predictivo para el alcance, cronograma y presupuesto, junto con prácticas ágiles organizadas en 4 iteraciones de dos semanas para construir, probar y ajustar la solución en condiciones rurales.
 
-La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de ingesta del corpus lingüístico, cuantización de modelos, desarrollo nativo móvil y validación en campo. El cronograma estima la entrega del Mínimo Producto Viable (MVP) y las pruebas de campo en escuelas rurales de Puno en la semana 26. El plan de costos proyecta la curva de gasto acumulado (Curva S) con picos en la fase de cuantización y hardware móvil de prueba, mientras que el plan de riesgos formula estrategias concretas de mitigación frente a fallos de procesamiento de audio en teléfonos de gama baja y alucinaciones lingüísticas.
+La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de curación del corpus lingüístico, configuración RAG local, desarrollo móvil y validación en campo. El cronograma estima la entrega del Mínimo Producto Viable (MVP) en la semana 8. El plan de costos proyecta una inversión máxima de S/. 3,500.00, coherente con un proyecto rural autofinanciado que reutiliza celulares, herramientas libres y recursos educativos existentes.
 
 ### Secciones de Desarrollo
 
@@ -26,14 +26,14 @@ La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de ingesta 
 * **Usuarios / Beneficiarios:** Estudiantes, docentes de Instituciones Educativas EIB y especialistas de las UGELs de la región Puno.
 
 ##### 1.2. Objetivos del Proyecto
-* **Objetivo Técnico:** Lograr la inferencia local de un Modelo de Lenguaje Pequeño (SLM) cuantizado a 4 bits con una latencia inferior a $2.5\text{ s}$ en un smartphone estándar de gama baja/media.
-* **Objetivo de Gestión:** Entregar el producto de software (APK), el dataset bilingüe estructurado y el informe de tesis aprobado en un periodo de 7 meses, respetando el presupuesto asignado por el equipo.
+* **Objetivo Técnico:** Lograr la inferencia local de un Modelo de Lenguaje Pequeño (SLM) cuantizado a 4 bits con una latencia inferior a 2.5 s en un smartphone estándar de gama baja/media.
+* **Objetivo de Gestión:** Entregar el prototipo de software (APK), el dataset bilingüe estructurado y el informe técnico en un periodo de 2 meses, respetando el presupuesto asignado por el equipo.
 
 ##### 1.3. Alcance Preliminar
 El proyecto abarca el diseño, entrenamiento por RAG, cuantización, desarrollo de la aplicación móvil Android y validación en campo de un asistente virtual offline bilingüe para educación primaria rural. Queda fuera del alcance el desarrollo para sistemas operativos iOS, la provisión física de smartphones a las escuelas y la actualización curricular de los contenidos del MINEDU.
 
 ##### 1.4. Restricciones y Supuestos
-* **Restricciones:** Presupuesto limitado por autofinanciación (máximo $\text{S/. 18,500.00}$), plazo estricto de entrega por calendario académico (7 meses) y el software debe operar en hardware móvil con $\le 4\text{ GB}$ de RAM sin conexión a internet.
+* **Restricciones:** Presupuesto limitado por autofinanciación (máximo S/. 3,500.00), plazo estricto de entrega por calendario académico (2 meses) y el software debe operar en hardware móvil con <= 4 GB de RAM sin conexión a internet.
 * **Supuestos:** Acceso oportuno a los textos escolares del MINEDU en Quechua Collao y Aymara, y viabilidad para ingresar a las comunidades piloto en Puno para las pruebas de campo.
 
 ---
@@ -64,7 +64,7 @@ La EDT se organiza en 5 componentes principales del ciclo de vida del proyecto:
 
 ##### 2.2. Diccionario de Entregables Críticos
 * **Paquete 1.1.2 (Dataset Estructurado):** Archivos en formato JSON/Markdown con el contenido pedagógico indexado y alineado bilingüemente.
-* **Paquete 1.2.2 (Modelo SLM Optimizado):** Archivo binario del modelo cuantizado comprimido a menos de $1.8\text{ GB}$ listo para la inferencia local.
+* **Paquete 1.2.2 (Modelo SLM Optimizado):** Archivo binario del modelo cuantizado comprimido a menos de 1.8 GB listo para la inferencia local.
 * **Paquete 1.3.3 (Aplicación Móvil - APK):** Instalable nativo de Android que empaqueta la interfaz, la base de datos vectorial y el motor de IA.
 
 ---
@@ -72,36 +72,33 @@ La EDT se organiza en 5 componentes principales del ciclo de vida del proyecto:
 #### III. Gestión del Cronograma
 
 ##### 3.1. Lista de Actividades e Hitos Principales
-El proyecto tiene una duración total de 28 semanas (7 meses).
+El proyecto tiene una duración total de 8 semanas (2 meses).
 
 | ID Actividad | Descripción de la Actividad | Predecesora | Duración (Semanas) |
 | :---: | :--- | :---: | :---: |
-| **A1** | Recopilación y estructuración de datos EIB | — | 4 |
-| **A2** | Indexación en Base de Datos Vectorial Embebida | A1 | 3 |
-| **A3** | Selección, Ajuste y Cuantización del Modelo SLM | A1 | 5 |
-| **A4** | Integración del motor de inferencia nativo en App | A2, A3 | 4 |
-| **A5** | Desarrollo de módulos locales de voz (STT/TTS) y UI | A4 | 5 |
-| **A6** | Pruebas integrales de software y consumo de RAM | A5 | 3 |
-| **A7** | Despliegue piloto en campo (Puno) y validación | A6 | 2 |
-| **A8** | Redacción final de tesis y trámites académicos | A7 | 2 |
+| **A1** | Curación y estructuración de contenidos EIB | — | 2 |
+| **A2** | Configuración de base local y recuperación RAG | A1 | 2 |
+| **A3** | Selección de modelo liviano y pruebas de respuesta | A1 | 2 |
+| **A4** | Desarrollo del prototipo móvil Android | A2, A3 | 2 |
+| **A5** | Pruebas de rendimiento en celulares de gama baja | A4 | 2 |
+| **A6** | Piloto rural básico y ajustes finales | A5 | 2 |
+| **A7** | Documentación técnica y presentación académica | A6 | 1 |
 
-* **Hito 1 (Semana 4):** Base de conocimientos bilingüe digitalizada y validada.
-* **Hito 2 (Semana 12):** Modelo de IA cuantizado corriendo localmente en entorno de pruebas.
-* **Hito 3 (Semana 21):** Aplicación móvil (APK) con soporte de voz e interfaz terminada.
-* **Hito 4 (Semana 26):** Pruebas de campo concluidas con éxito en la escuela rural.
+* **Hito 1 (Semana 2):** Base de conocimientos bilingüe organizada y validada.
+* **Hito 2 (Semana 4):** Motor RAG local funcionando con consultas básicas.
+* **Hito 3 (Semana 6):** Aplicación móvil (APK) instalada en celulares de prueba.
+* **Hito 4 (Semana 8):** Piloto rural básico concluido y versión final documentada.
 
 ##### 3.2. Diagrama de Gantt (Representación Temporal)
-```
-Semanas:                 |02|04|06|08|10|12|14|16|18|20|22|24|26|28|
-A1: Corpus               [====]★ (Hito 1)
-A2: VectDB                    [===]
-A3: SLM/IA               [=====]★ (Hito 2)
-A4: Motor-Inference            [====]
-A5: App/STT/TTS                     [=====]★ (Hito 3)
-A6: QA-RAM                                [===]
-A7: Piloto                                     [==]★ (Hito 4)
-A8: Tesis Final                                   [==]✔ (Fin)
-```
+| Actividad | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| A1: Contenidos EIB | X | X |  |  |  |  |  |  |
+| A2: Base local/RAG |  | X | X | X |  |  |  |  |
+| A3: Modelo liviano |  |  | X | X |  |  |  |  |
+| A4: Prototipo móvil |  |  |  | X | X | X |  |  |
+| A5: Pruebas en celulares |  |  |  |  | X | X | X |  |
+| A6: Piloto rural |  |  |  |  |  |  | X | X |
+| A7: Documentación final |  |  |  |  |  |  |  | X |
 
 ---
 
@@ -112,21 +109,20 @@ A8: Tesis Final                                   [==]✔ (Fin)
 | Ítem | Descripción Recurso | Unidad | Cant. | Total (PEN) |
 | :---: | :--- | :---: | :---: | :---: |
 | **1.0** | **Hardware e Infraestructura de TI** | | | |
-| 1.1 | GPU Workstation (Alquiler/Depreciación) | Global | 1 | S/. 4,500.00 |
-| 1.2 | Cloud Computing (Compute Credits Fine-Tuning) | Global | 1 | S/. 2,000.00 |
+| 1.1 | Uso de laptop/equipo propio y herramientas libres | Global | 1 | S/. 0.00 |
+| 1.2 | Almacenamiento, energía y conectividad puntual para descargas | Global | 1 | S/. 450.00 |
 | **2.0** | **Ingeniería y Trabajo de Campo** | | | |
-| 2.1 | Viáticos y Movilidad Rural (Puno) | Ruta | 3 | S/. 1,500.00 |
-| 2.2 | Dispositivos móviles de prueba | Unid | 2 | S/. 1,600.00 |
+| 2.1 | Curación de contenidos y validación con docentes | Global | 1 | S/. 600.00 |
+| 2.2 | Accesorios y pruebas en celulares disponibles | Global | 1 | S/. 850.00 |
+| 2.3 | Viáticos y movilidad rural local | Ruta | 2 | S/. 600.00 |
 | **3.0** | **Gestión y Recursos Humanos** | | | |
-| 3.1 | Horas de Desarrollo de Software (Valor estimado de mano de obra propia) | Meses | 7 | S/. 8,900.00 |
-| **Total**| **Costo Total Estimado** | | | **S/. 18,500.00** |
+| 3.1 | Desarrollo de software y documentación (valor estimado de mano de obra propia) | Meses | 2 | S/. 1,000.00 |
+| **Total**| **Costo Total Estimado** | | | **S/. 3,500.00** |
 
 ##### 4.2. Línea Base de Costos (Curva S Proyectada por Mes)
-El gasto acumulado planeado a lo largo de los 7 meses de ejecución del proyecto sigue la siguiente distribución financiera:
-* **Mes 1 - 2 (Inicio e Ingesta de Data):** $\text{S/. 3,500.00}$ (Incurre en setup inicial y recolección).
-* **Mes 3 - 4 (Ingeniería de IA y Servidores):** $\text{S/. 10,000.00}$ acumulados (Pico alto por entrenamiento, cómputo cloud y compra de móviles de testeo).
-* **Mes 5 - 6 (Desarrollo Móvil y QA):** $\text{S/. 16,500.00}$ acumulados (Desarrollo intensivo del cliente Android).
-* **Mes 7 (Cierre, Pruebas de Campo y Tesis):** $\text{S/. 18,500.00}$ acumulados (Validación final e impresión).
+El gasto acumulado planeado a lo largo de los 2 meses de ejecución del proyecto sigue la siguiente distribución financiera:
+* **Mes 1 (Curación, base local y configuración RAG):** S/. 1,450.00 acumulados.
+* **Mes 2 (Prototipo móvil, piloto rural y documentación):** S/. 3,500.00 acumulados.
 
 ---
 
@@ -139,13 +135,13 @@ El gasto acumulado planeado a lo largo de los 7 meses de ejecución del proyecto
 
 ##### 5.2. Plan de Respuesta a Riesgos
 * **Para Riesgo 1 (Mitigación):** Inyección forzada de contexto mediante programación determinista de la base vectorial. Si la consulta del niño no coincide con el contenido educativo indexado, el modelo ejecuta un fallback controlado: "No tengo esa información en mi base local".
-* **Para Riesgo 2 (Mitigación):** Utilizar modelos Whisper optimizados en formato de bajo peso (Tiny o Base quantized) y restringir el muestreo de audio a fragmentos de máximo $5\text{ segundos}$.
+* **Para Riesgo 2 (Mitigación):** Utilizar modelos Whisper optimizados en formato de bajo peso (Tiny o Base quantized) y restringir el muestreo de audio a fragmentos de máximo 5 segundos.
 * **Para Riesgo 3 (Contingencia):** Establecer nexos institucionales con directores de escuelas rurales de zonas cercanas accesibles por vías alternas como plan de respaldo para las pruebas del piloto.
 
 ---
 
 #### VI. Gestión Ágil (Aplica para las Fases 2 y 3: Construcción de Software)
-El ciclo de desarrollo core del backend de IA y de la app móvil se gestionará bajo el framework Scrum, organizando el trabajo en Sprints de 2 semanas.
+El ciclo de desarrollo core del backend de IA y de la app móvil se gestionará bajo un enfoque ágil, organizando el trabajo en 4 iteraciones de 2 semanas.
 
 ##### 6.1. Product Backlog Inicial (Historias de Usuario Críticas)
 * **HU01:** Como estudiante rural, quiero interactuar con el asistente usando comandos de voz en Quechua/Aymara para que la falta de escritura fluida no frene mi aprendizaje.

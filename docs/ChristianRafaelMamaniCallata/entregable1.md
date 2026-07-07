@@ -1,4 +1,4 @@
-# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+﻿# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
 ## 1. Descripción
 El presente entregable establece el **Diagnóstico Organizacional y el Alineamiento Estratégico** para el proyecto **YatiqApp**, un asistente inteligente offline diseñado para dar soporte al proceso pedagógico en el ámbito de la Educación Intercultural Bilingüe (EIB) en la región de Puno. El propósito fundamental es diagnosticar las limitaciones severas de infraestructura tecnológica (conectividad intermitente o nula y hardware móvil de gama baja) de las escuelas rurales y plantear la justificación técnica de una solución de Inteligencia Artificial On-Device. Asimismo, se define la coherencia del proyecto con los objetivos estratégicos y normativas de desarrollo local, nacional e internacional, y se presenta un análisis preliminar de riesgos y presupuesto.
 
@@ -11,11 +11,11 @@ El presente entregable establece el **Diagnóstico Organizacional y el Alineamie
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el análisis situacional y el alineamiento estratégico del proyecto **YatiqApp** en la Educación Intercultural Bilingüe (EIB) de la región Puno. Al identificar restricciones severas de conectividad a internet (banda ancha ausente o inestable) y limitaciones de hardware final (dispositivos de gama baja/media con RAM $\le$ 4 GB), se sustenta técnicamente la inviabilidad de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube.
+Este informe presenta el análisis situacional y el alineamiento estratégico del proyecto **YatiqApp** en la Educación Intercultural Bilingüe (EIB) de la región Puno. Al identificar restricciones severas de conectividad a internet (banda ancha ausente o inestable) y limitaciones de hardware final (dispositivos de gama baja/media con RAM <= 4 GB), se sustenta técnicamente la inviabilidad de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube.
 
 En respuesta, se propone una arquitectura de Inteligencia Artificial en el borde (On-Device AI) mediante la optimización y cuantización a 4 bits de Modelos de Lenguaje Pequeños (SLMs) como Gemma-2B o Phi-3-mini, integrados con un sistema RAG (Generación Aumentada por Recuperación) embebido en una base de datos SQLite vectorial local, además de interfaces de voz locales (STT/TTS).
 
-El proyecto demuestra un claro alineamiento estratégico con el ODS 4 (Educación de Calidad), la Política Nacional de Transformación Digital (PCM), el Plan Nacional de EIB (MINEDU) y el Plan de Desarrollo Regional Concertado (PDRC) Puno. Con una inversión inicial estimada de S/. 18,500.00 en fase de investigación y desarrollo, la propuesta se proyecta como una disrupción tecnológica que anula costos operativos recurrentes de conectividad e infraestructura cloud, asegurando la inclusión y la continuidad pedagógica en entornos de conectividad nula.
+El proyecto demuestra un claro alineamiento estratégico con el ODS 4 (Educación de Calidad), la Política Nacional de Transformación Digital (PCM), el Plan Nacional de EIB (MINEDU) y el Plan de Desarrollo Regional Concertado (PDRC) Puno. Con una inversión inicial estimada de S/. 3,500.00 para el desarrollo de un prototipo funcional, la propuesta se proyecta como una alternativa de bajo costo que reutiliza celulares disponibles, software libre y contenidos educativos existentes, anulando costos operativos recurrentes de conectividad e infraestructura cloud.
 
 ### Secciones de Desarrollo
 
@@ -27,7 +27,7 @@ El presente proyecto se circunscribe en el ámbito de la Educación Intercultura
 ##### 1.2. Análisis de la Infraestructura Tecnológica Actual (Línea Base)
 Desde la perspectiva de la Ingeniería de Sistemas, la infraestructura tecnológica de la organización presenta restricciones críticas que definen los requerimientos no funcionales del sistema propuesto:
 * **Infraestructura de Red y Conectividad:** Inexistencia o alta intermitencia de servicios de red de banda ancha (3G/4G/5G o fibra óptica) en los nodos periféricos (comunidades rurales). Esto inhabilita el despliegue de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube (Cloud-based AI).
-* **Capacidad de Cómputo (Hardware Endpoint):** El parque informático de las instituciones es limitado o inexistente. El dispositivo objetivo principal es el teléfono inteligente (smartphone) de los docentes o padres de familia. El perfil de hardware predominante corresponde a dispositivos de gama baja/media con restricciones severas de memoria RAM ($\le \text{4 GB}$) y almacenamiento interno limitado.
+* **Capacidad de Cómputo (Hardware Endpoint):** El parque informático de las instituciones es limitado o inexistente. El dispositivo objetivo principal es el teléfono inteligente (smartphone) de los docentes o padres de familia. El perfil de hardware predominante corresponde a dispositivos de gama baja/media con restricciones severas de memoria RAM (<= 4 GB) y almacenamiento interno limitado.
 * **Disponibilidad Energética:** Suministro eléctrico inestable en las instituciones rurales, lo que exige soluciones de software con alta eficiencia en el consumo de recursos de hardware para prolongar la autonomía de la batería de los terminales móviles.
 
 ##### 1.3. Diagnóstico de Procesos Pedagógicos y Limitaciones Lingüísticas
@@ -98,11 +98,11 @@ El desarrollo de este asistente inteligente offline representa una disrupción d
 
 | Concepto / Rubro | Costo (PEN) | Recurso |
 | :--- | :---: | :--- |
-| **1. Fase de Investigación y Recolección de Datos** (Validación de corpus lingüístico/EIB) | S/. 2,500.00 | Propios |
-| **2. Infraestructura de Cómputo de Desarrollo** (GPU local / Cloud Credits para Fine-Tune) | S/. 6,500.00 | Propios |
-| **3. Ingeniería de Software y Entrenamiento** (Desarrollo de App, Cuantización y RAG) | S/. 8,000.00 | Tesista |
-| **4. Pruebas de Campo y Validación Piloto** (Despliegue experimental en escuelas Puno) | S/. 1,500.00 | Propios |
-| **Total Inversión Estimada** | **S/. 18,500.00** | |
+| **1. Curación de contenidos EIB** (selección, limpieza y organización de materiales existentes) | S/. 600.00 | Propios |
+| **2. Desarrollo técnico del prototipo** (app móvil, base local y configuración RAG con herramientas libres) | S/. 1,400.00 | Tesista |
+| **3. Equipos y pruebas locales** (reutilización de celulares, almacenamiento, accesorios y conectividad puntual) | S/. 900.00 | Propios |
+| **4. Validación rural básica** (movilidad local, coordinación con docentes y aplicación piloto) | S/. 600.00 | Propios |
+| **Total Inversión Estimada** | **S/. 3,500.00** | |
 
 ##### 3.4. Beneficios Esperados y Retorno Social de la Inversión (SROI)
 * **Beneficios Tangibles (Reducción de Costos Operativos):**
@@ -116,33 +116,32 @@ El desarrollo de este asistente inteligente offline representa una disrupción d
 ---
 
 #### IV. Roadmap de Tecnología (Hoja de Ruta)
-El desarrollo del asistente inteligente se ejecutará de manera secuencial e iterativa, asegurando que las restricciones de hardware y las particularidades lingüísticas sean validadas de forma incremental.
+El desarrollo del asistente inteligente se ejecutará en **2 meses (8 semanas)** bajo un enfoque de prototipo funcional. La hoja de ruta prioriza lo indispensable para una zona rural: uso offline, bajo consumo de memoria, contenidos bilingües básicos y validación rápida con docentes o estudiantes.
 
-```
-Fase 1: Curación e Ingesta ──> Fase 2: Optimización e IA ──> Fase 3: Arquitectura Móvil ──> Fase 4: Piloto y Validación
-     (Mes 1 - 2)                   (Mes 3 - 4)                 (Mes 5 - 6)                   (Mes 7)
-```
+| Fase | Semanas | Enfoque | Resultado visible |
+| :--- | :---: | :--- | :--- |
+| **1. Curación e ingesta de contenidos** | 1 - 2 | Selección de material EIB, limpieza de textos y organización en archivos estructurados. | Base inicial de contenidos Quechua/Aymara lista para consulta local. |
+| **2. RAG local e IA liviana** | 3 - 4 | Configuración de búsqueda semántica local y selección de un modelo pequeño o reglas de respuesta asistida. | Motor offline capaz de responder desde la base de conocimiento sin internet. |
+| **3. Prototipo móvil** | 5 - 6 | Construcción de la interfaz Android, empaquetado de la base local y pruebas en celulares de gama baja. | APK funcional con consulta por texto y arquitectura preparada para voz. |
+| **4. Piloto y mejora final** | 7 - 8 | Pruebas en entorno rural, medición de latencia, revisión con usuarios y corrección de fallos. | Versión validada del prototipo, lista para presentación académica. |
 
-* **Fase 1: Curación de Datos e Ingesta del Conocimiento (Mes 1 - Mes 2)**
-  El enfoque está en la recopilación y estructuración del corpus de conocimiento pedagógico bilingüe.
-  * **Hito 1:** Recopilación y digitalización del material educativo oficial de Educación Intercultural Bilingüe (EIB) del MINEDU en variantes Quechua Collao y Aymara.
-  * **Hito 2:** Procesamiento y limpieza del texto: tokenización adaptada, eliminación de ruido gramatical y alineación bilingüe (Castellano-Quechua/Castellano-Aymara).
-  * **Hito 3:** Diseño y poblamiento de la base de datos de conocimiento en formato estructurado (JSON/Markdown) para la posterior ingesta en el sistema de recuperación.
-* **Fase 2: Ingeniería de IA, Cuantización y RAG Local (Mes 3 - Mes 4)**
-  Fase puramente de backend y optimización de modelos de lenguaje pequeños (SLMs).
-  * **Hito 1:** Selección y evaluación comparativa en entorno de desarrollo (GPU local) de Modelos de Lenguaje Pequeños de código abierto (ej. Gemma-2B, Phi-3-mini o Llama-3-8B).
-  * **Hito 2:** Aplicación de técnicas de cuantización de post-entrenamiento (PTQ) a 4 bits (utilizando formatos como GGUF o AWQ) para reducir el peso del modelo y su consumo de memoria RAM a límites tolerables por un smartphone ($\le \text{1.5 GB}$ en ejecución).
-  * **Hito 3:** Configuración del motor de generación aumentada por recuperación (RAG Offline) empleando una biblioteca de embeddings ligera y una base de datos vectorial local (ej. SQLite Vector Extension o empaquetada nativamente).
-* **Fase 3: Arquitectura y Desarrollo de la Aplicación Móvil (Mes 5 - Mes 6)**
-  Integración del motor de IA optimizado dentro del entorno de ejecución móvil sin conectividad.
-  * **Hito 1:** Configuración del entorno de desarrollo móvil (Flutter o React Native) e integración de la API de inferencia local (ej. MediaPipe LLM Inference API o integración nativa con LLaMA.cpp vía C++ JNI).
-  * **Hito 2:** Desarrollo de los módulos locales de Procesamiento de Voz (STT y TTS) optimizados para arquitecturas ARM, permitiendo la traducción local de audio a texto y viceversa en lenguas originarias.
-  * **Hito 3:** Diseño e implementación de la interfaz de usuario (UI/UX) gamificada, adaptada a niños y optimizada para pantallas de baja resolución.
-* **Fase 4: Pruebas de Sistema, Despliegue Piloto y Validación (Mes 7)**
-  Aseguramiento de la calidad del software en condiciones reales de aislamiento técnico.
-  * **Hito 1:** Pruebas de estrés y perfilado de hardware (profiling): Monitoreo de consumo de batería, temperatura del CPU del móvil, tasa de uso de memoria RAM y latencia de respuesta (búsqueda de un Time-to-First-Token $\le \text{2 segundos}$).
-  * **Hito 2:** Despliegue del paquete de instalación (.apk) de forma offline (vía MicroSD / Bluetooth) en un grupo de control de smartphones de gama baja/media.
-  * **Hito 3:** Validación pedagógica y operativa en una escuela rural piloto de la región Puno para medir la precisión de las respuestas del asistente y la usabilidad por parte de estudiantes y docentes.
+**Cronograma resumido**
+
+| Actividad | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Curación de contenidos EIB | X | X |  |  |  |  |  |  |
+| Base local y recuperación RAG |  | X | X | X |  |  |  |  |
+| Integración del modelo liviano |  |  | X | X |  |  |  |  |
+| Desarrollo del prototipo móvil |  |  |  | X | X | X |  |  |
+| Pruebas en celulares de gama baja |  |  |  |  | X | X | X |  |
+| Piloto rural y ajustes finales |  |  |  |  |  |  | X | X |
+
+**Hitos principales**
+
+* **Semana 2:** Contenidos bilingües organizados y listos para la base local.
+* **Semana 4:** Motor RAG offline probado con consultas básicas.
+* **Semana 6:** APK funcional instalado en celulares de prueba.
+* **Semana 8:** Piloto rural básico validado y documentación final actualizada.
 
 ##### Matriz Tecnológica del Proyecto
 Esta tabla resume el stack tecnológico (tecnologías seleccionadas) que se defenderá en el perfil:
@@ -169,7 +168,7 @@ Para garantizar la viabilidad y el éxito del proyecto, se ha realizado un anál
 
 | ID | Descripción del Riesgo | Probabilidad | Impacto | Nivel de Riesgo | Estrategia de Mitigación (Enfoque de Ingeniería) |
 | :---: | :--- | :---: | :---: | :---: | :--- |
-| **RT-01** | **Desbordamiento de Memoria (OOM):** El modelo de IA (SLM) satura la memoria RAM ($\le \text{4 GB}$) en teléfonos de gama baja, provocando el cierre de la app. | Alta | Alta | **Crítico** | Aplicar cuantización agresiva de post-entrenamiento (PTQ a 4 bits o menos) y configurar técnicas de sharding o descarga en caché de capas del modelo para balancear el uso de CPU/GPU móvil. |
+| **RT-01** | **Desbordamiento de Memoria (OOM):** El modelo de IA (SLM) satura la memoria RAM (<= 4 GB) en teléfonos de gama baja, provocando el cierre de la app. | Alta | Alta | **Crítico** | Aplicar cuantización agresiva de post-entrenamiento (PTQ a 4 bits o menos) y configurar técnicas de sharding o descarga en caché de capas del modelo para balancear el uso de CPU/GPU móvil. |
 | **RT-02** | **Latencia Excesiva de Respuesta:** El procesador móvil tarde demasiado en procesar el texto/voz (Time-to-First-Token mayor a 10 segundos), frustrando al usuario. | Media | Alta | **Alto** | Optimizar el motor de inferencia usando bindings de bajo nivel en C++ (vía LLaMA.cpp o MediaPipe) aprovechando la aceleración por hardware (NPU/GPU) nativa del procesador ARM. |
 | **RD-01** | **Alucinación de Datos y Sesgo Lingüístico:** El asistente responde con datos falsos o mezcla variantes dialectales no usadas en Puno (ej. Quechua Chanka en vez de Collao). | Media | Alta | **Alto** | Implementar una arquitectura RAG (Retrieval-Augmented Generation) offline estricta, forzando al modelo mediante prompt engineering a responder únicamente utilizando los documentos pedagógicos locales indexados en la base de datos vectorial embebida. |
 | **RD-02** | **Baja Precisión en el Reconocimiento de Voz (STT):** Los modelos de audio fallan al procesar la fonética o el ruido de fondo de las aulas rurales. | Alta | Media | **Medio** | Realizar un ajuste fino (Fine-Tuning) o filtrado previo de las muestras de audio locales mediante algoritmos ligeros de cancelación de ruido digital antes de pasar el input al motor Whisper cuantizado. |

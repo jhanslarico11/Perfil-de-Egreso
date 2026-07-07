@@ -27,9 +27,9 @@ Cuando un estudiante bilingüe (cuya lengua materna es el Quechua o Aymara) inte
 Si el docente está ocupado atendiendo a otro grupo, el estudiante detiene su aprendizaje (tiempo muerto). Cuando el docente finalmente atiende la consulta, debe realizar la traducción conceptual en tiempo real. Si la duda persiste fuera del horario escolar, el estudiante no cuenta con ningún soporte en su hogar, interrumpiendo el proceso educativo hasta el día siguiente.
 
 ##### 1.2. Indicadores Actuales (Línea Base)
-* **Tiempo Medio de Espera por Consulta (TMEC):** $18\text{ minutos}$ dentro del aula.
-* **Tasa de Consultas No Resueltas (TCNR):** $45\%$ (consultas que el alumno olvida hacer o que surgen en el hogar donde no hay soporte).
-* **Disponibilidad del Soporte Pedagógico (DSP):** $5\text{ horas/día}$ (restringido estrictamente a la jornada escolar presencial).
+* **Tiempo Medio de Espera por Consulta (TMEC):** 18 minutos dentro del aula.
+* **Tasa de Consultas No Resueltas (TCNR):** 45% (consultas que el alumno olvida hacer o que surgen en el hogar donde no hay soporte).
+* **Disponibilidad del Soporte Pedagógico (DSP):** 5 horas/día (restringido estrictamente a la jornada escolar presencial).
 
 ##### 1.3. Diagrama BPMN - Proceso Actual (AS-IS)
 *(Para el documento oficial, se sugiere diagramar este flujo en Bizagi o Camunda)*:
@@ -74,9 +74,9 @@ Inicio ──> Detecta Duda ──> Realiza Consulta por Voz a YatiqApp ──> 
 ```
 
 ##### 2.3. Nuevos Indicadores de Eficiencia
-* **Tiempo Medio de Espera por Consulta (TMEC):** $\le 3\text{ segundos}$ (tiempo de procesamiento local en el smartphone).
-* **Tasa de Éxito de la IA (TEIA):** Meta del $85\%$ de consultas escolares resueltas en primera instancia de forma automatizada.
-* **Disponibilidad del Soporte Pedagógico (DSP):** $24\text{ horas / } 7\text{ días}$ (100% offline, funciona en el hogar del estudiante).
+* **Tiempo Medio de Espera por Consulta (TMEC):** <= 3 segundos (tiempo de procesamiento local en el smartphone).
+* **Tasa de Éxito de la IA (TEIA):** Meta del 85% de consultas escolares resueltas en primera instancia de forma automatizada.
+* **Disponibilidad del Soporte Pedagógico (DSP):** 24 horas / 7 días (100% offline, funciona en el hogar del estudiante).
 
 ---
 
@@ -86,8 +86,8 @@ Inicio ──> Detecta Duda ──> Realiza Consulta por Voz a YatiqApp ──> 
 
 | Dimensión de Análisis | Situación Actual (AS-IS) | Situación Propuesta (TO-BE) | Impacto y Mejora Cuantificada |
 | :--- | :--- | :--- | :--- |
-| **Tiempo de Respuesta** | $18\text{ minutos}$ de espera promedio en aula por cada duda. | $2.5\text{ segundos}$ (latencia máxima del motor de inferencia On-Device). | **Reducción del $99.7\%$** en el tiempo de espera. El estudiante elimina los tiempos muertos y no bloquea su aprendizaje. |
-| **Costo Operativo (TI)** | Variable/Alto si se usara internet (planes de datos por alumno $\approx \text{S/. 30}$ mensuales por consumo de gigabytes). | $\text{S/. 0.00}$ de costo recurrente. El procesamiento es absorbido por el hardware del móvil del usuario. | **Reducción del $100\%$** en costos recurrentes de conectividad. Viabilidad financiera absoluta para zonas de extrema pobreza. |
+| **Tiempo de Respuesta** | 18 minutos de espera promedio en aula por cada duda. | 2.5 segundos (latencia máxima del motor de inferencia On-Device). | **Reducción del 99.7%** en el tiempo de espera. El estudiante elimina los tiempos muertos y no bloquea su aprendizaje. |
+| **Costo Operativo (TI)** | Variable/Alto si se usara internet (planes de datos por alumno aprox. S/. 30 mensuales por consumo de gigabytes). | S/. 0.00 de costo recurrente. El procesamiento es absorbido por el hardware del móvil del usuario. | **Reducción del 100%** en costos recurrentes de conectividad. Viabilidad financiera absoluta para zonas de extrema pobreza. |
 | **Calidad del Servicio** | Baja continuidad. El soporte se corta al salir del colegio. Sesgo lingüístico por falta de materiales interactivos bilingües. | Alta continuidad y pertinencia. Soporte ubicuo 24/7 en el idioma materno del niño (Quechua/Aymara) mediante interfaz de voz. | **Incremento drástico** en la cobertura pedagógica. El autoaprendizaje se extiende al hogar con validación semántica controlada. |
 
 ##### 3.2. Conclusión de la Mejora en Eficiencia Operativa

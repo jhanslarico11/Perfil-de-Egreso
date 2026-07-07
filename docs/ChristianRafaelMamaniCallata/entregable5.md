@@ -96,11 +96,11 @@ El ciclo de vida del software se rige bajo el marco de Gobernanza del MINEDU y l
 Al contrario de los sistemas cloud tradicionales, donde un incremento masivo de usuarios degrada el rendimiento de los servidores y dispara los costos de infraestructura, esta solución presenta una escalabilidad lineal perfecta de costo marginal cero. Como la inferencia de la Inteligencia Artificial se ejecuta de forma descentralizada utilizando los recursos de hardware de cada smartphone cliente, añadir 10,000 estudiantes concurrentes no genera carga técnica ni financiera en los sistemas centrales del proyecto.
 
 ##### 4.2. Costos Futuros y Sostenibilidad Financiera
-* **Infraestructura:** Proyección de gasto en servidores Cloud a futuro: $\text{S/. 0.00}$.
+* **Infraestructura:** Proyección de gasto en servidores Cloud a futuro: S/. 0.00.
 * **Sostenibilidad del Dataset (Mantenimiento Curricular):** El mantenimiento a largo plazo se limita al empaquetado semestral de nuevas lecturas o materias académicas en la base vectorial. Esto demanda únicamente las horas de ingeniería de un administrador de base de datos de la UGEL, quien compilará el archivo `.db` centralizado para su distribución masiva por canales físicos.
 
 ##### 4.3. Evolución Tecnológica (Ciclo de Vida)
-El diseño modular de la aplicación móvil (utilizando abstracciones de software) garantiza que la capa de IA sea intercambiable en el futuro. Si la comunidad científica lanza un nuevo Modelo de Lenguaje Pequeño (SLM) más eficiente que Gemma o Phi-3 (por ejemplo, modelos de menos de $1\text{B}$ de parámetros con mayor compresión sintáctica para lenguas aglutinantes como el Quechua), la aplicación móvil podrá recibir dicho binario como una actualización de archivos transparente, extendiendo el ciclo de vida útil del sistema y permitiendo que opere en smartphones aún más antiguos o de especificaciones inferiores.
+El diseño modular de la aplicación móvil (utilizando abstracciones de software) garantiza que la capa de IA sea intercambiable en el futuro. Si la comunidad científica lanza un nuevo Modelo de Lenguaje Pequeño (SLM) más eficiente que Gemma o Phi-3 (por ejemplo, modelos de menos de 1B de parámetros con mayor compresión sintáctica para lenguas aglutinantes como el Quechua), la aplicación móvil podrá recibir dicho binario como una actualización de archivos transparente, extendiendo el ciclo de vida útil del sistema y permitiendo que opere en smartphones aún más antiguos o de especificaciones inferiores.
 
 ### Anexos
 *(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
