@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">Topologia fisica de red de la I.E. Agropecuario Sorapa</title>
+  <desc id="desc">Diagrama fisico con ISP, router, switch, patch panel, rack mural, UPS, servidor, areas cableadas y access points.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9f8}.zone{fill:#fff;stroke:#c9d5cf;stroke-width:2;rx:18}.rack{fill:#eef5f2;stroke:#9fb9ae;stroke-width:3;rx:16}.core{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:12}.device{fill:#fff;stroke:#41504b;stroke-width:3;rx:10}.area{fill:#f2f6f4;stroke:#65756f;stroke-width:2;rx:10}.wifi{fill:#f4f0df;stroke:#9b8b3f;stroke-width:2;rx:10}.power{fill:#e8eaf0;stroke:#6e7482;stroke-width:2;rx:10}.title{font-family:Arial,sans-serif;font-size:32px;font-weight:700;fill:#1f2b27}.zoneTitle{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#26342f}.label{font-family:Arial,sans-serif;font-size:19px;font-weight:700;fill:#25302c}.small{font-family:Arial,sans-serif;font-size:14px;fill:#3f4d48}.tiny{font-family:Arial,sans-serif;font-size:12px;fill:#52605a}.line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}.thin{stroke:#6b7d75;stroke-width:3;fill:none;marker-end:url(#arrowGray)}.wifiLine{stroke:#9b8b3f;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowGold)}.energy{stroke:#6e7482;stroke-width:2;fill:none;stroke-dasharray:6 6}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+    <marker id="arrowGray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#6b7d75"/></marker>
+    <marker id="arrowGold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9b8b3f"/></marker>
+  </defs>
+  <rect class="bg" width="1400" height="860"/>
+  <text class="title" x="50" y="56">Topologia fisica de red - I.E. Agropecuario Sorapa</text>
+  <text class="small" x="52" y="86">Distribucion realista para colegio rural pequeno: ISP -> router -> switch -> patch panel -> puntos de red y Wi-Fi.</text>
+
+  <rect class="zone" x="45" y="120" width="260" height="180"/>
+  <text class="zoneTitle" x="70" y="154">Proveedor / WAN</text>
+  <rect class="device" x="92" y="190" width="165" height="70"/>
+  <text class="label" x="133" y="222">ISP</text>
+  <text class="small" x="104" y="246">Internet rural/local</text>
+
+  <rect class="rack" x="365" y="115" width="435" height="330"/>
+  <text class="zoneTitle" x="390" y="150">Rack mural 9U/12U - Cuarto de comunicaciones</text>
+  <rect class="core" x="410" y="185" width="170" height="75"/>
+  <text class="label" x="450" y="216">Router</text>
+  <text class="small" x="426" y="239">NAT + firewall</text>
+  <rect class="core" x="410" y="292" width="170" height="80"/>
+  <text class="label" x="448" y="324">Switch</text>
+  <text class="small" x="421" y="348">Gigabit 16/24p</text>
+  <rect class="device" x="610" y="292" width="155" height="80"/>
+  <text class="label" x="634" y="324">Patch Panel</text>
+  <text class="small" x="637" y="348">Cat 6 etiquetado</text>
+
+  <rect class="power" x="835" y="245" width="150" height="85"/>
+  <text class="label" x="888" y="278">UPS</text>
+  <text class="small" x="860" y="303">1000/1500 VA</text>
+  <path class="energy" d="M910 330 C840 385 575 390 495 372"/>
+  <path class="energy" d="M910 245 C810 210 655 205 580 220"/>
+
+  <rect class="zone" x="1015" y="120" width="320" height="180"/>
+  <text class="zoneTitle" x="1045" y="154">Servidor y respaldo</text>
+  <rect class="device" x="1060" y="190" width="145" height="70"/>
+  <text class="label" x="1094" y="220">Servidor</text>
+  <text class="small" x="1078" y="244">archivos locales</text>
+  <rect class="device" x="1230" y="190" width="78" height="70"/>
+  <text class="small" x="1244" y="219">Disco</text>
+  <text class="small" x="1238" y="240">backup</text>
+
+  <path class="line" d="M257 225 H410"/>
+  <path class="line" d="M495 260 V292"/>
+  <path class="line" d="M580 332 H610"/>
+  <path class="thin" d="M580 332 C740 470 995 315 1060 232"/>
+  <path class="thin" d="M1205 225 H1230"/>
+
+  <rect class="zone" x="45" y="500" width="1290" height="270"/>
+  <text class="zoneTitle" x="75" y="535">Puntos de red y cobertura del colegio</text>
+  <rect class="area" x="85" y="590" width="180" height="82"/>
+  <text class="label" x="130" y="620">Direccion</text>
+  <text class="small" x="118" y="646">PC administrativa</text>
+  <rect class="area" x="305" y="590" width="180" height="82"/>
+  <text class="label" x="345" y="620">Secretaria</text>
+  <text class="small" x="333" y="646">matricula / actas</text>
+  <rect class="area" x="525" y="590" width="210" height="82"/>
+  <text class="label" x="557" y="620">Aula innovacion</text>
+  <text class="small" x="562" y="646">PCs academicas</text>
+  <rect class="wifi" x="775" y="590" width="185" height="82"/>
+  <text class="label" x="810" y="620">AP Docentes</text>
+  <text class="small" x="815" y="646">Wi-Fi autorizado</text>
+  <rect class="wifi" x="1000" y="590" width="245" height="82"/>
+  <text class="label" x="1028" y="620">AP Administracion / Estudiantes</text>
+  <text class="small" x="1055" y="646">cobertura controlada</text>
+
+  <path class="thin" d="M688 372 C688 470 175 475 175 590"/>
+  <path class="thin" d="M688 372 C688 475 395 485 395 590"/>
+  <path class="thin" d="M688 372 C688 490 630 500 630 590"/>
+  <path class="wifiLine" d="M688 372 C745 485 867 500 867 590"/>
+  <path class="wifiLine" d="M688 372 C830 470 1122 495 1122 590"/>
+
+  <rect class="zone" x="70" y="800" width="1260" height="38"/>
+  <text class="small" x="92" y="824">Leyenda: flechas verdes = cableado UTP Cat 6; flechas punteadas = enlaces hacia AP; lineas grises punteadas = energia protegida por UPS.</text>
+</svg>

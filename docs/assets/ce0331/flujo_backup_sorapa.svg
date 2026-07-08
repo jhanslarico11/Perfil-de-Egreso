@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo de respaldo de informacion institucional</title>
+  <desc id="desc">Diagrama del flujo de backup desde PCs administrativas hacia servidor local, disco externo y nube opcional.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8faf9}.box{fill:#fff;stroke:#3f4c47;stroke-width:3;rx:10}.main{fill:#dcebe7;stroke:#2f6f66;stroke-width:3;rx:10}.optional{fill:#eef3ef;stroke:#61706a;stroke-width:3;stroke-dasharray:8 6;rx:10}.title{font-family:Arial,sans-serif;font-size:30px;font-weight:700;fill:#1f2b27}.label{font-family:Arial,sans-serif;font-size:21px;font-weight:700;fill:#25302c}.small{font-family:Arial,sans-serif;font-size:16px;fill:#38443f}.line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+  </defs>
+  <rect class="bg" width="1100" height="520"/>
+  <text class="title" x="55" y="58">Flujo de respaldo - I.E.S. Agropecuario Sorapa</text>
+  <rect class="box" x="70" y="160" width="220" height="110"/>
+  <text class="label" x="104" y="205">PCs administrativas</text>
+  <text class="small" x="105" y="235">Direccion y Secretaria</text>
+  <rect class="main" x="365" y="150" width="230" height="130"/>
+  <text class="label" x="415" y="204">Servidor local</text>
+  <text class="small" x="398" y="235">Documentos y carpetas</text>
+  <rect class="main" x="675" y="150" width="220" height="130"/>
+  <text class="label" x="715" y="204">Disco externo</text>
+  <text class="small" x="706" y="235">Copia semanal/mensual</text>
+  <rect class="optional" x="765" y="335" width="240" height="100"/>
+  <text class="label" x="820" y="378">Nube opcional</text>
+  <text class="small" x="805" y="407">Solo si internet es estable</text>
+  <path class="line" d="M290 215 H365"/>
+  <path class="line" d="M595 215 H675"/>
+  <path class="line" d="M785 280 C785 315 835 315 855 335"/>
+  <text class="small" x="80" y="350">Diario: documentos criticos hacia el servidor local.</text>
+  <text class="small" x="80" y="380">Semanal: copia completa en disco externo.</text>
+  <text class="small" x="80" y="410">Mensual: disco externo guardado bajo llave.</text>
+  <text class="small" x="80" y="440">Opcional: sincronizacion en nube cuando exista conectividad suficiente.</text>
+</svg>
