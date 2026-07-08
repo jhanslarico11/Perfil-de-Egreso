@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Redundancia y continuidad basica de red para Sorapa</title>
+  <desc id="desc">Diagrama con UPS, backup externo, segundo access point y documentacion de configuracion para recuperacion rapida.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9f8}.core{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:12}.device{fill:#fff;stroke:#40514b;stroke-width:3;rx:10}.safe{fill:#e8eaf0;stroke:#6e7482;stroke-width:3;rx:12}.backup{fill:#e8e4f2;stroke:#6d5a94;stroke-width:3;rx:12}.wifi{fill:#f4f0df;stroke:#9b8b3f;stroke-width:3;rx:12}.doc{fill:#f2e7e2;stroke:#a56f59;stroke-width:3;rx:12}.title{font-family:Arial,sans-serif;font-size:32px;font-weight:700;fill:#1f2b27}.label{font-family:Arial,sans-serif;font-size:19px;font-weight:700;fill:#25302c}.small{font-family:Arial,sans-serif;font-size:14px;fill:#3f4d48}.tiny{font-family:Arial,sans-serif;font-size:12px;fill:#52605a}.line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}.energy{stroke:#6e7482;stroke-width:3;fill:none;stroke-dasharray:7 7;marker-end:url(#arrowGray)}.backupLine{stroke:#6d5a94;stroke-width:4;fill:none;marker-end:url(#arrowPurple)}.wifiLine{stroke:#9b8b3f;stroke-width:4;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowGold)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+    <marker id="arrowGray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#6e7482"/></marker>
+    <marker id="arrowPurple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#6d5a94"/></marker>
+    <marker id="arrowGold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9b8b3f"/></marker>
+  </defs>
+  <rect class="bg" width="1400" height="840"/>
+  <text class="title" x="55" y="58">Redundancia realista y recuperacion rapida</text>
+  <text class="small" x="57" y="88">Continuidad basica para colegio rural: energia protegida, respaldo de datos, cobertura Wi-Fi secundaria y documentacion.</text>
+
+  <rect class="safe" x="90" y="175" width="190" height="100"/>
+  <text class="label" x="150" y="214">UPS</text>
+  <text class="small" x="118" y="240">Proteccion electrica</text>
+  <text class="tiny" x="126" y="260">1000/1500 VA</text>
+
+  <rect class="core" x="430" y="145" width="170" height="80"/>
+  <text class="label" x="477" y="176">Router</text>
+  <text class="small" x="454" y="200">salida a internet</text>
+  <rect class="core" x="430" y="270" width="170" height="80"/>
+  <text class="label" x="478" y="302">Switch</text>
+  <text class="small" x="452" y="326">distribucion LAN</text>
+  <rect class="device" x="430" y="395" width="170" height="85"/>
+  <text class="label" x="470" y="428">Servidor</text>
+  <text class="small" x="448" y="452">archivos locales</text>
+
+  <path class="energy" d="M280 225 C335 185 380 185 430 185"/>
+  <path class="energy" d="M280 225 C345 275 385 300 430 310"/>
+  <path class="energy" d="M280 225 C330 380 375 430 430 438"/>
+
+  <rect class="backup" x="770" y="390" width="210" height="95"/>
+  <text class="label" x="815" y="425">Disco externo</text>
+  <text class="small" x="802" y="450">backup semanal/mensual</text>
+  <path class="backupLine" d="M600 438 H770"/>
+
+  <rect class="wifi" x="760" y="165" width="190" height="90"/>
+  <text class="label" x="803" y="200">AP principal</text>
+  <text class="small" x="792" y="224">cobertura normal</text>
+  <rect class="wifi" x="1030" y="165" width="210" height="90"/>
+  <text class="label" x="1068" y="200">AP respaldo</text>
+  <text class="small" x="1058" y="224">cobertura secundaria</text>
+  <path class="line" d="M600 310 C680 260 710 220 760 210"/>
+  <path class="wifiLine" d="M950 210 H1030"/>
+
+  <rect class="doc" x="765" y="585" width="475" height="120"/>
+  <text class="label" x="825" y="623">Documentacion de configuracion</text>
+  <text class="small" x="805" y="652">IP, VLAN, claves administrativas, datos del proveedor,</text>
+  <text class="small" x="805" y="675">puertos del switch y parametros de AP/router.</text>
+  <path class="backupLine" d="M875 485 V585"/>
+
+  <rect class="device" x="95" y="585" width="500" height="120"/>
+  <text class="label" x="140" y="623">Procedimiento ante falla</text>
+  <text class="small" x="130" y="652">1. Verificar energia y UPS. 2. Revisar router/switch.</text>
+  <text class="small" x="130" y="675">3. Validar backup. 4. Restaurar configuracion documentada.</text>
+  <path class="line" d="M600 438 C660 535 700 625 765 645"/>
+
+  <rect class="device" x="90" y="760" width="1220" height="42"/>
+  <text class="small" x="115" y="786">Nota: no se propone duplicacion empresarial; se prioriza continuidad basica, bajo costo y recuperacion rapida con recursos disponibles.</text>
+</svg>

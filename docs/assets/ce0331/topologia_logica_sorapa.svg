@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">Topologia logica de red de la I.E. Agropecuario Sorapa</title>
+  <desc id="desc">Diagrama logico con router firewall, switch administrable y VLAN 10, 20, 30, 40 y 50.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9f8}.core{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:12}.switch{fill:#e8f0f7;stroke:#6c8eac;stroke-width:3;rx:12}.v10{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:12}.v20{fill:#e7f0dc;stroke:#6b8d4f;stroke-width:3;rx:12}.v30{fill:#eef0dc;stroke:#9a8a3a;stroke-width:3;rx:12}.v40{fill:#e8e4f2;stroke:#6d5a94;stroke-width:3;rx:12}.v50{fill:#f2e7e2;stroke:#a56f59;stroke-width:3;rx:12}.title{font-family:Arial,sans-serif;font-size:32px;font-weight:700;fill:#1f2b27}.label{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#25302c}.small{font-family:Arial,sans-serif;font-size:14px;fill:#3f4d48}.tiny{font-family:Arial,sans-serif;font-size:12px;fill:#52605a}.line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}.trunk{stroke:#2f6f66;stroke-width:6;fill:none;marker-end:url(#arrow)}.rule{stroke:#6b7d75;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowGray)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+    <marker id="arrowGray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#6b7d75"/></marker>
+  </defs>
+  <rect class="bg" width="1400" height="860"/>
+  <text class="title" x="50" y="56">Topologia logica de red - VLAN y subredes</text>
+  <text class="small" x="52" y="86">Separacion logica para administracion, docentes, estudiantes, servidor e invitados opcionales.</text>
+
+  <rect class="core" x="155" y="140" width="250" height="105"/>
+  <text class="label" x="206" y="176">Router / Firewall</text>
+  <text class="small" x="195" y="204">Gateway inter-VLAN</text>
+  <text class="tiny" x="195" y="225">Reglas basicas de acceso</text>
+  <rect class="switch" x="575" y="140" width="250" height="105"/>
+  <text class="label" x="617" y="176">Switch administrable</text>
+  <text class="small" x="626" y="204">802.1Q trunk/access</text>
+  <text class="tiny" x="638" y="225">16/24 puertos gigabit</text>
+  <path class="trunk" d="M405 193 H575"/>
+  <text class="tiny" x="455" y="176">Trunk VLAN 10/20/30/40/50</text>
+
+  <rect class="v10" x="80" y="360" width="230" height="140"/>
+  <text class="label" x="122" y="394">VLAN 10</text>
+  <text class="small" x="116" y="422">Administracion</text>
+  <text class="tiny" x="113" y="448">192.168.10.0/24</text>
+  <text class="tiny" x="105" y="474">Direccion y Secretaria</text>
+
+  <rect class="v20" x="350" y="360" width="230" height="140"/>
+  <text class="label" x="392" y="394">VLAN 20</text>
+  <text class="small" x="410" y="422">Docentes</text>
+  <text class="tiny" x="383" y="448">192.168.20.0/24</text>
+  <text class="tiny" x="390" y="474">Wi-Fi docente</text>
+
+  <rect class="v30" x="620" y="360" width="230" height="140"/>
+  <text class="label" x="662" y="394">VLAN 30</text>
+  <text class="small" x="650" y="422">Estudiantes/Wi-Fi</text>
+  <text class="tiny" x="653" y="448">192.168.30.0/24</text>
+  <text class="tiny" x="665" y="474">Aula innovacion</text>
+
+  <rect class="v40" x="890" y="360" width="230" height="140"/>
+  <text class="label" x="932" y="394">VLAN 40</text>
+  <text class="small" x="955" y="422">Servidor</text>
+  <text class="tiny" x="923" y="448">192.168.40.0/24</text>
+  <text class="tiny" x="933" y="474">Archivos y backup</text>
+
+  <rect class="v50" x="1160" y="360" width="190" height="140"/>
+  <text class="label" x="1193" y="394">VLAN 50</text>
+  <text class="small" x="1202" y="422">Invitados</text>
+  <text class="tiny" x="1187" y="448">192.168.50.0/24</text>
+  <text class="tiny" x="1192" y="474">solo internet</text>
+
+  <path class="line" d="M700 245 C700 315 195 310 195 360"/>
+  <path class="line" d="M700 245 C700 315 465 315 465 360"/>
+  <path class="line" d="M700 245 V360"/>
+  <path class="line" d="M700 245 C700 315 1005 315 1005 360"/>
+  <path class="line" d="M700 245 C760 315 1255 315 1255 360"/>
+
+  <rect class="core" x="455" y="615" width="490" height="110"/>
+  <text class="label" x="525" y="652">Control logico por router/firewall</text>
+  <text class="small" x="500" y="682">Administracion puede acceder al servidor. Invitados solo salen a internet.</text>
+  <text class="small" x="548" y="706">Docentes y estudiantes se mantienen separados por politicas.</text>
+  <path class="rule" d="M195 500 C270 610 475 610 520 650"/>
+  <path class="rule" d="M1005 500 C970 585 860 610 810 650"/>
+  <path class="rule" d="M1255 500 C1190 635 930 620 885 680"/>
+</svg>

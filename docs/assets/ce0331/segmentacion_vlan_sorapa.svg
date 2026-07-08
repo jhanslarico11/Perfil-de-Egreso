@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Segmentacion VLAN para la I.E. Agropecuario Sorapa</title>
+  <desc id="desc">Diagrama que muestra separacion de grupos por VLAN y paso por router firewall.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9f8}.fire{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:14}.group{fill:#fff;stroke:#c9d5cf;stroke-width:2;rx:14}.v10{fill:#dceee9}.v20{fill:#e7f0dc}.v30{fill:#eef0dc}.v40{fill:#e8e4f2}.v50{fill:#f2e7e2}.title{font-family:Arial,sans-serif;font-size:32px;font-weight:700;fill:#1f2b27}.label{font-family:Arial,sans-serif;font-size:19px;font-weight:700;fill:#25302c}.small{font-family:Arial,sans-serif;font-size:14px;fill:#3f4d48}.tiny{font-family:Arial,sans-serif;font-size:12px;fill:#52605a}.line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}.blocked{stroke:#b46a5a;stroke-width:3;fill:none;stroke-dasharray:7 7}.ok{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+  </defs>
+  <rect class="bg" width="1400" height="820"/>
+  <text class="title" x="50" y="56">Segmentacion VLAN y control de acceso</text>
+  <text class="small" x="52" y="86">Cada grupo se mantiene separado y el trafico inter-VLAN pasa por el router/firewall.</text>
+
+  <rect class="fire" x="520" y="145" width="360" height="150"/>
+  <text class="label" x="608" y="185">Router / Firewall</text>
+  <text class="small" x="574" y="215">Politicas basicas entre VLAN</text>
+  <text class="tiny" x="585" y="242">Permitir lo necesario, bloquear lo sensible</text>
+
+  <rect class="group v10" x="80" y="370" width="230" height="140"/>
+  <text class="label" x="122" y="405">VLAN 10</text>
+  <text class="small" x="108" y="432">Administracion</text>
+  <text class="tiny" x="105" y="460">Direccion / Secretaria</text>
+  <text class="tiny" x="105" y="482">Acceso a servidor</text>
+
+  <rect class="group v20" x="350" y="370" width="230" height="140"/>
+  <text class="label" x="392" y="405">VLAN 20</text>
+  <text class="small" x="410" y="432">Docentes</text>
+  <text class="tiny" x="385" y="460">Recursos educativos</text>
+  <text class="tiny" x="385" y="482">Acceso controlado</text>
+
+  <rect class="group v30" x="620" y="370" width="230" height="140"/>
+  <text class="label" x="662" y="405">VLAN 30</text>
+  <text class="small" x="650" y="432">Estudiantes/Wi-Fi</text>
+  <text class="tiny" x="655" y="460">Aula innovacion</text>
+  <text class="tiny" x="655" y="482">Sin acceso administrativo</text>
+
+  <rect class="group v40" x="890" y="370" width="230" height="140"/>
+  <text class="label" x="932" y="405">VLAN 40</text>
+  <text class="small" x="955" y="432">Servidor</text>
+  <text class="tiny" x="920" y="460">Archivos y backup</text>
+  <text class="tiny" x="920" y="482">Gestion restringida</text>
+
+  <rect class="group v50" x="1160" y="370" width="190" height="140"/>
+  <text class="label" x="1193" y="405">VLAN 50</text>
+  <text class="small" x="1202" y="432">Invitados</text>
+  <text class="tiny" x="1190" y="460">Opcional</text>
+  <text class="tiny" x="1190" y="482">Solo internet</text>
+
+  <path class="line" d="M625 295 C580 345 245 320 195 370"/>
+  <path class="line" d="M665 295 C640 345 500 330 465 370"/>
+  <path class="line" d="M700 295 V370"/>
+  <path class="line" d="M735 295 C780 345 960 330 1005 370"/>
+  <path class="line" d="M780 295 C850 350 1210 315 1255 370"/>
+
+  <path class="ok" d="M310 440 H890"/>
+  <text class="tiny" x="505" y="426">Acceso permitido: Administracion -> Servidor</text>
+  <path class="blocked" d="M735 510 C760 610 1080 610 1255 510"/>
+  <text class="tiny" x="865" y="635">Invitados y estudiantes no acceden a recursos administrativos</text>
+
+  <rect class="group" x="180" y="690" width="1040" height="55"/>
+  <text class="small" x="210" y="722">Regla practica: separar por funcion institucional, aplicar contrasenas distintas por SSID y documentar puertos de acceso en el switch.</text>
+</svg>

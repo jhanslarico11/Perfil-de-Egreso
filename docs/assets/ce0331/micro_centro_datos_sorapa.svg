@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Micro centro de datos propuesto para la I.E.S. Agropecuario Sorapa</title>
+  <desc id="desc">Ilustracion tecnica de un cuarto pequeno de comunicaciones con rack mural, router, switch, patch panel, UPS, servidor, disco externo, ventilacion y extintor.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9f8}.wall{fill:#e8efe9}.floor{fill:#dfe7df}.line{stroke:#46524d;stroke-width:3;fill:none}.thin{stroke:#66736d;stroke-width:2;fill:none}.label{font-family:Arial,sans-serif;font-size:22px;fill:#27312d}.small{font-family:Arial,sans-serif;font-size:17px;fill:#35413c}.title{font-family:Arial,sans-serif;font-size:30px;font-weight:700;fill:#1f2b27}.device{fill:#ffffff;stroke:#3f4c47;stroke-width:3}.muted{fill:#cbd8d0}.accent{fill:#3f7f73}.warn{fill:#c65f4a}.cable{stroke:#4d8076;stroke-width:4;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="60" y="54">Micro centro de datos - I.E.S. Agropecuario Sorapa</text>
+  <rect class="wall" x="55" y="90" width="1090" height="390" rx="8"/>
+  <rect class="floor" x="55" y="480" width="1090" height="170" rx="8"/>
+  <line class="thin" x1="55" y1="480" x2="1145" y2="480"/>
+  <rect class="device" x="165" y="145" width="250" height="290" rx="8"/>
+  <text class="label" x="216" y="180">Rack mural 12U</text>
+  <rect class="muted" x="195" y="205" width="190" height="42" rx="4"/>
+  <text class="small" x="250" y="232">Router</text>
+  <rect class="muted" x="195" y="260" width="190" height="42" rx="4"/>
+  <text class="small" x="242" y="287">Switch 24p</text>
+  <rect class="muted" x="195" y="315" width="190" height="42" rx="4"/>
+  <text class="small" x="235" y="342">Patch panel</text>
+  <rect class="muted" x="195" y="370" width="190" height="34" rx="4"/>
+  <text class="small" x="225" y="393">Organizador</text>
+  <path class="cable" d="M415 278 C500 278 500 470 595 470"/>
+  <rect class="device" x="515" y="515" width="170" height="90" rx="8"/>
+  <text class="label" x="575" y="555">UPS</text>
+  <text class="small" x="548" y="583">1000/1500 VA</text>
+  <rect class="device" x="755" y="245" width="230" height="150" rx="8"/>
+  <rect class="accent" x="790" y="275" width="95" height="70" rx="5"/>
+  <text class="label" x="800" y="430">Computadora servidor</text>
+  <text class="small" x="770" y="460">Documentos, SIAGIE y respaldos</text>
+  <rect class="device" x="1010" y="332" width="65" height="92" rx="8"/>
+  <text class="small" x="1000" y="452">Disco externo</text>
+  <path class="cable" d="M985 372 C1000 372 1005 376 1010 378"/>
+  <path class="cable" d="M685 550 C730 520 745 410 790 395"/>
+  <rect class="device" x="760" y="122" width="250" height="56" rx="8"/>
+  <line class="thin" x1="790" y1="150" x2="980" y2="150"/>
+  <text class="label" x="800" y="113">Ventilacion natural</text>
+  <rect class="warn" x="96" y="510" width="50" height="95" rx="8"/>
+  <rect class="warn" x="108" y="484" width="26" height="32" rx="4"/>
+  <text class="label" x="78" y="635">Extintor</text>
+  <rect class="device" x="740" y="520" width="360" height="72" rx="8"/>
+  <text class="label" x="785" y="564">Mesa de trabajo y soporte</text>
+  <text class="small" x="70" y="690">Solucion sencilla: bajo costo, mantenimiento facil, proteccion fisica y respaldo periodico.</text>
+</svg>
