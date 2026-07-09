@@ -9,19 +9,23 @@ CopIA resuelve este problema mediante un traductor bidireccional y un asistente 
 
 ## 2. Plantilla del Producto
 
-### Portada
-* **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 1: Requerimientos y Diseño del Sistema
-* **Responsable:** Brayner Anibal Mamani Calcina
+### 🏷️ Portada
+| Campo | Detalle |
+| :--- | :--- |
+| **🚀 Proyecto** | CopIA |
+| **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
+| **📦 Entregable** | Entregable 1: Requerimientos y Diseño del Sistema |
+| **👤 Responsable** | Brayner Anibal Mamani Calcina |
 
-### Resumen Ejecutivo
-Este entregable presenta el análisis de requerimientos y el diseño del sistema **CopIA**, una plataforma de traducción y asistencia inteligente por voz en Aymara y Quechua. 
+### 🎯 Resumen Ejecutivo
+Este entregable presenta el análisis de requerimientos y el diseño del sistema **CopIA**, una plataforma de traducción y asistencia inteligente por voz en Aymara y Quechua.
 
-Los hallazgos clave de esta fase son:
-1. **Necesidad de Inferencia Híbrida**: Para lograr un asistente interactivo inteligente en tiempo real, se diseñó una arquitectura que desacopla la transcripción, traducción y síntesis (ejecutadas localmente) de la generación lógica de respuestas (ejecutada mediante APIs LLM eficientes como Gemini 1.5 Flash).
-2. **Optimización de Latencia**: La latencia en la CPU era inaceptable (~10s por consulta). El diseño arquitectónico exige el uso de la GPU local (NVIDIA CUDA con hardware RTX 5060) para los pipelines inferenciales (Whisper ASR, NLLB NMT, y MMS TTS), reduciendo el tiempo de respuesta a <0.5 segundos.
-3. **Robustez y Tolerancia a Fallos**: Se diseñó un sistema de fallbacks locales que permite que la traducción y la síntesis continúen operando de manera offline (traducción directa) aun cuando no haya conexión a Internet para las APIs de Inteligencia Artificial.
+> [!NOTE]
+> ### 🔍 Hallazgos clave de esta fase:
+> 
+> 1. **🧠 Necesidad de Inferencia Híbrida**: Para lograr un asistente interactivo inteligente en tiempo real, se diseñó una arquitectura que desacopla la transcripción, traducción y síntesis (ejecutadas localmente) de la generación lógica de respuestas (ejecutada mediante APIs LLM eficientes como Gemini 1.5 Flash).
+> 2. **⚡ Optimización de Latencia**: La latencia en la CPU era inaceptable (~10s por consulta). El diseño arquitectónico exige el uso de la GPU local (NVIDIA CUDA con hardware RTX 5060) para los pipelines inferenciales (Whisper ASR, NLLB NMT, y MMS TTS), reduciendo el tiempo de respuesta a <0.5 segundos.
+> 3. **🛡️ Robustez y Tolerancia a Fallos**: Se diseñó un sistema de fallbacks locales que permite que la traducción y la síntesis continúen operando de manera offline (traducción directa) aun cuando no haya conexión a Internet para las APIs de Inteligencia Artificial.
 
 ---
 
@@ -32,20 +36,20 @@ Los hallazgos clave de esta fase son:
 ##### Requerimientos Funcionales (RF)
 | ID | Nombre | Descripción | Prioridad |
 | :--- | :--- | :--- | :--- |
-| **RF-01** | Transcripción de Voz (ASR) | El sistema debe convertir audio del habla del usuario en texto en español o lengua originaria usando Whisper. | Alta |
-| **RF-02** | Traducción Bidireccional (NMT) | El sistema debe traducir textos bidireccionalmente entre Español ↔ Aymara (`ayr_Latn`) y Español ↔ Quechua (`quy_Latn`) mediante NLLB-200. | Alta |
-| **RF-03** | Síntesis de Voz (TTS) | El sistema debe convertir las traducciones y respuestas a audio de voz nativa y realista en formato WAV usando Meta MMS-TTS. | Alta |
-| **RF-04** | Asistente de Voz Conversacional | El sistema debe responder preguntas conversacionales del usuario en español mediante Gemini API, traduciendo y hablando la respuesta en la lengua originaria seleccionada. | Alta |
-| **RF-05** | Fallback de Respuestas Locales | Si no se detectan credenciales de APIs de LLM externas, el sistema debe operar en modo offline de traducción directa y responder usando heurísticas conversacionales locales. | Media |
-| **RF-06** | Historial Local de Consultas | La interfaz debe registrar y almacenar de manera persistente las últimas traducciones en el dispositivo del usuario. | Baja |
+| **`RF-01`** | Transcripción de Voz (ASR) | El sistema debe convertir audio del habla del usuario en texto en español o lengua originaria usando Whisper. | 🔴 Alta |
+| **`RF-02`** | Traducción Bidireccional (NMT) | El sistema debe traducir textos bidireccionalmente entre Español ↔ Aymara (`ayr_Latn`) y Español ↔ Quechua (`quy_Latn`) mediante NLLB-200. | 🔴 Alta |
+| **`RF-03`** | Síntesis de Voz (TTS) | El sistema debe convertir las traducciones y respuestas a audio de voz nativa y realista en formato WAV usando Meta MMS-TTS. | 🔴 Alta |
+| **`RF-04`** | Asistente de Voz Conversacional | El sistema debe responder preguntas conversacionales del usuario en español mediante Gemini API, traduciendo y hablando la respuesta en la lengua originaria seleccionada. | 🔴 Alta |
+| **`RF-05`** | Fallback de Respuestas Locales | Si no se detectan credenciales de APIs de LLM externas, el sistema debe operar en modo offline de traducción directa y responder usando heurísticas conversacionales locales. | 🟡 Media |
+| **`RF-06`** | Historial Local de Consultas | La interfaz debe registrar y almacenar de manera persistente las últimas traducciones en el dispositivo del usuario. | 🟢 Baja |
 
 ##### Requerimientos No Funcionales (RNF)
 | ID | Nombre | Descripción | Métrica |
 | :--- | :--- | :--- | :--- |
-| **RNF-01** | Desempeño y Latencia | El pipeline completo de traducción y generación de voz debe tardar menos de 1 segundo en responder utilizando aceleración por hardware GPU (CUDA). | < 1.0s |
-| **RNF-02** | Escalabilidad del Backend | El servidor backend debe ser construido de forma asíncrona sobre FastAPI para manejar solicitudes concurrentes de múltiples dispositivos móviles. | Concurrente (Async) |
-| **RNF-03** | Portabilidad y Diseño UX | El frontend debe ser desarrollado en Flutter para garantizar consistencia visual y rendimiento fluido en sistemas Android y iOS. | Multiplataforma |
-| **RNF-04** | Seguridad de Datos | Los tokens de acceso y API Keys sensibles deben cargarse de forma segura a través de variables de entorno `.env` en el servidor backend. | Encriptación / Env |
+| **`RNF-01`** | Desempeño y Latencia | El pipeline completo de traducción y generación de voz debe tardar menos de 1 segundo en responder utilizando aceleración por hardware GPU (CUDA). | `⚡ < 1.0s` |
+| **`RNF-02`** | Escalabilidad del Backend | El servidor backend debe ser construido de forma asíncrona sobre FastAPI para manejar solicitudes concurrentes de múltiples dispositivos móviles. | `🔄 Concurrente (Async)` |
+| **`RNF-03`** | Portabilidad y Diseño UX | El frontend debe ser desarrollado en Flutter para garantizar consistencia visual y rendimiento fluido en sistemas Android y iOS. | `📱 Multiplataforma` |
+| **`RNF-04`** | Seguridad de Datos | Los tokens de acceso y API Keys sensibles deben cargarse de forma segura a través de variables de entorno `.env` en el servidor backend. | `🔒 Encriptación / Env` |
 
 ---
 
@@ -57,27 +61,34 @@ La arquitectura de **CopIA** sigue un patrón de **Microservicios Híbridos**. C
 
 ```mermaid
 flowchart TD
-    subgraph Capa_de_Presentacion [Capa de Presentación / Cliente]
-        A[App Móvil - Flutter]
-        B[Frontend Web - HTML5/JS]
+    %% Define color classes for components (supporting light/dark themes)
+    classDef client fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
+    classDef service fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef localModel fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87;
+    classDef extApi fill:#fef9c3,stroke:#ca8a04,stroke-width:2px,color:#713f12;
+    classDef subg fill:#fafafa,stroke:#d4d4d8,stroke-width:1px,stroke-dasharray: 5 5,color:#52525b;
+
+    subgraph Capa_de_Presentacion [📱 Capa de Presentación / Cliente]
+        A[📱 App Móvil - Flutter]:::client
+        B[🌐 Frontend Web - HTML5/JS]:::client
     end
 
-    subgraph Capa_de_Servicios [Capa de Servicios - Backend FastAPI]
-        C[Endpoint API /api/translate]
-        D[Endpoint API /api/speech-to-text]
-        E[Endpoint API /api/text-to-speech]
-        F[Endpoint Asistente /api/mobile/voice-assistant]
+    subgraph Capa_de_Servicios [⚡ Capa de Servicios - Backend FastAPI]
+        C[🔗 Endpoint API /api/translate]:::service
+        D[🎙️ Endpoint API /api/speech-to-text]:::service
+        E[🔊 Endpoint API /api/text-to-speech]:::service
+        F[🤖 Endpoint Asistente /api/mobile/voice-assistant]:::service
     end
 
-    subgraph Capa_de_Modelos_locales [Capa Inferencial - GPU CUDA]
-        G[Whisper Large V3 Turbo ASR]
-        H[NLLB-200 NMT + LoRA Adapters]
-        I[Meta MMS TTS aym/quy]
+    subgraph Capa_de_Modelos_locales [⚙️ Capa Inferencial - GPU CUDA]
+        G[🧠 Whisper Large V3 Turbo ASR]:::localModel
+        H[🧠 NLLB-200 NMT + LoRA Adapters]:::localModel
+        I[🧠 Meta MMS TTS aym/quy]:::localModel
     end
 
-    subgraph Capa_de_APIs_Externas [Servicios Externos de IA]
-        J[Google Gemini API]
-        K[OpenAI API]
+    subgraph Capa_de_APIs_Externas [☁️ Servicios Externos de IA]
+        J[✨ Google Gemini API]:::extApi
+        K[✨ OpenAI API]:::extApi
     end
 
     A & B -->|HTTP Requests| C & D & E & F
@@ -87,6 +98,8 @@ flowchart TD
     F -->|Chat Logic| J & K
     F -->|Auto-Translation| H
     F -->|Auto-Synthesis| I
+
+    class Capa_de_Presentacion,Capa_de_Servicios,Capa_de_Modelos_locales,Capa_de_APIs_Externas subg;
 ```
 
 ---
@@ -100,36 +113,46 @@ El comportamiento interactivo del asistente conversacional de voz híbrido (tipo
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Usuario
-    participant App as App Móvil (Flutter)
-    participant API as Backend FastAPI (Uvicorn)
-    participant Gemini as Google Gemini API
-    participant NLLB as Modelo NMT (NLLB-200)
-    participant TTS as Modelo TTS (MMS-TTS)
+    actor Usuario as 👤 Usuario
+    participant App as 📱 App Móvil (Flutter)
+    participant API as ⚡ Backend FastAPI (Uvicorn)
+    participant Gemini as ☁️ Google Gemini API
+    participant NLLB as 🧠 Modelo NMT (NLLB-200)
+    participant TTS as 🧠 Modelo TTS (MMS-TTS)
 
     Usuario->>App: Habla al micrófono (e.g., "¿Qué es el Inti Raymi?")
+    activate App
     App->>API: POST /api/mobile/voice-assistant/audio (Archivo WAV)
+    activate API
     Note over API: Carga audio y lo transcribe a texto con Whisper en GPU
     API->>Gemini: Solicitud de respuesta en formato conversacional conciso
+    activate Gemini
     Gemini-->>API: Retorna respuesta (e.g., "El Inti Raymi es la fiesta del Sol...")
+    deactivate Gemini
     Note over API: Envía la respuesta en español para traducción local
     API->>NLLB: Traduce respuesta a Quechua (quy_Latn)
+    activate NLLB
     NLLB-->>API: Retorna texto en Quechua
+    deactivate NLLB
     Note over API: Genera la voz nativa de la traducción
     API->>TTS: Sintetiza texto en Quechua a formato de audio WAV
+    activate TTS
     TTS-->>API: Archivo WAV generado
+    deactivate TTS
     API-->>App: Retorna JSON {respuesta_es, traducción_qu, audio_url}
+    deactivate API
     App->>Usuario: Muestra texto en pantalla y reproduce la voz en Quechua
+    deactivate App
 ```
 
 ---
 
 ### Anexos
 
-#### A. Captura de la Inicialización de los Modelos de IA en GPU CUDA
+#### A. 🖥️ Captura de la Inicialización de los Modelos de IA en GPU CUDA
 El backend utiliza PyTorch configurado de forma nativa para cargar y compilar los pesos en el procesador gráfico (NVIDIA RTX 5060), minimizando la latencia.
 
-```
+```bash
 INFO:     Started server process [25164]
 INFO:     Waiting for application startup.
 [*] INICIANDO SERVIDOR WEB TRADUCTOR SOTA (DISPOSITIVO: CUDA)
@@ -141,8 +164,9 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
-#### B. Variables de Entorno del Servidor (.env)
+#### B. 🔑 Variables de Entorno del Servidor (.env)
 Configuración para la activación de las capacidades inteligentes del asistente conversacional:
+
 ```env
 # Configuración del servidor de producción local
 DEVICE=cuda
@@ -159,3 +183,4 @@ OPENAI_API_KEY=sk-proj-YourOpenAIApiKeyHere
 *   **Completitud**: Todos los requerimientos funcionales y no funcionales se alinean con la solución de software CopIA.
 *   **Modelado Estructurado**: El diagrama C4 y el diagrama de secuencia Mermaid detallan con precisión el flujo de llamadas de red y lógica de IA.
 *   **Viabilidad**: El diseño e implementación técnica están basados en componentes ya integrados y validados sobre hardware con aceleración de GPU CUDA.
+
