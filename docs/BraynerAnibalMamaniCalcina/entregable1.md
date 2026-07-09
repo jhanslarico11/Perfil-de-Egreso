@@ -59,6 +59,11 @@ La arquitectura de **CopIA** sigue un patrón de **Microservicios Híbridos**. C
 
 ##### Diagrama de Arquitectura de Bloques (C4 Model - Nivel 2)
 
+![Diagrama de Arquitectura de Bloques](arquitectura.png)
+
+<details>
+<summary>💻 Código Fuente del Diagrama (Mermaid)</summary>
+
 ```mermaid
 flowchart TD
     %% Define color classes for components (supporting light/dark themes)
@@ -101,6 +106,7 @@ flowchart TD
 
     class Capa_de_Presentacion,Capa_de_Servicios,Capa_de_Modelos_locales,Capa_de_APIs_Externas subg;
 ```
+</details>
 
 ---
 
@@ -109,6 +115,11 @@ flowchart TD
 El comportamiento interactivo del asistente conversacional de voz híbrido (tipo Siri) sigue el flujo de secuencia detallado a continuación:
 
 ##### Diagrama de Secuencia del Asistente de Voz Inteligente
+
+![Diagrama de Secuencia del Asistente de Voz Inteligente](secuencia.png)
+
+<details>
+<summary>💻 Código Fuente del Diagrama (Mermaid)</summary>
 
 ```mermaid
 sequenceDiagram
@@ -144,6 +155,7 @@ sequenceDiagram
     App->>Usuario: Muestra texto en pantalla y reproduce la voz en Quechua
     deactivate App
 ```
+</details>
 
 ---
 
