@@ -12,9 +12,9 @@ El presente entregable detalla la **Propuesta de Solución TIC Integrada** al ec
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta la propuesta de integración de la solución TIC **YatiqApp** en el ecosistema educativo nacional. Ante la falta de conectividad constante, se adopta un paradigma de arquitectura híbrida On-Device descentralizada, donde la inferencia de Inteligencia Artificial (procesamiento del modelo de lenguaje, STT, TTS y búsquedas vectoriales RAG) se realiza localmente en el móvil del usuario.
+Este informe presenta la propuesta de integración de la solución TIC **YatiqApp** en el ecosistema educativo, tomando como caso de estudio a la **I.E. Agropecuario Sorapa** (nivel secundaria, distrito de Juli, provincia de Chucuito, región de Puno). Ante la falta de conectividad constante, se adopta un paradigma de arquitectura híbrida On-Device descentralizada, donde la inferencia de Inteligencia Artificial (procesamiento del modelo de lenguaje, STT, TTS y búsquedas vectoriales RAG) se realiza localmente en el móvil del usuario.
 
-La integración se complementa con un esquema de interoperabilidad diferida: inyección curricular semestral de lecciones del MINEDU convertidas offline a bases vectoriales locales, y exportación diferida de logs analíticos cifrados en reposo (AES-256) cuando el docente dispone de conectividad en una UGEL, impactando agregadamente en SIAGIE y ESCALE. El modelo demuestra gobernanza normativa mediante el cumplimiento estricto de la Ley N° 29733 de Protección de Datos Personales, y garantiza sostenibilidad financiera y escalabilidad horizontal ilimitada con costo marginal cero para el Estado.
+La integración se complementa con un esquema de interoperabilidad diferida: inyección curricular de lecciones del MINEDU convertidas offline a bases vectoriales locales distribuidas por el servidor de la institución (CE03), y exportación diferida de logs analíticos cifrados en reposo (AES-256) recopilados localmente, impactando agregadamente en SIAGIE y ESCALE cuando el docente dispone de conectividad en una UGEL. El modelo demuestra gobernanza normativa mediante el cumplimiento estricto de la Ley N° 29733 de Protección de Datos Personales, y garantiza sostenibilidad financiera y escalabilidad horizontal ilimitada con costo de infraestructura marginal cero para el Estado.
 
 ### Secciones de Desarrollo
 
@@ -34,9 +34,10 @@ La arquitectura se divide en tres capas desacopladas dentro del cliente móvil A
 * **Motor de Sincronización Diferida (Offline Data Sync):** Componente secundario que almacena logs analíticos anonimizados del uso de la app en un búfer local encriptado, esperando un nodo de red físico para su descarga.
 
 ##### 1.3. Integraciones
-Al operar en frío (offline), el sistema utiliza un modelo de integración por Pasarela de Transferencia Física de Datos (*Sneakernet / Local Gateway*). El software móvil se acopla a entornos de red locales o físicos mediante dos mecanismos:
-* **Sincronización manual en UGEL/Red Educativa:** Los smartphones de los docentes se actualizan o descargan nuevas versiones del dataset educativo acudiendo físicamente a las sedes institucionales equipadas con conectividad.
-* **Sincronización P2P en el Aula:** El APK de la aplicación móvil y los archivos binarios del modelo optimizado (`.gguf`) se propagan entre terminales de la comunidad de forma local mediante protocolos directos de alta velocidad (Wi-Fi Direct o Bluetooth de baja energía), evitando el consumo de datos de internet.
+Al operar en frío (offline), el sistema utiliza un modelo de integración por Pasarela de Transferencia Física de Datos (*Sneakernet / Local Gateway*). El software móvil se acopla a entornos de red locales de la I.E. Sorapa mediante dos mecanismos:
+* **Sincronización y Descarga local en la Escuela (Local Gateway):** Los smartphones de los estudiantes y docentes se conectan por Wi-Fi a los Access Points locales para descargar la última APK y la base vectorial de contenidos desde la Computadora Servidor de la I.E. Sorapa (infraestructura preexistente de CE03), operando al 100% offline.
+* **Sincronización P2P en el Aula:** La APK de la aplicación móvil y los archivos binarios del modelo optimizado (`.gguf`) se propagan de forma local entre terminales de los estudiantes mediante protocolos directos de alta velocidad (Wi-Fi Direct o Bluetooth de baja energía), evitando cualquier consumo de internet.
+* **Sincronización manual en UGEL/Red Educativa:** El docente descarga las actualizaciones curriculares del servidor de la UGEL Chucuito (Juli) en su celular para luego inyectarlas al servidor local de la I.E. Sorapa.
 
 ---
 

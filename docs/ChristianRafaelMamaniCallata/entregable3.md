@@ -12,9 +12,9 @@ El presente entregable detalla el **Plan de Gestión del Proyecto** para **Yatiq
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo de un prototipo educativo bilingüe e interactivo offline. Utilizando un enfoque híbrido, se establecen mecanismos de control predictivo para el alcance, cronograma y presupuesto, junto con prácticas ágiles organizadas en 4 iteraciones de dos semanas para construir, probar y ajustar la solución en condiciones rurales.
+Este informe presenta el plan de gestión del proyecto **YatiqApp** para el desarrollo del prototipo de asistente bilingüe offline, enfocado en la **I.E. Agropecuario Sorapa** (nivel secundaria, distrito de Juli, provincia de Chucuito, región de Puno). Utilizando un enfoque híbrido, se establecen mecanismos de control predictivo para el alcance, cronograma y presupuesto, junto con prácticas ágiles organizadas en 4 iteraciones de dos semanas para construir, probar y ajustar la solución en condiciones rurales.
 
-La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de curación del corpus lingüístico, configuración RAG local, desarrollo móvil y validación en campo. El cronograma estima la entrega del Mínimo Producto Viable (MVP) en la semana 8. El plan de costos proyecta una inversión máxima de S/. 3,500.00, coherente con un proyecto rural autofinanciado que reutiliza celulares, herramientas libres y recursos educativos existentes.
+La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de curación del corpus lingüístico, configuración RAG local, desarrollo móvil y validación en campo. El cronograma registra la entrega final del Mínimo Producto Viable (MVP) para la próxima semana (Semana 8). El plan de costos del proyecto de desarrollo estima una inversión máxima de S/. 3,500.00 financiada por los tesistas, ya que la infraestructura de soporte (computadora servidor, switch, APs, UPS) es parte de la plataforma preexistente de la escuela (CE03).
 
 ### Secciones de Desarrollo
 
@@ -26,15 +26,15 @@ La Estructura de Desglose del Trabajo (EDT) organiza las fases clave de curació
 * **Usuarios / Beneficiarios:** Estudiantes, docentes de Instituciones Educativas EIB y especialistas de las UGELs de la región Puno.
 
 ##### 1.2. Objetivos del Proyecto
-* **Objetivo Técnico:** Lograr la inferencia local de un Modelo de Lenguaje Pequeño (SLM) cuantizado a 4 bits con una latencia inferior a 2.5 s en un smartphone estándar de gama baja/media.
-* **Objetivo de Gestión:** Entregar el prototipo de software (APK), el dataset bilingüe estructurado y el informe técnico en un periodo de 2 meses, respetando el presupuesto asignado por el equipo.
+* **Objetivo Técnico:** Lograr la inferencia local de un Modelo de Lenguaje Pequeño (SLM) cuantizado a 4 bits con una latencia inferior a 2.5 s en un smartphone estándar de gama baja/media de los estudiantes de Sorapa.
+* **Objetivo de Gestión:** Entregar el prototipo de software (APK), el dataset bilingüe estructurado de secundaria y el informe técnico en un periodo de 2 meses (mayo - julio 2026), respetando el presupuesto asignado.
 
 ##### 1.3. Alcance Preliminar
-El proyecto abarca el diseño, entrenamiento por RAG, cuantización, desarrollo de la aplicación móvil Android y validación en campo de un asistente virtual offline bilingüe para educación primaria rural. Queda fuera del alcance el desarrollo para sistemas operativos iOS, la provisión física de smartphones a las escuelas y la actualización curricular de los contenidos del MINEDU.
+El proyecto abarca el diseño, entrenamiento por RAG, cuantización, desarrollo de la aplicación móvil Android y validación en campo de un asistente virtual offline bilingüe para educación secundaria en la I.E. Agropecuario Sorapa. Queda fuera del alcance el desarrollo para sistemas operativos iOS, la provisión física de smartphones a las escuelas y la actualización curricular de los contenidos del MINEDU.
 
 ##### 1.4. Restricciones y Supuestos
-* **Restricciones:** Presupuesto limitado por autofinanciación (máximo S/. 3,500.00), plazo estricto de entrega por calendario académico (2 meses) y el software debe operar en hardware móvil con <= 4 GB de RAM sin conexión a internet.
-* **Supuestos:** Acceso oportuno a los textos escolares del MINEDU en Quechua Collao y Aymara, y viabilidad para ingresar a las comunidades piloto en Puno para las pruebas de campo.
+* **Restricciones:** Presupuesto de desarrollo limitado (máximo S/. 3,500.00), plazo de entrega de 2 meses (iniciado a mediados de mayo de 2026 y finalizando la próxima semana) y el software debe operar en hardware móvil con <= 4 GB de RAM sin conexión a internet.
+* **Supuestos:** Acceso a los textos escolares del MINEDU en Quechua Collao y Aymara, disponibilidad de la infraestructura local de red y servidor preexistente de la escuela (CE03), y viabilidad para ingresar a Sorapa (Juli) para el piloto de campo.
 
 ---
 
@@ -70,73 +70,73 @@ La EDT se organiza en 5 componentes principales del ciclo de vida del proyecto:
 ---
 
 #### III. Gestión del Cronograma
+El proyecto se planificó para un periodo total de 8 semanas (2 meses). Habiéndose iniciado el **18 de mayo de 2026**, actualmente se encuentra en su octava semana (fase final de cierre) y tiene programada su entrega final la próxima semana (mediados de julio de 2026).
 
 ##### 3.1. Lista de Actividades e Hitos Principales
-El proyecto tiene una duración total de 8 semanas (2 meses).
+| ID Actividad | Descripción de la Actividad | Predecesora | Fechas de Ejecución | Duración | Estado Actual |
+| :---: | :--- | :---: | :---: | :---: | :--- |
+| **A1** | Curación y estructuración de contenidos EIB | — | 18 - 29 Mayo 2026 | 2 sem | Completado |
+| **A2** | Configuración de base local y recuperación RAG | A1 | 1 - 12 Junio 2026 | 2 sem | Completado |
+| **A3** | Selección de modelo liviano y pruebas de respuesta | A1 | 1 - 12 Junio 2026 | 2 sem | Completado |
+| **A4** | Desarrollo del prototipo móvil Android (Flutter) | A2, A3 | 15 - 26 Junio 2026 | 2 sem | Completado |
+| **A5** | Pruebas de rendimiento en celulares de la I.E. | A4 | 22 Jun - 3 Jul 2026 | 2 sem | Completado |
+| **A6** | Piloto en la I.E. Sorapa y ajustes finales | A5 | 29 Jun - 17 Jul 2026 | 2 sem | **En ejecución** |
+| **A7** | Documentación final y sustentación académica | A6 | 13 - 17 Julio 2026 | 1 sem | **Programado (Próx. sem.)** |
 
-| ID Actividad | Descripción de la Actividad | Predecesora | Duración (Semanas) |
-| :---: | :--- | :---: | :---: |
-| **A1** | Curación y estructuración de contenidos EIB | — | 2 |
-| **A2** | Configuración de base local y recuperación RAG | A1 | 2 |
-| **A3** | Selección de modelo liviano y pruebas de respuesta | A1 | 2 |
-| **A4** | Desarrollo del prototipo móvil Android | A2, A3 | 2 |
-| **A5** | Pruebas de rendimiento en celulares de gama baja | A4 | 2 |
-| **A6** | Piloto rural básico y ajustes finales | A5 | 2 |
-| **A7** | Documentación técnica y presentación académica | A6 | 1 |
+* **Hito 1 (Semana 2 - 29 de Mayo):** Base de conocimientos de secundaria organizada y validada. (Alcanzado)
+* **Hito 2 (Semana 4 - 12 de Junio):** Motor RAG local funcionando en estación de pruebas. (Alcanzado)
+* **Hito 3 (Semana 6 - 26 de Junio):** APK funcional compilada para celulares de prueba de la I.E. (Alcanzado)
+* **Hito 4 (Semana 8 - 17 de Julio):** Piloto en Juli (Sorapa) finalizado y versión técnica concluida. (Por entregar)
 
-* **Hito 1 (Semana 2):** Base de conocimientos bilingüe organizada y validada.
-* **Hito 2 (Semana 4):** Motor RAG local funcionando con consultas básicas.
-* **Hito 3 (Semana 6):** Aplicación móvil (APK) instalada en celulares de prueba.
-* **Hito 4 (Semana 8):** Piloto rural básico concluido y versión final documentada.
-
-##### 3.2. Diagrama de Gantt (Representación Temporal)
-| Actividad | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| A1: Contenidos EIB | X | X |  |  |  |  |  |  |
-| A2: Base local/RAG |  | X | X | X |  |  |  |  |
-| A3: Modelo liviano |  |  | X | X |  |  |  |  |
-| A4: Prototipo móvil |  |  |  | X | X | X |  |  |
-| A5: Pruebas en celulares |  |  |  |  | X | X | X |  |
-| A6: Piloto rural |  |  |  |  |  |  | X | X |
-| A7: Documentación final |  |  |  |  |  |  |  | X |
+##### 3.2. Diagrama de Gantt con Calendario de Ejecución
+| Actividad | Fechas Reales | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | Estado |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| A1: Contenidos EIB | 18 - 29 Mayo | X | X |  |  |  |  |  |  | Completado |
+| A2: Base local/RAG | 1 - 12 Junio |  | X | X | X |  |  |  |  | Completado |
+| A3: Modelo liviano | 1 - 12 Junio |  |  | X | X |  |  |  |  | Completado |
+| A4: Prototipo móvil | 15 - 26 Junio |  |  |  | X | X | X |  |  | Completado |
+| A5: Pruebas en celulares | 22 Jun - 3 Jul |  |  |  |  | X | X | X |  | Completado |
+| A6: Piloto en Sorapa | 29 Jun - 17 Jul |  |  |  |  |  |  | X | X | **En ejecución** |
+| A7: Documentación final | 13 - 17 Julio |  |  |  |  |  |  |  | X | **Programado** |
 
 ---
 
 #### IV. Gestión de Costos
 
 ##### 4.1. Presupuesto Detallado de TI (Financiado por el Equipo)
+*Nota: La adquisición de la infraestructura de red local y computo (servidor, router, switch, UPS y APs) no genera gasto al proyecto por ser **inventario tecnológico preexistente** en la I.E. Agropecuario Sorapa (detallado en CE03). El presupuesto detalla únicamente la inversión de desarrollo asumida por los tesistas.*
 
 | Ítem | Descripción Recurso | Unidad | Cant. | Total (PEN) |
 | :---: | :--- | :---: | :---: | :---: |
 | **1.0** | **Hardware e Infraestructura de TI** | | | |
-| 1.1 | Uso de laptop/equipo propio y herramientas libres | Global | 1 | S/. 0.00 |
-| 1.2 | Almacenamiento, energía y conectividad puntual para descargas | Global | 1 | S/. 450.00 |
+| 1.1 | Computadoras y servidores locales de la I.E. Sorapa (CE03) | Global | 1 | S/. 0.00 |
+| 1.2 | Conectividad eventual, descargas de modelos y energía | Global | 1 | S/. 450.00 |
 | **2.0** | **Ingeniería y Trabajo de Campo** | | | |
-| 2.1 | Curación de contenidos y validación con docentes | Global | 1 | S/. 600.00 |
-| 2.2 | Accesorios y pruebas en celulares disponibles | Global | 1 | S/. 850.00 |
-| 2.3 | Viáticos y movilidad rural local | Ruta | 2 | S/. 600.00 |
+| 2.1 | Curación del dataset de secundaria con docentes de Sorapa | Global | 1 | S/. 600.00 |
+| 2.2 | Accesorios y adaptadores para pruebas en smartphones | Global | 1 | S/. 850.00 |
+| 2.3 | Movilidad rural Juli - Sorapa (2 viajes de campo) | Ruta | 2 | S/. 600.00 |
 | **3.0** | **Gestión y Recursos Humanos** | | | |
-| 3.1 | Desarrollo de software y documentación (valor estimado de mano de obra propia) | Meses | 2 | S/. 1,000.00 |
-| **Total**| **Costo Total Estimado** | | | **S/. 3,500.00** |
+| 3.1 | Desarrollo de software móvil y documentación técnica | Meses | 2 | S/. 1,000.00 |
+| **Total**| **Costo Total de Desarrollo de TI** | | | **S/. 3,500.00** |
 
 ##### 4.2. Línea Base de Costos (Curva S Proyectada por Mes)
-El gasto acumulado planeado a lo largo de los 2 meses de ejecución del proyecto sigue la siguiente distribución financiera:
-* **Mes 1 (Curación, base local y configuración RAG):** S/. 1,450.00 acumulados.
-* **Mes 2 (Prototipo móvil, piloto rural y documentación):** S/. 3,500.00 acumulados.
+El gasto acumulado a lo largo de los 2 meses de ejecución del proyecto sigue la siguiente distribución financiera:
+* **Mes 1 (Curación, base local y configuración RAG - Mayo/Junio):** S/. 1,450.00 acumulados (Gastado).
+* **Mes 2 (Prototipo móvil, piloto en Sorapa y documentación - Junio/Julio):** S/. 3,500.00 acumulados (Fase final de ejecución).
 
 ---
 
-#### V. Gestión de Riesgos
+#### V. Gestión de Riesgos (Estado de Mitigaciones en Semana 8)
 
 ##### 5.1. Identificación y Análisis Cualitativo
-* **Riesgo 1: Alucinación Crítica del Modelo (Probabilidad: Media \| Impacto: Alto):** El modelo entrega conceptos educativos erróneos o alucina temas no cubiertos en las lecciones.
-* **Riesgo 2: Cuello de botella en STT/TTS local (Probabilidad: Alta \| Impacto: Medio):** El hardware móvil de gama baja se congela o tiene altas latencias al intentar procesar el audio local.
-* **Riesgo 3: Descoordinación con Comunidades Locales (Probabilidad: Baja \| Impacto: Alto):** Huelgas, bloqueos de vías o rechazo de los padres impiden el ingreso de los tesistas para realizar las pruebas de campo.
+* **Riesgo 1: Alucinación Crítica del Modelo (Probabilidad: Media \| Impacto: Alto):** El modelo entrega conceptos erróneos fuera del temario de secundaria en la I.E. Sorapa.
+* **Riesgo 2: Cuello de botella en STT/TTS local (Probabilidad: Alta \| Impacto: Medio):** Los celulares Android de baja gama de los estudiantes se congelan o presentan latencias altas al procesar voz.
+* **Riesgo 3: Descoordinación con la Comunidad Rural de Sorapa (Probabilidad: Baja \| Impacto: Alto):** Problemas de acceso, huelgas o resistencia de los padres impiden las pruebas del piloto de campo.
 
-##### 5.2. Plan de Respuesta a Riesgos
-* **Para Riesgo 1 (Mitigación):** Inyección forzada de contexto mediante programación determinista de la base vectorial. Si la consulta del niño no coincide con el contenido educativo indexado, el modelo ejecuta un fallback controlado: "No tengo esa información en mi base local".
-* **Para Riesgo 2 (Mitigación):** Utilizar modelos Whisper optimizados en formato de bajo peso (Tiny o Base quantized) y restringir el muestreo de audio a fragmentos de máximo 5 segundos.
-* **Para Riesgo 3 (Contingencia):** Establecer nexos institucionales con directores de escuelas rurales de zonas cercanas accesibles por vías alternas como plan de respaldo para las pruebas del piloto.
+##### 5.2. Plan de Respuesta y Estado de Cierre de Riesgos
+* **Para Riesgo 1 (Mitigado en Semana 3-4):** Inyección forzada de contexto mediante la base vectorial RAG. Si la duda del estudiante no coincide con el corpus de secundaria indexado, la app ejecuta un fallback controlado: "No tengo esa información en mi base local". Las pruebas en la Semana 7 no registraron alucinaciones.
+* **Para Riesgo 2 (Mitigado en Semana 5-6):** Se utilizó Whisper Tiny cuantizado a 4 bits y se restringió la grabación de audio a fragmentos de 5s máximo. La latencia media registrada en celulares de prueba fue de 2.2 segundos.
+* **Para Riesgo 3 (Cerrado en Semana 7):** Se contó con el apoyo oficial del Director de la I.E. Agropecuario Sorapa y docentes bilingües. Las visitas de campo en Juli se realizaron con éxito y sin contratiempos.
 
 ---
 

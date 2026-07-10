@@ -12,19 +12,19 @@ El presente entregable detalla el **Modelado de Procesos AS-IS (Estado Actual) y
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el modelado y rediseño de procesos (reingeniería de procesos de TI) para la resolución de consultas bilingües en las escuelas de Puno. En el proceso actual (*AS-IS*), los alumnos bilingües afrontan un tiempo medio de espera de 18 minutos por consulta debido a la naturaleza de hilo único (*Single-Thread*) de atención síncrona del docente, bloqueando su aprendizaje.
+Este informe presenta el modelado y rediseño de procesos (reingeniería de procesos de TI) para la resolución de consultas bilingües en la **I.E. Agropecuario Sorapa** (nivel secundaria, distrito de Juli). En el proceso actual (*AS-IS*), los alumnos bilingües afrontan un tiempo medio de espera de 18 minutos por consulta debido a la naturaleza de hilo único (*Single-Thread*) de atención síncrona del docente, bloqueando su aprendizaje.
 
-Con la introducción de **YatiqApp** en el proceso propuesto (*TO-BE*), la consulta se procesa autónomamente de forma síncrona en el smartphone local (*On-Device AI*), reduciendo el tiempo de espera de 18 minutos a un tiempo de respuesta de escasos 2.5 segundos (reducción del 99.7%). El docente pasa de responder preguntas básicas repetitivas a actuar como supervisor de segundo nivel. El análisis comparativo cuantitativo demuestra que esta reingeniería reduce los costos recurrentes de datos móviles al 100% y eleva la disponibilidad del soporte bilingüe a un esquema ubicuo de 24 horas, los 7 días de la semana, beneficiando directamente a los entornos familiares de las comunidades.
+Con la introducción de **YatiqApp** en el proceso propuesto (*TO-BE*), la consulta se procesa autónomamente de forma síncrona en el smartphone local (*On-Device AI*), reduciendo el tiempo de espera de 18 minutos a un tiempo de respuesta de escasos 2.5 segundos (reducción del 99.7%). El docente pasa de responder preguntas básicas repetitivas a actuar como supervisor de segundo nivel. El análisis comparativo cuantitativo demuestra que esta reingeniería reduce los costos recurrentes de datos móviles al 100% (gracias a la distribución offline apoyada en la red local de CE03) y eleva la disponibilidad del soporte bilingüe a un esquema ubicuo de 24 horas, los 7 días de la semana, beneficiando directamente a los entornos familiares de Sorapa.
 
 ### Secciones de Desarrollo
 
 #### I. Proceso Actual (AS-IS)
 
 ##### 1.1. Descripción Narrativa del Proceso
-El proceso actual de resolución de consultas pedagógicas en las escuelas rurales de Puno durante las sesiones de autoaprendizaje es síncrono, lineal y altamente dependiente de la presencia del docente:
-Cuando un estudiante bilingüe (cuya lengua materna es el Quechua o Aymara) interactúa con los textos físicos del MINEDU (diseñados predominantemente en castellano o con traducciones estáticas), surgen dudas conceptuales o lingüísticas. El estudiante debe levantar la mano y esperar a que el docente acuda a su carpeta. Debido a que las aulas rurales suelen ser multidocente o tener un alto ratio de alumnos por profesor (promedio de 25 a 30 alumnos), el tiempo de espera es prolongado.
+El proceso actual de resolución de consultas pedagógicas en la **I.E. Agropecuario Sorapa** durante las sesiones de autoaprendizaje es síncrono, lineal y altamente dependiente de la presencia del docente:
+Cuando un estudiante bilingüe (cuya lengua materna es el Aymara o el Quechua Collao) interactúa con los textos físicos del MINEDU (diseñados predominantemente en castellano o con traducciones estáticas), surgen dudas conceptuales o lingüísticas. El estudiante debe levantar la mano y esperar a que el docente acuda a su carpeta. Debido a que las aulas rurales secundarias en Sorapa funcionan bajo una modalidad de atención simultánea o secciones multigrado, los docentes deben alternar su atención entre varios alumnos de distintos niveles, haciendo que el tiempo de espera sea prolongado.
 
-Si el docente está ocupado atendiendo a otro grupo, el estudiante detiene su aprendizaje (tiempo muerto). Cuando el docente finalmente atiende la consulta, debe realizar la traducción conceptual en tiempo real. Si la duda persiste fuera del horario escolar, el estudiante no cuenta con ningún soporte en su hogar, interrumpiendo el proceso educativo hasta el día siguiente.
+Si el docente está ocupado atendiendo a otro grupo u otra materia, el estudiante detiene su aprendizaje (tiempo muerto). Cuando el docente finalmente atiende la consulta, debe realizar la traducción conceptual en tiempo real. Si la duda persiste fuera del horario escolar, el estudiante no cuenta con ningún soporte en su hogar, interrumpiendo el proceso educativo hasta el día siguiente.
 
 ##### 1.2. Indicadores Actuales (Línea Base)
 * **Tiempo Medio de Espera por Consulta (TMEC):** 18 minutos dentro del aula.

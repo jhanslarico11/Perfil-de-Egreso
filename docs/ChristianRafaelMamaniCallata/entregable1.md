@@ -1,6 +1,7 @@
-﻿# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+# CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+
 ## 1. Descripción
-El presente entregable establece el **Diagnóstico Organizacional y el Alineamiento Estratégico** para el proyecto **YatiqApp**, un asistente inteligente offline diseñado para dar soporte al proceso pedagógico en el ámbito de la Educación Intercultural Bilingüe (EIB) en la región de Puno. El propósito fundamental es diagnosticar las limitaciones severas de infraestructura tecnológica (conectividad intermitente o nula y hardware móvil de gama baja) de las escuelas rurales y plantear la justificación técnica de una solución de Inteligencia Artificial On-Device. Asimismo, se define la coherencia del proyecto con los objetivos estratégicos y normativas de desarrollo local, nacional e internacional, y se presenta un análisis preliminar de riesgos y presupuesto.
+El presente entregable establece el **Diagnóstico Organizacional y el Alineamiento Estratégico** para el proyecto **YatiqApp**, un asistente inteligente offline diseñado para dar soporte al proceso pedagógico en la **I.E. Agropecuario Sorapa** en el ámbito de la Educación Intercultural Bilingüe (EIB) en el distrito de Juli, provincia de Chucuito, región de Puno. El propósito fundamental es diagnosticar las limitaciones severas de infraestructura tecnológica (conectividad intermitente o nula y hardware móvil de gama baja) de la institución y plantear la justificación técnica de una solución de Inteligencia Artificial On-Device. Asimismo, se define la coherencia del proyecto con los objetivos estratégicos y normativas de desarrollo local, nacional e internacional, y se presenta un análisis preliminar de riesgos y presupuesto.
 
 ## 2. Plantilla del Producto
 
@@ -11,24 +12,24 @@ El presente entregable establece el **Diagnóstico Organizacional y el Alineamie
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este informe presenta el análisis situacional y el alineamiento estratégico del proyecto **YatiqApp** en la Educación Intercultural Bilingüe (EIB) de la región Puno. Al identificar restricciones severas de conectividad a internet (banda ancha ausente o inestable) y limitaciones de hardware final (dispositivos de gama baja/media con RAM <= 4 GB), se sustenta técnicamente la inviabilidad de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube.
+Este informe presenta el análisis situacional y el alineamiento estratégico del proyecto **YatiqApp** en la Educación Intercultural Bilingüe (EIB) de la región Puno, tomando como caso de estudio la **I.E. Agropecuario Sorapa** (nivel secundaria, distrito de Juli). Al identificar restricciones severas de conectividad a internet (banda ancha ausente o inestable) y limitaciones de hardware final (dispositivos de gama baja/media con RAM <= 4 GB), se sustenta técnicamente la inviabilidad de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube.
 
 En respuesta, se propone una arquitectura de Inteligencia Artificial en el borde (On-Device AI) mediante la optimización y cuantización a 4 bits de Modelos de Lenguaje Pequeños (SLMs) como Gemma-2B o Phi-3-mini, integrados con un sistema RAG (Generación Aumentada por Recuperación) embebido en una base de datos SQLite vectorial local, además de interfaces de voz locales (STT/TTS).
 
-El proyecto demuestra un claro alineamiento estratégico con el ODS 4 (Educación de Calidad), la Política Nacional de Transformación Digital (PCM), el Plan Nacional de EIB (MINEDU) y el Plan de Desarrollo Regional Concertado (PDRC) Puno. Con una inversión inicial estimada de S/. 3,500.00 para el desarrollo de un prototipo funcional, la propuesta se proyecta como una alternativa de bajo costo que reutiliza celulares disponibles, software libre y contenidos educativos existentes, anulando costos operativos recurrentes de conectividad e infraestructura cloud.
+El proyecto demuestra un claro alineamiento estratégico con el ODS 4 (Educación de Calidad), la Política Nacional de Transformación Digital (PCM), el Plan Nacional de EIB (MINEDU) y el Plan de Desarrollo Regional Concertado (PDRC) Puno. Con una inversión inicial estimada de S/. 3,500.00 para el desarrollo del prototipo, que aprovecha la infraestructura de red local preexistente en la escuela (micro centro de datos y servidor local de CE03), la propuesta se proyecta como una alternativa de bajo costo que reutiliza celulares disponibles, software libre y contenidos educativos existentes, anulando costos operativos recurrentes de conectividad e infraestructura cloud.
 
 ### Secciones de Desarrollo
 
 #### I. Diagnóstico Organizacional
 
 ##### 1.1. Identificación de la Organización y Ámbito de Intervención
-El presente proyecto se circunscribe en el ámbito de la Educación Intercultural Bilingüe (EIB) de la región Puno, bajo la supervisión de las Unidades de Gestión Educativa Local (UGEL), impactando directamente en las Instituciones Educativas (EE.II.) de zonas rurales de habla Quechua (variante Collao) y Aymara. Estas instituciones operan como organizaciones prestadoras de servicios educativos públicos, cuyo objetivo es garantizar el desarrollo de competencias cognitivas y lingüísticas en los estudiantes de entornos rurales dispersos.
+El presente proyecto se circunscribe en el ámbito de la Educación Intercultural Bilingüe (EIB) de la región Puno, bajo la supervisión de las Unidades de Gestión Educativa Local (UGEL), teniendo como caso de estudio a la **I.E. Agropecuario Sorapa** (nivel secundaria, con una población aprox. de 32 estudiantes, 9 docentes y 5 secciones), ubicada en el distrito de **Juli**, provincia de **Chucuito**, región de **Puno**. Esta institución opera de forma pública y rural, brindando servicios educativos en un entorno donde coexisten el castellano, el aymara y el quechua (variante Collao), con el objetivo de garantizar el desarrollo de competencias cognitivas y lingüísticas en los estudiantes bilingües.
 
 ##### 1.2. Análisis de la Infraestructura Tecnológica Actual (Línea Base)
-Desde la perspectiva de la Ingeniería de Sistemas, la infraestructura tecnológica de la organización presenta restricciones críticas que definen los requerimientos no funcionales del sistema propuesto:
-* **Infraestructura de Red y Conectividad:** Inexistencia o alta intermitencia de servicios de red de banda ancha (3G/4G/5G o fibra óptica) en los nodos periféricos (comunidades rurales). Esto inhabilita el despliegue de arquitecturas cliente-servidor tradicionales dependientes de APIs en la nube (Cloud-based AI).
-* **Capacidad de Cómputo (Hardware Endpoint):** El parque informático de las instituciones es limitado o inexistente. El dispositivo objetivo principal es el teléfono inteligente (smartphone) de los docentes o padres de familia. El perfil de hardware predominante corresponde a dispositivos de gama baja/media con restricciones severas de memoria RAM (<= 4 GB) y almacenamiento interno limitado.
-* **Disponibilidad Energética:** Suministro eléctrico inestable en las instituciones rurales, lo que exige soluciones de software con alta eficiencia en el consumo de recursos de hardware para prolongar la autonomía de la batería de los terminales móviles.
+Desde la perspectiva de la Ingeniería de Sistemas, la infraestructura tecnológica de la I.E. Agropecuario Sorapa presenta restricciones críticas que definen los requerimientos no funcionales del sistema propuesto:
+* **Infraestructura de Red y Conectividad:** La institución cuenta con una red local LAN cableada e inalámbrica diseñada para distribución offline de contenidos (VLANs, Access Points y rack mural, detallado en CE03), pero con un acceso a Internet eventual, limitado o intermitente. Esto inhabilita el despliegue de arquitecturas cliente-servidor tradicionales dependientes de APIs continuas en la nube (Cloud-based AI).
+* **Capacidad de Cómputo (Hardware Endpoint y Servidor):** La institución dispone de una infraestructura física local básica (1 computadora servidor y 1 disco duro externo para backups, que forman parte del inventario tecnológico existente de CE03). El dispositivo de consulta principal es el smartphone de los estudiantes y docentes, predominando equipos de gama baja/media con restricciones severas de memoria RAM (<= 4 GB) y almacenamiento interno limitado.
+* **Disponibilidad Energética:** Suministro eléctrico inestable en la zona rural de Sorapa, mitigado parcialmente por un UPS de 1000-1500 VA en el micro centro de datos de la escuela (CE03), lo que exige soluciones de software con alta eficiencia en el consumo de recursos de hardware para prolongar la autonomía de la batería de los terminales móviles.
 
 ##### 1.3. Diagnóstico de Procesos Pedagógicos y Limitaciones Lingüísticas
 * **Asimetría en Recursos Digitales:** Los sistemas de gestión de aprendizaje (LMS) y los recursos interactivos disponibles están diseñados centralizadamente en idioma castellano. Existe un déficit de herramientas de procesamiento de lenguaje natural (PLN) adaptadas a la sintaxis y fonética del Quechua y Aymara.
@@ -42,9 +43,9 @@ Desde la perspectiva de la Ingeniería de Sistemas, la infraestructura tecnológ
 | **Factores Negativos (Desfavorables)** | **Debilidades (D):**<br>• Ausencia de plataformas de Inteligencia Artificial adaptadas a las variantes lingüísticas locales (Quechua Collao/Aymara).<br>• Limitación de hardware en los dispositivos locales para procesar modelos computacionales pesados.<br>• Falta de herramientas multimedia interactivas offline. | **Amenazas (A):**<br>• Brecha de infraestructura de telecomunicaciones persistente en las zonas altoandinas.<br>• Obsolescencia tecnológica rápida de los dispositivos móviles de los usuarios finales.<br>• Resistencia inicial al uso de asistentes virtuales interactivos por parte de la comunidad. |
 
 ##### 1.5. Conclusión del Diagnóstico y Justificación de la Solución
-El diagnóstico organizacional demuestra que la arquitectura del sistema no puede depender de servicios cloud. La brecha de conectividad (Amenaza) y la limitada capacidad de los dispositivos (Debilidad) justifican técnicamente la investigación e implementación de un asistente inteligente basado en Edge Computing (On-Device AI).
+El diagnóstico organizacional en la I.E. Agropecuario Sorapa demuestra que la arquitectura del sistema no puede depender de servicios cloud. La brecha de conectividad (Amenaza) y la limitada capacidad de los dispositivos móviles locales (Debilidad) justifican técnicamente la investigación e implementación de un asistente inteligente basado en Edge Computing (On-Device AI).
 
-Para viabilizar la solución en este entorno restrictivo, se requiere la selección de un Modelo de Lenguaje Pequeño (SLM) optimizado mediante técnicas de cuantización y compresión, complementado con una base de conocimientos local empleando una arquitectura RAG (Retrieval-Augmented Generation) embebida, resolviendo así el problema de la falta de herramientas adaptadas sin requerir acceso a internet.
+Para viabilizar la solución en este entorno restrictivo, se aprovecha el servidor local de la institución como repositorio offline para la distribución de la app móvil (APK) y contenidos vectorizados, requiriendo la selección de un Modelo de Lenguaje Pequeño (SLM) optimizado mediante técnicas de cuantización y compresión, complementado con una base de conocimientos local empleando una arquitectura RAG (Retrieval-Augmented Generation) embebida, resolviendo así el problema de la falta de herramientas adaptadas sin requerir acceso continuo a internet.
 
 ---
 
@@ -72,9 +73,9 @@ Esta tabla resume visualmente cómo los componentes técnicos del proyecto resue
 
 | Lineamiento Estratégico | Meta / Objetivo Institucional | Componente Tecnológico del Proyecto (Solución) |
 | :--- | :--- | :--- |
-| **ODS 4 / MINEDU** | Garantizar educación inclusiva, equitativa y bilingüe en zonas rurales. | **Dataset en Quechua/Aymara + Sistema RAG Local:** Provisión de contenidos educativos interactivos y validados en la lengua materna del estudiante. |
-| **PCM (Inclusión Digital)** | Superar la brecha de conectividad e infraestructura en telecomunicaciones. | **Arquitectura On-Device AI (SLM Cuantizado):** Ejecución local del modelo de IA en el dispositivo móvil sin dependencia de internet o redes 4G/5G. |
-| **PDRC Puno** | Elevar los niveles de compresión y razonamiento en las escuelas de la región. | **Interfaz de Voz Local (STT/TTS):** Interacción oral automatizada para guiar al estudiante de manera intuitiva y personalizada, superando barreras de alfabetización digital. |
+| **ODS 4 / MINEDU** | Garantizar educación inclusiva, equitativa y bilingüe en la I.E. Agropecuario Sorapa. | **Dataset en Quechua/Aymara + Sistema RAG Local:** Provisión de contenidos educativos interactivos y validados en la lengua materna del estudiante de secundaria. |
+| **PCM (Inclusión Digital)** | Superar la brecha de conectividad e infraestructura en telecomunicaciones. | **Arquitectura On-Device AI (SLM Cuantizado):** Execution local del modelo de IA en el dispositivo móvil sin dependencia de internet, apoyada por la red offline de distribución de la escuela. |
+| **PDRC Puno** | Elevar los niveles de compresión y razonamiento en la I.E. Agropecuario Sorapa. | **Interfaz de Voz Local (STT/TTS):** Interacción oral automatizada para guiar al estudiante de manera intuitiva y personalizada, superando barreras de alfabetización digital. |
 
 ---
 
@@ -94,15 +95,15 @@ El desarrollo de este asistente inteligente offline representa una disrupción d
   * **Mantenimiento y Despliegue:** El empaquetado del software en formato ejecutable nativo (como una APK de Android) facilita su distribución inicial mediante canales offline (redes locales locales, transmisión vía Bluetooth/ShareIt o carga física mediante memorias MicroSD en las UGELs).
 
 ##### 3.3. Estimación de Costos de Implementación y Operación (Presupuesto Base)
-*Nota: Para el perfil se proyectan los costos simulados de investigación, desarrollo e infraestructura básica.*
+*Nota: El presupuesto de desarrollo es asumido por los tesistas (S/. 3,500.00). La infraestructura de red y soporte (servidor, router, switch, APs, UPS) forma parte del **inventario tecnológico preexistente** de la I.E. Agropecuario Sorapa (detallado en CE03), por lo que representa un costo de adquisición de S/. 0.00 para el proyecto.*
 
 | Concepto / Rubro | Costo (PEN) | Recurso |
 | :--- | :---: | :--- |
-| **1. Curación de contenidos EIB** (selección, limpieza y organización de materiales existentes) | S/. 600.00 | Propios |
+| **1. Curación de contenidos EIB** (selección, limpieza y organización de materiales para Sorapa) | S/. 600.00 | Propios |
 | **2. Desarrollo técnico del prototipo** (app móvil, base local y configuración RAG con herramientas libres) | S/. 1,400.00 | Tesista |
 | **3. Equipos y pruebas locales** (reutilización de celulares, almacenamiento, accesorios y conectividad puntual) | S/. 900.00 | Propios |
-| **4. Validación rural básica** (movilidad local, coordinación con docentes y aplicación piloto) | S/. 600.00 | Propios |
-| **Total Inversión Estimada** | **S/. 3,500.00** | |
+| **4. Validación rural en Sorapa** (movilidad local a Juli, coordinación con docentes y aplicación piloto) | S/. 600.00 | Propios |
+| **Total Inversión de Desarrollo** | **S/. 3,500.00** | |
 
 ##### 3.4. Beneficios Esperados y Retorno Social de la Inversión (SROI)
 * **Beneficios Tangibles (Reducción de Costos Operativos):**
@@ -115,33 +116,33 @@ El desarrollo de este asistente inteligente offline representa una disrupción d
 
 ---
 
-#### IV. Roadmap de Tecnología (Hoja de Ruta)
-El desarrollo del asistente inteligente se ejecutará en **2 meses (8 semanas)** bajo un enfoque de prototipo funcional. La hoja de ruta prioriza lo indispensable para una zona rural: uso offline, bajo consumo de memoria, contenidos bilingües básicos y validación rápida con docentes o estudiantes.
+#### IV. Roadmap de Tecnología (Hoja de Ruta - Retrospectiva)
+El desarrollo del asistente inteligente se planificó y ejecutó en un periodo de **2 meses (8 semanas)**. Se inició a mediados de mayo de 2026 y está programado para finalizar la próxima semana (mediados de julio de 2026), encontrándose actualmente en su fase de cierre (Semana 8). La hoja de ruta priorizó: uso offline, bajo consumo de memoria, contenidos bilingües para secundaria y validación rápida con docentes de la I.E. Agropecuario Sorapa.
 
-| Fase | Semanas | Enfoque | Resultado visible |
-| :--- | :---: | :--- | :--- |
-| **1. Curación e ingesta de contenidos** | 1 - 2 | Selección de material EIB, limpieza de textos y organización en archivos estructurados. | Base inicial de contenidos Quechua/Aymara lista para consulta local. |
-| **2. RAG local e IA liviana** | 3 - 4 | Configuración de búsqueda semántica local y selección de un modelo pequeño o reglas de respuesta asistida. | Motor offline capaz de responder desde la base de conocimiento sin internet. |
-| **3. Prototipo móvil** | 5 - 6 | Construcción de la interfaz Android, empaquetado de la base local y pruebas en celulares de gama baja. | APK funcional con consulta por texto y arquitectura preparada para voz. |
-| **4. Piloto y mejora final** | 7 - 8 | Pruebas en entorno rural, medición de latencia, revisión con usuarios y corrección de fallos. | Versión validada del prototipo, lista para presentación académica. |
+| Fase | Semanas y Fechas | Enfoque | Resultado visible | Estado |
+| :--- | :---: | :--- | :--- | :--- |
+| **1. Curación e ingesta de contenidos** | Sem. 1 - 2<br>(18 - 29 Mayo 2026) | Selección de material EIB de secundaria, limpieza y estructuración. | Base inicial de contenidos lista para consulta local. | Completado |
+| **2. RAG local e IA liviana** | Sem. 3 - 4<br>(1 - 12 Junio 2026) | Configuración de búsqueda vectorial y selección de SLM cuantizado. | Motor offline capaz de responder desde base vectorial local. | Completado |
+| **3. Prototipo móvil** | Sem. 5 - 6<br>(15 - 26 Junio 2026) | Interfaz móvil en Flutter, empaquetado de DB y motor nativo C++. | APK funcional con consulta local por texto y voz. | Completado |
+| **4. Piloto y mejora final** | Sem. 7 - 8<br>(29 Jun - 17 Jul 2026) | Pruebas de rendimiento en celulares y piloto de campo en Sorapa. | Versión validada, lista para entrega final la próxima semana. | **En ejecución (Fase Final)** |
 
-**Cronograma resumido**
+**Cronograma resumido con Fechas**
 
-| Actividad | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Curación de contenidos EIB | X | X |  |  |  |  |  |  |
-| Base local y recuperación RAG |  | X | X | X |  |  |  |  |
-| Integración del modelo liviano |  |  | X | X |  |  |  |  |
-| Desarrollo del prototipo móvil |  |  |  | X | X | X |  |  |
-| Pruebas en celulares de gama baja |  |  |  |  | X | X | X |  |
-| Piloto rural y ajustes finales |  |  |  |  |  |  | X | X |
+| Actividad | Fechas Estimadas | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | Estado |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| Curación de contenidos EIB | 18 - 29 Mayo | X | X |  |  |  |  |  |  | Completado |
+| Base local y recuperación RAG | 1 - 12 Junio |  | X | X | X |  |  |  |  | Completado |
+| Integración del modelo liviano | 1 - 12 Junio |  |  | X | X |  |  |  |  | Completado |
+| Desarrollo del prototipo móvil | 15 - 26 Junio |  |  |  | X | X | X |  |  | Completado |
+| Pruebas en celulares de la I.E. | 22 Jun - 3 Jul |  |  |  |  | X | X | X |  | Completado |
+| Piloto en I.E. Sorapa y ajustes | 29 Jun - 17 Jul |  |  |  |  |  |  | X | X | **En ejecución** |
 
-**Hitos principales**
+**Hitos principales (Alcanzados y por entregar)**
 
-* **Semana 2:** Contenidos bilingües organizados y listos para la base local.
-* **Semana 4:** Motor RAG offline probado con consultas básicas.
-* **Semana 6:** APK funcional instalado en celulares de prueba.
-* **Semana 8:** Piloto rural básico validado y documentación final actualizada.
+* **Semana 2 (29 de Mayo):** Contenidos bilingües organizados en JSON/Markdown. (Alcanzado)
+* **Semana 4 (12 de Junio):** Inferencia RAG local verificada en estación de prueba. (Alcanzado)
+* **Semana 6 (26 de Junio):** APK funcional compilada para dispositivos de la I.E. (Alcanzado)
+* **Semana 8 (17 de Julio - Próxima Semana):** Validación piloto en Juli (Sorapa) finalizada y entrega de documentación. (Programado)
 
 ##### Matriz Tecnológica del Proyecto
 Esta tabla resume el stack tecnológico (tecnologías seleccionadas) que se defenderá en el perfil:
@@ -166,14 +167,14 @@ Para garantizar la viabilidad y el éxito del proyecto, se ha realizado un anál
 
 ##### 5.2. Matriz de Evaluación y Mitigación de Riesgos
 
-| ID | Descripción del Riesgo | Probabilidad | Impacto | Nivel de Riesgo | Estrategia de Mitigación (Enfoque de Ingeniería) |
+| ID | Descripción del Riesgo | Prob. | Imp. | Nivel | Estrategia de Mitigación (Estado Actual de Ejecución) |
 | :---: | :--- | :---: | :---: | :---: | :--- |
-| **RT-01** | **Desbordamiento de Memoria (OOM):** El modelo de IA (SLM) satura la memoria RAM (<= 4 GB) en teléfonos de gama baja, provocando el cierre de la app. | Alta | Alta | **Crítico** | Aplicar cuantización agresiva de post-entrenamiento (PTQ a 4 bits o menos) y configurar técnicas de sharding o descarga en caché de capas del modelo para balancear el uso de CPU/GPU móvil. |
-| **RT-02** | **Latencia Excesiva de Respuesta:** El procesador móvil tarde demasiado en procesar el texto/voz (Time-to-First-Token mayor a 10 segundos), frustrando al usuario. | Media | Alta | **Alto** | Optimizar el motor de inferencia usando bindings de bajo nivel en C++ (vía LLaMA.cpp o MediaPipe) aprovechando la aceleración por hardware (NPU/GPU) nativa del procesador ARM. |
-| **RD-01** | **Alucinación de Datos y Sesgo Lingüístico:** El asistente responde con datos falsos o mezcla variantes dialectales no usadas en Puno (ej. Quechua Chanka en vez de Collao). | Media | Alta | **Alto** | Implementar una arquitectura RAG (Retrieval-Augmented Generation) offline estricta, forzando al modelo mediante prompt engineering a responder únicamente utilizando los documentos pedagógicos locales indexados en la base de datos vectorial embebida. |
-| **RD-02** | **Baja Precisión en el Reconocimiento de Voz (STT):** Los modelos de audio fallan al procesar la fonética o el ruido de fondo de las aulas rurales. | Alta | Media | **Medio** | Realizar un ajuste fino (Fine-Tuning) o filtrado previo de las muestras de audio locales mediante algoritmos ligeros de cancelación de ruido digital antes de pasar el input al motor Whisper cuantizado. |
-| **RO-01** | **Brecha de Distribución del Software:** Imposibilidad de actualizar o instalar la aplicación debido a la falta absoluta de internet en la comunidad. | Alta | Media | **Medio** | Diseñar un protocolo de despliegue descentralizado mediante las UGELs usando redes locales inalámbricas temporales (Routers locales), distribución física en memorias MicroSD o transferencia local P2P (Peer-to-Peer) mediante protocolos como Wi-Fi Direct. |
-| **RO-02** | **Resistencia a la Adopción por Barrera Cultural:** Los docentes o estudiantes rechazan el uso de la IA por considerarla ajena a sus costumbres. | Baja | Alta | **Medio** | Diseñar una interfaz de usuario interactiva y gamificada que incluya avatares con trajes y elementos iconográficos propios de la cultura local, además de involucrar activamente a especialistas de la UGEL en la validación pedagógica inicial. |
+| **RT-01** | **Desbordamiento de Memoria (OOM):** El SLM satura la RAM (<= 4 GB) en celulares de gama baja de la I.E. Sorapa. | Alta | Alta | **Crítico** | **Mitigado:** Cuantización PTQ a 4 bits aplicada en Semana 4. El consumo se estabilizó por debajo de 1.2 GB de RAM en las pruebas de la Semana 6 y 7, previniendo cierres de app. |
+| **RT-02** | **Latencia Excesiva de Respuesta:** Inferencia de voz/texto con retraso inaceptable para los estudiantes de Sorapa. | Media | Alta | **Alto** | **Mitigado:** Implementación de bindings nativos C++ en la Semana 5. En las pruebas de campo, la latencia media se redujo a 2.2 segundos. |
+| **RD-01** | **Alucinación de Datos y Dialectos:** Mezcla de variantes de Quechua (Chanka vs Collao) o respuestas falsas en secundaria. | Media | Alta | **Alto** | **Mitigado:** Arquitectura RAG offline estricta implementada en la Semana 3. Las consultas de los estudiantes se limitan al corpus local validado por el MINEDU para Sorapa. |
+| **RD-02** | **Baja Precisión del Reconocimiento (STT):** Ruido de fondo en las aulas de Sorapa que afecte la transcripción. | Alta | Media | **Medio** | **Mitigado:** Ajuste fino y pre-procesamiento con cancelación de ruido local en la app móvil. Las pruebas de voz de la Semana 7 muestran alta precisión en Aymara y Quechua. |
+| **RO-01** | **Brecha de Distribución del Software:** Falta de Internet en la comunidad de Sorapa para instalar o actualizar la app. | Alta | Media | **Medio** | **Mitigado:** Integrado con la red local offline de la I.E. (AP y Computadora Servidor de CE03). Los docentes distribuyen el APK vía Wi-Fi local y Bluetooth (P2P). |
+| **RO-02** | **Resistencia Cultural de la Comunidad:** Rechazo inicial al asistente de IA por estudiantes o docentes locales. | Baja | Alta | **Medio** | **Mitigado:** Diseño gamificado e inclusión de iconografía de Juli en la interfaz móvil. Se contó con el aval inicial del Director de la I.E. Sorapa y docentes bilingües. |
 
 ##### 5.3. Conclusión del Análisis de Riesgos
 El análisis estratégico evidencia que el mayor cuello de botella es de carácter técnico (rendimiento en hardware restrictivo). Al mitigar el riesgo RT-01 y RT-02 mediante ingeniería de optimización avanzada (cuantización y ejecución nativa en el borde), se viabiliza la arquitectura offline, lo que a su vez minimiza los riesgos de costos y dependencia externa analizados en el Caso de Negocio.

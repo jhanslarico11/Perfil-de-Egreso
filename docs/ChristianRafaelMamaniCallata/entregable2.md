@@ -12,28 +12,28 @@ El presente entregable detalla el **Business Case (Caso de Negocio)** para el de
 * **Responsable:** Christian Rafael Mamani Callata
 
 ### Resumen Ejecutivo
-Este documento sustenta el Caso de Negocio de **YatiqApp**, un asistente virtual offline para estudiantes bilingües en entornos rurales de Puno. Ante la brecha estructural de conectividad a internet en las zonas altoandinas y la falta de software interactivo adaptado a las variantes de Quechua Collao y Aymara, se justifica la necesidad de una solución de Inteligencia Artificial que se ejecute de forma nativa en el dispositivo móvil del usuario (*On-Device AI*).
+Este informe presenta el caso de negocio de **YatiqApp**, un asistente virtual offline para estudiantes bilingües en la **I.E. Agropecuario Sorapa** (nivel secundaria, distrito de Juli, provincia de Chucuito, región de Puno). Ante la brecha estructural de conectividad a internet en las zonas altoandinas y la falta de software interactivo adaptado a las variantes de Quechua Collao y Aymara, se justifica la necesidad de una solución de Inteligencia Artificial que se ejecute de forma nativa en el dispositivo móvil del usuario (*On-Device AI*).
 
-Tras evaluar tres alternativas tecnológicas, la arquitectura local embebida fue seleccionada por garantizar total independencia de red y costo operativo marginal cero para las escuelas públicas. El proyecto demanda una inversión inicial de S/. 3,500.00 autofinanciada por los tesistas, priorizando software libre, reutilización de celulares disponibles, contenidos educativos existentes y pruebas de campo de bajo costo. Por el contrario, los costos operativos y de mantenimiento cloud recurrentes se anulan completamente para la organización beneficiaria. Se identifican riesgos críticos de desbordamiento de memoria RAM y degradación del modelo, mitigados mediante modelos livianos, recuperación RAG local y pruebas tempranas en celulares de gama baja.
+Tras evaluar tres alternativas tecnológicas, la arquitectura local embebida fue seleccionada por garantizar total independencia de red y costo de adquisición e infraestructura marginal cero para la institución educativa, al reutilizar los celulares de los usuarios y la red y servidor local preexistente en la escuela (detallado en CE03). El proyecto demandó una inversión inicial de desarrollo de S/. 3,500.00 autofinanciada por los tesistas, priorizando software libre, contenidos educativos existentes y pruebas de campo de bajo costo. Por el contrario, los costos operativos y de mantenimiento cloud recurrentes se anulan completamente para la organización beneficiaria. Se identifican riesgos críticos de desbordamiento de memoria RAM y degradación del modelo, mitigados mediante modelos livianos, recuperación RAG local y pruebas tempranas en celulares de gama baja de la institución.
 
 ### Secciones de Desarrollo
 
 #### I. Justificación del Proyecto
 
 ##### 1.1. Problema que se Resuelve
-El sistema educativo rural bilingüe en la región de Puno enfrenta una brecha estructural de aprendizaje debido a la confluencia de tres factores críticos de TI:
-* **Inexistencia de conectividad de red:** El aislamiento geográfico de las instituciones educativas (EE.II.) de entornos rurales dispersos impide el acceso a plataformas educativas modernas o modelos de Inteligencia Artificial que residen en la nube (Cloud-based AI).
-* **Asimetría lingüística digital:** El software educativo disponible comercialmente ignora las variantes lingüísticas locales (Quechua Collao y Aymara), limitando el autoaprendizaje cognitivo en la lengua materna de los estudiantes.
-* **Restricciones severas de hardware:** El parque informático disponible se reduce a smartphones familiares de gama baja/media con baja capacidad de memoria RAM y almacenamiento, incompatibles con software pesado.
+El sistema educativo rural bilingüe en la I.E. Agropecuario Sorapa enfrenta una brecha estructural de aprendizaje debido a la confluencia de tres factores críticos de TI:
+* **Inexistencia de conectividad de red:** El aislamiento geográfico de la comunidad de Sorapa impide el acceso a plataformas educativas modernas o modelos de Inteligencia Artificial que residen en la nube (Cloud-based AI).
+* **Asimetría lingüística digital:** El software educativo disponible ignora las variantes lingüísticas locales de Juli (Aymara y Quechua Collao), limitando el autoaprendizaje cognitivo en la lengua materna de los estudiantes de secundaria.
+* **Restricciones de hardware:** El parque informático familiar se reduce a smartphones de gama baja/media con baja capacidad de memoria RAM y almacenamiento, requiriendo software optimizado para su inferencia local.
 
 ##### 1.2. Objetivos del Proyecto (SMART)
-* **Objetivo General:** Desarrollar un prototipo de asistente inteligente offline con soporte bilingüe (Quechua/Aymara), ejecutable en dispositivos móviles con un consumo de memoria RAM inferior a 1.5 GB e interactividad inicial por texto y voz local, incrementando el acceso a herramientas de personalización pedagógica en escuelas rurales de Puno dentro de un plazo de 2 meses.
+* **Objetivo General:** Desarrollar un prototipo de asistente inteligente offline con soporte bilingüe (Quechua/Aymara), ejecutable en dispositivos móviles con un consumo de memoria RAM inferior a 1.5 GB e interactividad por texto y voz local, incrementando el acceso a herramientas de personalización pedagógica en la I.E. Agropecuario Sorapa en un plazo de 2 meses (habiendo iniciado a mediados de mayo de 2026 y finalizando la próxima semana).
 * **Objetivos Específicos:**
   * **S (Específico):** Optimizar un Modelo de Lenguaje Pequeño (SLM) mediante cuantización de post-entrenamiento a 4 bits para su ejecución en entornos Android móviles locales.
   * **M (Medible):** Reducir la latencia de respuesta del sistema (Time-to-First-Token) a menos de 2.5 segundos en procesadores ARM estándar.
-  * **A (Alcanzable):** Compilar una base de datos vectorial local con el corpus pedagógico bilingüe validado del MINEDU empleando una arquitectura RAG (Retrieval-Augmented Generation) embebida.
+  * **A (Alcanzable):** Compilar una base de datos vectorial local con el corpus pedagógico bilingüe de secundaria validado del MINEDU empleando una arquitectura RAG (Retrieval-Augmented Generation) embebida.
   * **R (Relevante):** Proveer una solución interactiva por voz (STT/TTS) para evitar que las barreras de alfabetización escrita limiten el uso de la IA.
-  * **T (Tiempo):** Diseñar, empaquetar en formato APK y validar el prototipo mediante una prueba piloto en un entorno rural en un plazo máximo de 2 meses.
+  * **T (Tiempo):** Diseñar, empaquetar en formato APK y validar el prototipo mediante una prueba piloto en la I.E. Sorapa en un plazo de 2 meses (mayo - julio 2026).
 
 ##### 1.3. Beneficios Esperados
 * **Pedagógicos:** Incremento en la comprensión conceptual de los contenidos curriculares y preservación de la identidad lingüística de los usuarios.
@@ -46,8 +46,8 @@ El sistema educativo rural bilingüe en la región de Puno enfrenta una brecha e
 ##### 2.1. Alternativas Tecnológicas Consideradas
 Para resolver el problema, la arquitectura de TI evaluó tres aproximaciones de ingeniería:
 * **Alternativa A: Sistema Híbrido Cloud-Edge (API en la Nube):** Consiste en una aplicación móvil ligera que realiza llamadas HTTPS a modelos hospedados en servicios como OpenAI o Google Cloud.
-* **Alternativa B: Distribución de Hardware Dedicado (Raspberry Pi / Servidor Local):** Instalar un nodo de cómputo en cada escuela que ejecute un modelo localmente (Ollama) actuando como servidor local mediante una red Wi-Fi comunitaria interna.
-* **Alternativa C: Arquitectura On-Device AI Embebida (La Solución Seleccionada):** Compilar, cuantizar y ejecutar el Modelo de Lenguaje Pequeño (SLM) directamente dentro de la memoria y el CPU del teléfono móvil del usuario de forma 100% autónoma.
+* **Alternativa B: Distribución de Hardware Dedicado (Raspberry Pi / Servidor Local):** Instalar un nodo de cómputo en la I.E. Agropecuario Sorapa que ejecute un modelo localmente (Ollama) actuando como servidor local mediante la red Wi-Fi interna de soporte (diseñada en CE03).
+* **Alternativa C: Arquitectura On-Device AI Embebida (La Solución Seleccionada):** Compilar, cuantizar y ejecutar el Modelo de Lenguaje Pequeño (SLM) directamente dentro de la memoria y el CPU del teléfono móvil del usuario de forma 100% autónoma, distribuyéndose localmente mediante el servidor preexistente en la escuela.
 
 ##### 2.2. Criterios de Evaluación
 Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficiente y 5 es Excelente) considerando los siguientes criterios de arquitectura de TI:
@@ -97,11 +97,11 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
 
 | Componente / Rubro | Detalle | Costo (PEN) | Recurso |
 | :--- | :--- | :---: | :--- |
-| **1. Curación de contenidos y dataset EIB** | Selección, limpieza y estructuración de materiales educativos existentes en formatos simples para consulta local. | S/. 600.00 | Propios |
-| **2. Desarrollo del prototipo móvil** | Programación de la app, integración de base local, configuración RAG y pruebas técnicas con herramientas libres. | S/. 1,400.00 | Tesista |
-| **3. Equipos, almacenamiento y conectividad puntual** | Reutilización de celulares disponibles, memoria externa, cables, energía y descargas puntuales necesarias. | S/. 900.00 | Propios |
-| **4. Logística y prueba piloto rural** | Movilidad local, coordinación con docentes y validación básica del APK en una institución o comunidad cercana. | S/. 600.00 | Propios |
-| **Total Inversión Inicial de TI** | | **S/. 3,500.00** | |
+| **1. Curación de contenidos y dataset EIB** | Ingesta, limpieza y estructuración de contenidos curriculares de secundaria de la I.E. Sorapa. | S/. 600.00 | Propios |
+| **2. Desarrollo del prototipo móvil** | Programación de la app, integración de base local, configuración RAG y motor de inferencia local. | S/. 1,400.00 | Tesista |
+| **3. Equipos, almacenamiento y pruebas** | Reutilización de smartphones y servidor preexistente (CE03), cables de red y descargas puntuales. | S/. 900.00 | Propios |
+| **4. Logística y prueba piloto en Sorapa** | Movilidad local Juli-Sorapa, coordinación con docentes de secundaria y aplicación de pruebas de campo. | S/. 600.00 | Propios |
+| **Total Inversión Inicial de Desarrollo** | | **S/. 3,500.00** | |
 
 ##### 4.2. Costos Operativos (Para la Institución / Escuela)
 * **Consumo de Ancho de Banda / Datos Móviles:** S/. 0.00 anuales.
