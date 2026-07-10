@@ -172,7 +172,3 @@ graph LR
 ```
 
 
-## 3. Rúbrica de Evaluación
-El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
-- **CE01 (Gestión de Tecnologías de Información):** Capacidad para modelar y analizar procesos de negocio bajo estándares de notación BPMN, identificando ineficiencias críticas (*AS-IS*) y proponiendo un rediseño de procesos optimizado (*TO-BE*) con indicadores de valor que justifiquen el impacto del sistema de TI.
-- **Criterios de Evaluación:** Detalle narrativo de las ineficiencias del proceso actual, estructura formal de flujos AS-IS y TO-BE, y cuantificación lógica de las mejoras operativas de negocio (tiempo, costo y calidad).

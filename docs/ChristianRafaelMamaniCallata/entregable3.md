@@ -269,8 +269,3 @@ graph LR
     Dir --> |Liderazgo pedagógico| Doc
     Doc --> |Facilitación en el aula con la app| Est
 ```
-
-## 3. Rúbrica de Evaluación
-El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
-- **CE01 (Gestión de Tecnologías de Información):** Capacidad para planificar y gestionar proyectos de TI con un enfoque híbrido, estableciendo la EDT (WBS), estimando el cronograma y presupuesto mediante líneas base (Curva S) y diseñando iteraciones ágiles de software.
-- **Criterios de Evaluación:** Rigurosidad en la descomposición de la EDT, consistencia lógica en el cronograma con hitos de desarrollo, planeamiento de la Curva S de costos y especificación de la estructura Scrum para la construcción del producto.

@@ -285,7 +285,4 @@ graph TD
     R4 --- R5
     R5 --- R6
 ```
-## 3. Rúbrica de Evaluación
-El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
-- **CE01 (Gestión de Tecnologías de Información):** Capacidad para proponer soluciones TIC que se alineen estratégicamente con los objetivos de la organización, evalúen la viabilidad técnica/operativa y estimen costos de implementación.
-- **Criterios de Evaluación:** Diagnóstico situacional sustentado en datos de infraestructura, consistencia de la matriz estratégica (ODS, PCM, PDRC Puno), viabilidad en el Caso de Negocio y rigurosidad en la matriz de mitigación de riesgos.
+

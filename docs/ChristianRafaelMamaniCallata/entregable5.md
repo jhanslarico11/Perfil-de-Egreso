@@ -206,7 +206,3 @@ graph TD
     Note["NOTA DE ESCALABILIDAD:<br>Al ejecutar la inferencia de la IA localmente, el procesamiento se distribuye.<br>Añadir usuarios adicionales tiene costo de infraestructura S/. 0.00 para la escuela."]:::note
 ```
 
-## 3. Rúbrica de Evaluación
-El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
-- **CE01 (Gestión de Tecnologías de Información):** Capacidad para proponer soluciones TIC integrales integradas al ecosistema de sistemas de información institucionales, diseñando la interoperabilidad de datos, los conroles de seguridad y gobernanza, y justificando la escalabilidad y sostenibilidad financiera de la arquitectura.
-- **Criterios de Evaluación:** Calidad del diseño arquitectónico en el borde, coherencia del mapa de sistemas integrados de interoperabilidad (SIAGIE/ESCALE), solidez del marco de protección de datos personales y justificación de escalabilidad a costo marginal cero.

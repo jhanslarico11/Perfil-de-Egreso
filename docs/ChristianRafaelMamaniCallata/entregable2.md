@@ -211,7 +211,3 @@ graph TD
     Inversion --> A2
     Inversion --> A3
 ```
-## 3. Rúbrica de Evaluación
-El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
-- **CE01 (Gestión de Tecnologías de Información):** Capacidad para formular un Caso de Negocio (Business Case) justificando las decisiones de arquitectura de TI, comparando alternativas frente a requerimientos y restricciones, estimando costos y cuantificando beneficios.
-- **Criterios de Evaluación:** Identificación de problemas SMART, matriz de selección de alternativas tecnológicas ponderada, cuantificación de costos de inversión/operación de TI y evaluación estratégica de riesgos de negocio.
