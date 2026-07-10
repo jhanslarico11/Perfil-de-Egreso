@@ -1,5 +1,12 @@
 # CE021 - Entregable 1: YatiqApp: Aprendizaje de Aimara y Quechua - Requerimientos y Diseño
 
+## Video del proyecto
+
+<video controls style="width: 100%; max-width: 960px;">
+  <source src="YatiCap-IA-educativa-bilingüe-que-funciona-sin-Internet-y-reduce-la-brecha-rural-en-Puno-watermark.mp4" type="video/mp4">
+  Tu navegador no admite la reproducción de video.
+</video>
+
 ## 1. Descripción
 El presente entregable documenta la especificación de requerimientos y el diseño arquitectónico de **YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). El propósito del sistema es cerrar la brecha de inclusión digital para los hablantes de las lenguas andinas **Aymara** y **Quechua** en el Perú y Bolivia, facilitando tanto el aprendizaje de estos idiomas como la traducción bidireccional en tiempo real.
 
