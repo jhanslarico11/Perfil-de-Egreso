@@ -29,6 +29,13 @@ theme:
 extra_css:
   - assets/styles.css
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 nav:
   - Inicio: index.md
   - "Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)":
