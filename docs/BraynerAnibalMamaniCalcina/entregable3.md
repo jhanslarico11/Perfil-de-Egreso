@@ -54,6 +54,11 @@ La comunicación entre los componentes se realiza mediante el protocolo HTTP emp
 
 ##### Esquema de Integración de Llamadas de Red
 
+![Esquema de Integración de Llamadas de Red](llamadas_red.png)
+
+<details>
+<summary>💻 Código Fuente del Diagrama (Mermaid)</summary>
+
 ```mermaid
 sequenceDiagram
     autonumber
@@ -72,6 +77,7 @@ sequenceDiagram
     FastAPI -->> Laravel: Retorna métricas ChrF++ y BLEU
     Laravel -->> Usuario: Renderiza tabla comparativa en la UI
 ```
+</details>
 
 ---
 
