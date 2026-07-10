@@ -40,6 +40,13 @@ Este documento proporciona las herramientas necesarias para la defensa del proye
 
 El video pitch tiene una duración sugerida de **3 a 5 minutos** y sigue la estructura clásica de un pitch de tecnología:
 
+##### 🎥 Video Pitch Oficial de Demostración
+<div align="center">
+  <div style="max-width: 560px; margin: 20px auto; padding: 10px; background: #1e293b; border-radius: 12px; border: 2px solid #38bdf8; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.2);">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/QaxUfdtTNvQ" title="Video Pitch de YatiqApp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+  </div>
+</div>
+
 ##### Guión y Tiempos del Video Pitch
 | Fase / Tiempo | Tipo | Guión y Acciones del Video Pitch |
 | :--- | :--- | :--- |
