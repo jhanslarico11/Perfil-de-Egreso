@@ -124,92 +124,93 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
   * **Descripción:** Teléfonos inteligentes de muy baja gama con procesadores de arquitecturas ARM antiguas podrían carecer de los conjuntos de instrucciones necesarios para ejecutar las bibliotecas nativas del motor de inferencia de IA.
   * **Evaluación de Impacto:** Crítico. **Probabilidad:** Baja.
   * **Mitigación Inicial:** Establecer en la documentación de TI una línea base de requerimientos mínimos de hardware (ej. Android 8.0 o superior, arquitectura ARM64 y mínimo 3 GB de RAM total).
-
 ### Anexos
-A continuación se presentan los diagramas estructurados y detallados en notación Mermaid para mayor claridad del caso de negocio:
+A continuación se presentan los diagramas de soporte para el Caso de Negocio, detallando objetivos, canvas de análisis, ponderación de alternativas e indicadores financieros con estilos mejorados:
 
-#### 1. Árbol de Objetivos
+#### 1. Árbol de Objetivos (Fines y Medios)
 ```mermaid
 graph TD
-    %% Fines (Nivel Superior)
-    F1["Fin 1: Elevar el nivel de autoaprendizaje y razonamiento en alumnos bilingües"]
-    F2["Fin 2: Promover la inclusión y la revalorización de lenguas originarias"]
+    classDef fin fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
+    classDef prop fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#14532d,font-weight:bold;
+    classDef medio fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b;
 
-    %% Propósito Central
-    PC["PROPÓSITO: Desarrollar un prototipo de asistente inteligente offline bilingüe para secundaria"]
+    %% Nodos
+    F1["🎯 Fin Mayor:<br>Elevar comprensión conceptual y autoaprendizaje bilingüe en Sorapa"]:::fin
+    F2["🎯 Fin Secundario:<br>Promover inclusión educativa y revalorización de lenguas originarias"]:::fin
 
-    %% Medios (Nivel Inferior)
-    M1["Medio 1: Servidor local preexistente y red offline de soporte (CE03)"]
-    M2["Medio 2: SLM optimizado (cuantización a 4 bits, RAM < 1.5 GB)"]
-    M3["Medio 3: Interfaz móvil (Flutter) interactiva por voz y texto"]
+    PC["💡 PROPÓSITO CENTRAL:<br>Desarrollar asistente inteligente offline (Quechua/Aymara) para celulares"]:::prop
 
+    M1["⚙️ Medio 1:<br>Servidor local preexistente y red offline de distribución (CE03)"]:::medio
+    M2["⚙️ Medio 2:<br>SLM optimizado (Cuantización a 4 bits, RAM < 1.5 GB)"]:::medio
+    M3["⚙️ Medio 3:<br>Interfaz móvil (Flutter) con soporte de interacción por voz"]:::medio
+
+    %% Enlaces
     F1 --- F2
     F2 --- PC
     PC --- M1
     PC --- M2
     PC --- M3
-    
-    style PC fill:#e2f0d9,stroke:#385723,stroke-width:2px;
-    style M1 fill:#f1f5f9,stroke:#64748b;
-    style M2 fill:#f1f5f9,stroke:#64748b;
-    style M3 fill:#f1f5f9,stroke:#64748b;
 ```
 
-#### 2. Canvas Simplificado del Caso de Negocio (Business Case)
+#### 2. Canvas del Caso de Negocio (Business Case Canvas)
 ```mermaid
 graph LR
-    subgraph Entrada
-        P["Problema: Aislamiento geográfico y falta de material pedagógico interactivo bilingüe"]
-        I["Inversión: S/. 3,500.00 de desarrollo (Autofinanciado por tesistas)"]
+    classDef in fill:#fee2e2,stroke:#f87171,stroke-width:2px,color:#991b1b;
+    classDef proc fill:#fef9c3,stroke:#facc15,stroke-width:2px,color:#854d0e;
+    classDef out fill:#dcfce7,stroke:#4ade80,stroke-width:2px,color:#14532d;
+
+    subgraph INSUMOS Y COSTOS
+        P["🚨 Problema:<br>Aislamiento geográfico y falta de conectividad"]:::in
+        I["💰 Inversión Inicial:<br>S/. 3,500.00 de desarrollo (Tesistas)"]:::in
     end
 
-    subgraph Proceso
-        S["Solución: YatiqApp con On-Device AI (Inferencia local)"]
+    subgraph MOTOR SOLUCIÓN
+        S["⚙️ YatiqApp:<br>Edge Computing + On-Device AI"]:::proc
     end
 
-    subgraph Salidas
-        B["Beneficios: Costo de datos S/. 0.00 y Costo Cloud S/. 0.00"]
-        V["Valor Social: Reducción del 99.7% en tiempo de espera del alumno"]
+    subgraph VALOR GENERADO
+        B["✅ Beneficios Tangibles:<br>Costo Datos S/. 0.00 y Costo Cloud S/. 0.00"]:::out
+        V["✅ Valor Intangible:<br>Respuesta en 2.2s y disponibilidad 24/7"]:::out
     end
 
     P --> S
     I --> S
     S --> B
     S --> V
-
-    style S fill:#d4f1f9,stroke:#00a3c4,stroke-width:2px;
 ```
 
-#### 3. Comparación de Alternativas de TI
+#### 3. Comparación Ponderada de Alternativas de TI
 ```mermaid
 graph TD
-    classDef selected fill:#e2f0d9,stroke:#385723,stroke-width:2px;
-    classDef normal fill:#f1f5f9,stroke:#64748b;
+    classDef sel fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#14532d,font-weight:bold;
+    classDef nor fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#475569;
 
-    A["Alternativa A: Cloud-based AI<br>(Puntaje: 13)<br>Dependencia de Red"]:::normal
-    B["Alternativa B: Servidor Local<br>(Puntaje: 14)<br>Movilidad Restringida"]:::normal
-    C["Alternativa C: On-Device AI Embebida<br>(Puntaje: 18)<br>Independencia Total (Seleccionada)"]:::selected
+    A["☁️ Alternativa A:<br>Cloud-based AI (Puntaje: 13)<br>Requiere conexión HTTPS activa"]:::nor
+    B["🖥️ Alternativa B:<br>Servidor Local (Puntaje: 14)<br>Movilidad restringida al aula"]:::nor
+    C["📱 Alternativa C:<br>On-Device AI Embebida (Puntaje: 18)<br>100% Autónoma e independiente (Seleccionada)"]:::sel
 
     A --- B
     B --- C
 ```
 
-#### 4. Relación Costo-Beneficio
+#### 4. Estructura de Retorno y Costo-Beneficio
 ```mermaid
 graph TD
-    Inversion["Inversión de Desarrollo (S/. 3,500.00)"]
+    classDef root fill:#f3e8ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6;
+    classDef benefit fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+
+    Inversion["💳 Inversión Única:<br>Desarrollo y Dataset EIB (S/. 3,500.00)"]:::root
     
-    subgraph Beneficios Tangibles (Ahorro Recurrente)
-        A1["Costo de Reducción de Datos: S/. 0.00 para la escuela"]
-        A2["Costo de Servidores Cloud: S/. 0.00 mensuales"]
-        A3["Reutilización de Celulares y Servidores Preexistentes (S/. 0.00 en Hardware Nuevo)"]
+    subgraph Ahorros Recurrentes (Costo Operativo Cero)
+        A1["📶 Datos Móviles:<br>S/. 0.00 para la escuela"]:::benefit
+        A2["☁️ Suscripciones Cloud:<br>S/. 0.00 por tokens/servidores"]:::benefit
+        A3["🖥️ Infraestructura Física:<br>S/. 0.00 al reutilizar red local (CE03)"]:::benefit
     end
 
     Inversion --> A1
     Inversion --> A2
     Inversion --> A3
 ```
-
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
 - **CE01 (Gestión de Tecnologías de Información):** Capacidad para formular un Caso de Negocio (Business Case) justificando las decisiones de arquitectura de TI, comparando alternativas frente a requerimientos y restricciones, estimando costos y cuantificando beneficios.

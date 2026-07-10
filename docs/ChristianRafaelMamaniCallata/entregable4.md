@@ -94,19 +94,19 @@ Inicio ──> Detecta Duda ──> Realiza Consulta por Voz a YatiqApp ──> 
 El análisis comparativo demuestra que la automatización mediante Edge Computing transforma un proceso reactivo y centralizado en uno proactivo, distribuido y altamente eficiente. Al liberar al docente de la carga operativa de responder consultas conceptuales repetitivas o de traducción, este puede enfocar el tiempo de la sesión en el desarrollo de competencias críticas y personalizadas, elevando el desempeño organizacional de las escuelas bilingües en Puno sin demandar presupuesto del Estado para infraestructura de red.
 
 ### Anexos
-A continuación se presentan los diagramas del modelado y reingeniería de procesos en notación Mermaid:
+A continuación se presentan los diagramas del modelado y reingeniería de procesos en notación Mermaid con mejoras en el diseño y leyendas claras:
 
 #### 1. Diagrama de Secuencia del Proceso Actual (AS-IS)
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Alumno as Estudiante Bilingüe
-    actor Docente as Docente de Aula
+    actor Alumno as 🎒 Estudiante Bilingüe
+    actor Docente as 👨‍🏫 Docente de Aula
     
-    Note over Alumno: Sesión de autoaprendizaje
+    Note over Alumno: Sesión de autoaprendizaje presencial
     Alumno ->> Alumno: Detecta duda conceptual en el texto (Castellano/Aymara)
     Alumno ->> Docente: Solicita ayuda (Levanta la mano)
-    Note over Alumno: Bloqueo de aprendizaje (Espera de ~18 min de media en cola)
+    Note over Alumno: 🛑 BLOQUEO DE APRENDIZAJE<br>(Espera de ~18 min de media en cola)
     Docente ->> Alumno: Acude a la carpeta del estudiante
     Docente ->> Alumno: Realiza traducción y explica concepto en tiempo real
     Alumno ->> Alumno: Resuelve duda y continúa la lectura
@@ -115,15 +115,16 @@ sequenceDiagram
 #### 2. Cuello de Botella Operativo en Aula Multigrado (Docente Single-Thread)
 ```mermaid
 graph TD
-    classDef block fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
-    classDef proc fill:#ffedd5,stroke:#f97316,stroke-width:2px;
+    classDef block fill:#fee2e2,stroke:#ef4444,stroke-width:2.5px,color:#991b1b,font-weight:bold;
+    classDef proc fill:#ffedd5,stroke:#f97316,stroke-width:2px,color:#9a3412;
+    classDef stu fill:#f1f5f9,stroke:#475569,stroke-width:1.5px,color:#1e293b;
 
-    E1["Estudiante 1 (Grado 1)"] --> Queue["Fila de Consultas (Cola de Espera)"]
-    E2["Estudiante 2 (Grado 2)"] --> Queue
-    E3["Estudiante 3 (Grado 3)"] --> Queue
+    E1["🎒 Estudiante 1 (Grado 1)"]:::stu --> Queue[" Fila de Consultas (Cola de Espera)"]
+    E2["🎒 Estudiante 2 (Grado 2)"]:::stu --> Queue
+    E3["🎒 Estudiante 3 (Grado 3)"]:::stu --> Queue
     
-    Queue --> Doc["Docente (Servidor de Hilo Único)"]:::block
-    Doc --> Current["Atendiendo Consulta de Estudiante 4 (Procesamiento Activo)"]:::proc
+    Queue --> Doc["👨‍🏫 Docente (Servidor de Hilo Único)"]:::block
+    Doc --> Current["⏳ Atendiendo Consulta de Estudiante 4 (Procesamiento Activo)"]:::proc
     
     style Queue stroke-dasharray: 5 5;
 ```
@@ -132,13 +133,13 @@ graph TD
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Alumno as Estudiante Bilingüe
-    participant App as YatiqApp (Local AI On-Device)
-    actor Docente as Docente de Aula
+    actor Alumno as 🎒 Estudiante Bilingüe
+    participant App as 📱 YatiqApp (Local AI On-Device)
+    actor Docente as 👨‍🏫 Docente de Aula
     
     Alumno ->> Alumno: Detecta duda conceptual en el texto
     Alumno ->> App: Realiza consulta por voz hablada (Aymara/Quechua)
-    Note over App: Inferencia local en 2.2s (STT + RAG + SLM + TTS)
+    Note over App: ⚡ INFERENCIA LOCAL EN 2.2 SEGUNDOS<br>(STT + RAG + SLM + TTS)
     App -->> Alumno: Emite respuesta por voz y texto en lengua materna
     
     alt ¿Consulta no resuelta / Escenario Complejo?
@@ -150,26 +151,26 @@ sequenceDiagram
 #### 4. Comparación de Indicadores de Eficiencia Operativa
 ```mermaid
 graph LR
-    subgraph Proceso AS-IS (Línea Base)
-        W1["Espera: 18 minutos de media"]
-        D1["Disponibilidad: 5 horas diarias (Colegio)"]
-        C1["Costo Datos: Variable / Alto (Planes de datos)"]
+    classDef asis fill:#fee2e2,stroke:#f87171,stroke-width:2px,color:#991b1b;
+    classDef tobe fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#14532d,font-weight:bold;
+
+    subgraph PROCESO AS-IS (LÍNEA BASE)
+        W1["⏳ Espera:<br>18 minutos de media"]:::asis
+        D1["🕒 Disponibilidad:<br>5 horas diarias (Colegio)"]:::asis
+        C1["📶 Costo Datos:<br>Variable / Alto (Planes)"]:::asis
     end
 
-    subgraph Proceso TO-BE (Propuesto)
-        W2["Espera: < 2.5 segundos (Local)"]
-        D2["Disponibilidad: 24 horas / 7 días (Offline)"]
-        C2["Costo Datos: S/. 0.00 (Edge Computing)"]
+    subgraph PROCESO TO-BE (YATIQAPP)
+        W2["⚡ Espera:<br>< 2.5 segundos (Local)"]:::tobe
+        D2["🕒 Disponibilidad:<br>24 horas / 7 días (Offline)"]:::tobe
+        C2["📶 Costo Datos:<br>S/. 0.00 (Edge Computing)"]:::tobe
     end
 
     W1 --> |Reducción del 99.7%| W2
     D1 --> |Soporte Ubicuo en el Hogar| D2
-    C1 --> |Reducción del 100% en Datos| C2
-
-    style W2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
-    style D2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
-    style C2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    C1 --> |Reducción del 100%| C2
 ```
+
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

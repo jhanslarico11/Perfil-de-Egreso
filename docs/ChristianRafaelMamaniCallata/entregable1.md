@@ -178,104 +178,106 @@ Para garantizar la viabilidad y el éxito del proyecto, se ha realizado un anál
 
 ##### 5.3. Conclusión del Análisis de Riesgos
 El análisis estratégico evidencia que el mayor cuello de botella es de carácter técnico (rendimiento en hardware restrictivo). Al mitigar el riesgo RT-01 y RT-02 mediante ingeniería de optimización avanzada (cuantización y ejecución nativa en el borde), se viabiliza la arquitectura offline, lo que a su vez minimiza los riesgos de costos y dependencia externa analizados en el Caso de Negocio.
-
 ### Anexos
-A continuación se presentan los diagramas estructurados y detallados del proyecto en notación Mermaid para mayor entendimiento y diferenciación visual:
+A continuación se presentan los diagramas de soporte para el diagnóstico y alineamiento estratégico, diseñados con estilos visuales y emojis descriptivos para mayor claridad:
 
 #### 1. Árbol de Problemas (Relación Causa-Efecto)
 ```mermaid
 graph TD
-    %% Efectos (Nivel Superior)
-    E1["Efecto Final: Rezago y deserción en el autoaprendizaje bilingüe en zonas rurales"]
-    E2["Efecto Indirecto: Aislamiento cognitivo y digital de los estudiantes de secundaria"]
-    
-    %% Problema Central
-    PC["PROBLEMA CENTRAL: Dificultad para resolver consultas pedagógicas bilingües en la I.E. Sorapa sin conectividad"]
-    
-    %% Causas (Nivel Inferior)
-    C1["Causa 1: Inexistencia de red de banda ancha en Sorapa (Juli)"]
-    C2["Causa 2: Dispositivos de gama baja (RAM <= 4GB) de estudiantes/padres"]
-    C3["Causa 3: Escasez de material pedagógico interactivo en Aymara y Quechua Collao"]
+    %% Estilos de Nodos
+    classDef effect fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b;
+    classDef problem fill:#fef2f2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d,font-weight:bold;
+    classDef cause fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b;
 
+    %% Nodos
+    E1["📉 Efecto Final:<br>Rezago y deserción en el autoaprendizaje bilingüe en zonas rurales"]:::effect
+    E2["🚪 Efecto Indirecto:<br>Aislamiento cognitivo y digital de los estudiantes de secundaria"]:::effect
+    
+    PC["🛑 PROBLEMA CENTRAL:<br>Dificultad para resolver consultas pedagógicas bilingües en la I.E. Sorapa sin conectividad"]:::problem
+    
+    C1["🔌 Causa 1:<br>Inexistencia de red de banda ancha en Sorapa (Juli)"]:::cause
+    C2["📱 Causa 2:<br>Dispositivos de gama baja (RAM <= 4GB) de estudiantes"]:::cause
+    C3["📚 Causa 3:<br>Escasez de material pedagógico interactivo bilingüe (Aymara/Quechua)"]:::cause
+
+    %% Enlaces
     E1 --- E2
     E2 --- PC
     PC --- C1
     PC --- C2
     PC --- C3
-    
-    style PC fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
-    style C1 fill:#f1f5f9,stroke:#64748b;
-    style C2 fill:#f1f5f9,stroke:#64748b;
-    style C3 fill:#f1f5f9,stroke:#64748b;
 ```
 
-#### 2. Alineamiento Estratégico
+#### 2. Alineamiento Estratégico Multivel
 ```mermaid
 graph TD
-    subgraph Internacional
-        ODS4["ODS 4: Educación de Calidad"]
-        ODS10["ODS 10: Reducción de Desigualdades"]
+    classDef int fill:#f3e8ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6;
+    classDef nac fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef reg fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,color:#0369a1;
+    classDef sol fill:#dcfce7,stroke:#15803d,stroke-width:3px,color:#14532d,font-weight:bold;
+
+    subgraph Nivel Internacional
+        ODS4["🌐 ODS 4:<br>Educación de Calidad"]:::int
+        ODS10["⚖️ ODS 10:<br>Reducción de Desigualdades"]:::int
     end
 
-    subgraph Nacional
-        PCM["Política Nacional de Transformación Digital (PCM)"]
-        MINEDU["Plan Nacional de Educación Intercultural Bilingüe (MINEDU)"]
+    subgraph Nivel Nacional
+        PCM["🏛️ PCM:<br>Política Nacional de Transformación Digital"]:::nac
+        MINEDU["📖 MINEDU:<br>Plan Nacional de Educación Intercultural Bilingüe"]:::nac
     end
 
-    subgraph Regional y Local
-        PDRC["Plan de Desarrollo Regional Concertado (PDRC Puno)"]
-        IES["I.E. Agropecuario Sorapa (Juli)"]
+    subgraph Nivel Regional y Local
+        PDRC["🏔️ PDRC Puno:<br>Mejora del Razonamiento Escolar"]:::reg
+        IES["🏫 I.E. Agropecuario Sorapa:<br>Caso de Estudio (Juli, Puno)"]:::reg
     end
+
+    %% Solución
+    Yatiq["🤖 YatiqApp:<br>Solución Edge Computing + IA On-Device"]:::sol
 
     ODS4 --> MINEDU
     ODS10 --> PCM
     MINEDU --> PDRC
     PCM --> IES
     PDRC --> IES
-    
-    %% Solución
-    IES --> Yatiq["YatiqApp: Edge Computing + On-Device AI"]
-    
-    style Yatiq fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    IES --> Yatiq
 ```
 
-#### 3. Roadmap Tecnológico y de Ejecución (Mayo - Julio 2026)
+#### 3. Gantt del Ciclo de Vida del Proyecto (Gantt Chart Estilizado)
 ```mermaid
 gantt
-    title Roadmap de Desarrollo - YatiqApp
+    title Cronograma de Ejecución Realizado (8 Semanas)
     dateFormat  YYYY-MM-DD
     axisFormat %d-%b
+    todayMarker off
+
+    section Fase 1: Datos
+    Curación de Contenidos EIB          :active, a1, 2026-05-18, 2026-05-29
     
-    section Ingesta
-    Curación de Contenidos EIB          :done, a1, 2026-05-18, 2026-05-29
+    section Fase 2: IA Core
+    Base local SQLite & RAG            :active, a2, 2026-06-01, 2026-06-12
+    Optimización SLM (Gemma-2B)        :active, a3, 2026-06-01, 2026-06-12
     
-    section IA Core
-    Base local SQLite & RAG            :done, a2, 2026-06-01, 2026-06-12
-    Optimización SLM (Gemma-2B)        :done, a3, 2026-06-01, 2026-06-12
+    section Fase 3: Móvil
+    Desarrollo App Flutter / Bindings  :active, a4, 2026-06-15, 2026-06-26
+    Pruebas de latencia y OOM          :active, a5, 2026-06-22, 2026-07-03
     
-    section Móvil
-    Desarrollo App Flutter / Bindings  :done, a4, 2026-06-15, 2026-06-26
-    Pruebas de latencia y OOM          :done, a5, 2026-06-22, 2026-07-03
-    
-    section Cierre
+    section Fase 4: Piloto
     Piloto en I.E. Sorapa              :active, a6, 2026-06-29, 2026-07-17
-    Documentación y Sustentación       :descr, a7, 2026-07-13, 2026-07-17
+    Documentación y Cierre             :active, a7, 2026-07-13, 2026-07-17
 ```
 
 #### 4. Matriz de Evaluación de Riesgos Estratégicos
 ```mermaid
 graph TD
-    %% Clasificación de criticidad
-    classDef crit fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
-    classDef high fill:#ffedd5,stroke:#f97316,stroke-width:2px;
-    classDef med fill:#fef9c3,stroke:#eab308,stroke-width:2px;
+    classDef crit fill:#ffe2e2,stroke:#ef4444,stroke-width:2.5px,color:#991b1b,font-weight:bold;
+    classDef high fill:#ffedd5,stroke:#f97316,stroke-width:2px,color:#9a3412;
+    classDef med fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#854d0e;
 
-    R1["RT-01: OOM en Celulares (RAM <= 4GB)"]:::crit
-    R2["RT-02: Latencia Excesiva de Respuesta"]:::high
-    R3["RD-01: Alucinación de Datos y Sesgo Dialectal"]:::high
-    R4["RD-02: Baja Precisión en STT (Ruido de Aula)"]:::med
-    R5["RO-01: Brecha de Distribución del Software"]:::med
-    R6["RO-02: Resistencia Cultural a la IA"]:::med
+    R1["🚨 RT-01: OOM en RAM <= 4GB<br>(Impacto Crítico / Probabilidad Alta)"]:::crit
+    R2["⚠️ RT-02: Latencia Excesiva de Respuesta<br>(Impacto Alto / Probabilidad Media)"]:::high
+    R3["⚠️ RD-01: Alucinación de Datos y Sesgo Dialectal<br>(Impacto Alto / Probabilidad Media)"]:::high
+    R4["⚡ RD-02: Baja Precisión en STT (Ruido de Aula)<br>(Impacto Medio / Probabilidad Alta)"]:::med
+    R5["📡 RO-01: Brecha de Distribución del Software<br>(Impacto Medio / Probabilidad Alta)"]:::med
+    R6["🤝 RO-02: Resistencia Cultural a la IA<br>(Impacto Alto / Probabilidad Baja)"]:::med
 
     R1 --- R2
     R2 --- R3
@@ -283,7 +285,6 @@ graph TD
     R4 --- R5
     R5 --- R6
 ```
-
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
 - **CE01 (Gestión de Tecnologías de Información):** Capacidad para proponer soluciones TIC que se alineen estratégicamente con los objetivos de la organización, evalúen la viabilidad técnica/operativa y estimen costos de implementación.

@@ -156,21 +156,24 @@ El ciclo de desarrollo core del backend de IA y de la app móvil se gestionará 
 * **Incremento de Producto Esperado (Mínimo Producto Viable - MVP):** Al finalizar el Sprint 4, el equipo dispondrá de un archivo `.apk` compilado y estable, capaz de ejecutarse en frío dentro de un dispositivo Android de pruebas, procesar una pregunta por voz en lengua originaria, buscar la respuesta semánticamente en su base local y reproducir la respuesta mediante audio, todo sin emitir un solo byte de datos a internet.
 
 ### Anexos
-A continuación se presentan los diagramas de soporte de gestión del proyecto en notación Mermaid:
+A continuación se presentan los diagramas de soporte para la planificación y gestión del proyecto, diseñados con estilos mejorados y colores distintivos en notación Mermaid:
 
 #### 1. Estructura del Project Charter (Acta de Constitución)
 ```mermaid
 graph TD
-    subgraph Actores Clave
-        S["Sponsor: Equipo de Tesistas (Autofinanciación)"]
-        A["Asesor Técnico: Docente de Ingeniería de Sistemas"]
-        B["Beneficiarios: Estudiantes y Docentes de la I.E. Sorapa"]
+    classDef actor fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef limit fill:#fff3dc,stroke:#ea580c,stroke-width:2px,color:#9a3412;
+
+    subgraph ACTORES CLAVE
+        S["👤 Sponsor:<br>Equipo de Tesistas (Autofinanciación)"]:::actor
+        A["👤 Asesor Técnico:<br>Docente de Ingeniería de Sistemas"]:::actor
+        B["👥 Beneficiarios:<br>Estudiantes y Docentes de la I.E. Sorapa"]:::actor
     end
 
-    subgraph Límites del Proyecto
-        Obj["Objetivo: Inferencia SLM local < 2.5s en RAM <= 4GB"]
-        Rest["Restricción: Presupuesto máx S/. 3,500.00 y 2 meses de plazo"]
-        Exc["Fuera de Alcance: Soporte iOS y provisión física de celulares"]
+    subgraph PARÁMETROS DEL PROYECTO
+        Obj["🎯 Objetivo Principal:<br>Inferencia local (SLM) < 2.5s en celulares (RAM <= 4GB)"]:::limit
+        Rest["⚠️ Restricciones Técnicas:<br>Presupuesto de S/. 3,500.00 y plazo de 2 meses"]:::limit
+        Exc["🚫 Fuera de Alcance:<br>Distribución física de teléfonos y soporte para iOS"]:::limit
     end
 
     S --> Obj
@@ -183,13 +186,17 @@ graph TD
 #### 2. Estructura de Desglose del Trabajo (WBS / EDT)
 ```mermaid
 graph TD
-    WBS["1.0 Asistente Inteligente Offline YatiqApp"]
+    classDef root fill:#f3e8ff,stroke:#7c3aed,stroke-width:3px,color:#5b21b6,font-weight:bold;
+    classDef phase fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
+    classDef task fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b;
+
+    WBS["🚀 1.0 ASISTENTE OFFLINE YATIQAPP"]:::root
     
-    W1["1.1 Ingesta y Gestión de Datos"]
-    W2["1.2 Ingeniería de IA y Optimización"]
-    W3["1.3 Desarrollo de Software Móvil"]
-    W4["1.4 Pruebas, Despliegue y Piloto"]
-    W5["1.5 Gestión del Proyecto"]
+    W1["📂 1.1 Ingesta de Datos (EIB)"]:::phase
+    W2["📂 1.2 Ingeniería de IA"]:::phase
+    W3["📂 1.3 Desarrollo de Software"]:::phase
+    W4["📂 1.4 Pruebas y Despliegue"]:::phase
+    W5["📂 1.5 Gestión del Proyecto"]:::phase
 
     WBS --> W1
     WBS --> W2
@@ -197,68 +204,70 @@ graph TD
     WBS --> W4
     WBS --> W5
 
-    W1 --> W11["1.1.1 Recopilación de Textos MINEDU"]
-    W1 --> W12["1.1.2 Limpieza y Tokenización de Data"]
+    W1 --> W11["📄 1.1.1 Ingesta de textos MINEDU"]:::task
+    W1 --> W12["📄 1.1.2 Limpieza y tokenización"]:::task
 
-    W2 --> W21["1.2.1 Almacén de Vectores RAG Local"]
-    W2 --> W22["1.2.2 Cuantización SLM a 4 bits"]
+    W2 --> W21["📄 1.2.1 Embeddings RAG local"]:::task
+    W2 --> W22["📄 1.2.2 Cuantización SLM (4 bits)"]:::task
 
-    W3 --> W31["1.3.1 Bindings C++ Inferencia Local"]
-    W3 --> W32["1.3.2 Implementación Whisper STT / Piper TTS"]
-    W3 --> W33["1.3.3 Interfaz Móvil Android en Flutter"]
+    W3 --> W31["📄 1.3.1 Bindings C++ nativos"]:::task
+    W3 --> W32["📄 1.3.2 Módulos STT / TTS locales"]:::task
+    W3 --> W33["📄 1.3.3 Interfaz Flutter Android"]:::task
 
-    W4 --> W41["1.4.1 Pruebas OOM y Latencia"]
-    W4 --> W42["1.4.2 Prueba Piloto en Sorapa"]
+    W4 --> W41["📄 1.4.1 Pruebas de estrés y RAM"]:::task
+    W4 --> W42["📄 1.4.2 Prueba piloto en Sorapa"]:::task
 
-    W5 --> W51["1.5.1 Redacción de Informes"]
-    W5 --> W52["1.5.2 Aprobación y Sustentación"]
+    W5 --> W51["📄 1.5.1 Informes de Tesis"]:::task
+    W5 --> W52["📄 1.5.2 Sustentación Final"]:::task
 ```
 
-#### 3. Secuencia de Actividades y Ruta Crítica
+#### 3. Red de Actividades y Ruta Crítica
 ```mermaid
 graph LR
-    A1["A1: Curación Contenidos (W1-2)"] --> A2["A2: Base Local RAG (W3-4)"]
-    A1 --> A3["A3: Modelo Liviano (W3-4)"]
-    A2 --> A4["A4: Prototipo Móvil (W5-6)"]
-    A3 --> A4
-    A4 --> A5["A5: Pruebas Celulares (W5-7)"]
-    A5 --> A6["A6: Piloto en Sorapa (W7-8)"]
-    A6 --> A7["A7: Documentación Final (W8)"]
+    classDef critical fill:#fee2e2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d,font-weight:bold;
+    classDef done fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
 
-    style A1 fill:#ffd2d2,stroke:#ef4444;
-    style A2 fill:#ffd2d2,stroke:#ef4444;
-    style A4 fill:#ffd2d2,stroke:#ef4444;
-    style A5 fill:#ffd2d2,stroke:#ef4444;
-    style A6 fill:#ffd2d2,stroke:#ef4444;
-    style A7 fill:#ffd2d2,stroke:#ef4444;
+    A1["✅ A1: Curación Datos<br>(Semanas 1-2)"]:::done --> A2["✅ A2: RAG Local<br>(Semanas 3-4)"]:::done
+    A1 --> A3["✅ A3: Selección SLM<br>(Semanas 3-4)"]:::done
+    A2 --> A4["✅ A4: Prototipo Flutter<br>(Semanas 5-6)"]:::done
+    A3 --> A4
+    A4 --> A5["✅ A5: Pruebas RAM<br>(Semanas 5-7)"]:::done
+    A5 --> A6["🚀 A6: Piloto Sorapa<br>(Semanas 7-8 - Ruta Crítica)"]:::critical
+    A6 --> A7["🚀 A7: Cierre/Tesis<br>(Semana 8 - Ruta Crítica)"]:::critical
+
+    style A6 stroke-width:3px;
+    style A7 stroke-width:3px;
 ```
 
-#### 4. Estructura de Roles de Gestión (CE01, CE02, CE03)
+#### 4. Roles y Responsabilidades del Equipo de Tesis (CE01, CE02, CE03)
 ```mermaid
 graph TD
-    classDef roles fill:#f8fafc,stroke:#38bdf8,stroke-width:2px;
+    classDef role fill:#e2f0d9,stroke:#15803d,stroke-width:2px,color:#14532d;
 
-    R1["Christian (CE01): Gestión de TI<br>Responsable de EDT, Cronograma, Procesos y Caso de Negocio"]:::roles
-    R2["Brayner (CE02): Ingeniería de Software<br>Responsable de Código, IA, API y Modelo Relacional"]:::roles
-    R3["Anyelo (CE03): Infraestructura<br>Responsable de Red Local, Seguridad y Servidor Físico"]:::roles
+    R1["🙋‍♂️ Christian (CE01): Gestión de TI<br>Responsable de EDT, Cronograma, Presupuesto y BPMN"]:::role
+    R2["🙋‍♂️ Brayner (CE02): Ingeniería de Software<br>Responsable de Inferencia C++, Modelo de IA y Flutter"]:::role
+    R3["🙋‍♂️ Anyelo (CE03): Infraestructura de Red<br>Responsable de Servidor Físico, Access Points y Seguridad"]:::role
 ```
 
 #### 5. Matriz de Interesados (Stakeholders)
 ```mermaid
 graph LR
-    subgraph Alto Interés / Alto Poder
-        UGEL["UGEL Chucuito (Juli)"]
-        Dir["Dirección de la I.E. Sorapa"]
+    classDef highPower fill:#f3e8ff,stroke:#7c3aed,stroke-width:2.5px,color:#5b21b6,font-weight:bold;
+    classDef highInterest fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
+
+    subgraph ALTO PODER / ALTO INTERÉS
+        UGEL["🏢 UGEL Chucuito (Juli)"]:::highPower
+        Dir["🏫 Dirección I.E. Sorapa"]:::highPower
     end
 
-    subgraph Alto Interés / Bajo Poder
-        Doc["Docentes de Secundaria Sorapa"]
-        Est["Estudiantes Bilingües Sorapa"]
+    subgraph BAJO PODER / ALTO INTERÉS
+        Doc["👨‍🏫 Docentes de Secundaria"]:::highInterest
+        Est["🎒 Estudiantes Bilingües"]:::highInterest
     end
 
-    UGEL --> |Supervisión y Aprobación| Dir
-    Dir --> |Acompañamiento| Doc
-    Doc --> |Guía en el uso de la IA| Est
+    UGEL --> |Supervisión y soporte institucional| Dir
+    Dir --> |Liderazgo pedagógico| Doc
+    Doc --> |Facilitación en el aula con la app| Est
 ```
 
 ## 3. Rúbrica de Evaluación

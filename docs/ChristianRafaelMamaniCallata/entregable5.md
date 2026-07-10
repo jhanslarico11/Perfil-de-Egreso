@@ -104,23 +104,27 @@ Al contrario de los sistemas cloud tradicionales, donde un incremento masivo de 
 El diseño modular de la aplicación móvil (utilizando abstracciones de software) garantiza que la capa de IA sea intercambiable en el futuro. Si la comunidad científica lanza un nuevo Modelo de Lenguaje Pequeño (SLM) más eficiente que Gemma o Phi-3 (por ejemplo, modelos de menos de 1B de parámetros con mayor compresión sintáctica para lenguas aglutinantes como el Quechua), la aplicación móvil podrá recibir dicho binario como una actualización de archivos transparente, extendiendo el ciclo de vida útil del sistema y permitiendo que opere en smartphones aún más antiguos o de especificaciones inferiores.
 
 ### Anexos
-A continuación se presentan los diagramas de arquitectura, interoperabilidad y seguridad en notación Mermaid:
+A continuación se presentan los diagramas de arquitectura, interoperabilidad y seguridad en notación Mermaid con estilos mejorados y colores descriptivos:
 
 #### 1. Arquitectura On-Device de Tres Capas (YatiqApp)
 ```mermaid
 graph TD
+    classDef present fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#1e293b;
+    classDef engine fill:#d4f1f9,stroke:#00a3c4,stroke-width:2px,color:#0891b2;
+    classDef data fill:#fff3dc,stroke:#ea580c,stroke-width:2.5px,color:#9a3412,font-weight:bold;
+
     subgraph Capa de Presentación (UI/UX)
-        UI["Interfaz Móvil en Flutter (Captura de Voz y Renderizado de Texto)"]
+        UI["📱 Interfaz Móvil en Flutter<br>(Captura de Voz y Renderizado de Texto)"]:::present
     end
 
     subgraph Capa de Inferencia Local (AI Engine)
-        Whisper["Whisper Tiny Quantized (ASR / STT)"]
-        SLM["Gemma-2B / Phi-3-mini cuantizados a 4 bits"]
-        Piper["Piper Speech (Synthesis / TTS)"]
+        Whisper["🗣️ Whisper STT (Quantized)<br>(Procesamiento de Voz a Texto)"]:::engine
+        SLM["🤖 Gemma-2B / Phi-3-mini<br>(Modelo de Lenguaje Cuantizado 4 bits)"]:::engine
+        Piper["🗣️ Piper TTS (Nativo C++)<br>(Síntesis de Texto a Voz)"]:::engine
     end
 
     subgraph Capa de Persistencia Embebida (Data)
-        DB["SQLite Vectorial Embebida (Embeddings de Lecciones Escolares)"]
+        DB["📦 SQLite Vectorial Embebida<br>(Base de Datos Local y Contexto RAG)"]:::data
     end
 
     %% Flujo de datos
@@ -130,76 +134,76 @@ graph TD
     DB --> |Contexto Relevante (RAG)| SLM
     SLM --> |Respuesta Generada| Piper
     Piper --> |Audio WAV Sintetizado| UI
-
-    style UI fill:#f1f5f9,stroke:#64748b;
-    style DB fill:#fff3dc,stroke:#ea580c;
-    style SLM fill:#d4f1f9,stroke:#00a3c4,stroke-width:2px;
 ```
 
 #### 2. Interoperabilidad Diferida con el Ecosistema MINEDU (SIAGIE/ESCALE)
 ```mermaid
 graph TD
+    classDef central fill:#f3e8ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6;
+    classDef local fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef app fill:#dcfce7,stroke:#16a34a,stroke-width:2.5px,color:#14532d;
+
     subgraph Ecosistema Centralizado (MINEDU)
-        PE["PerúEduca / Repositorio EIB (Textos Curriculares)"]
-        ES["Sistema ESCALE / Dashboard Regional DRE Puno"]
+        PE["📖 PerúEduca / Repositorio EIB<br>(Textos Curriculares Oficiales)"]:::central
+        ES["📊 Sistema ESCALE / SIAGIE<br>(Analítica Académica y Matrículas)"]:::central
     end
 
     subgraph Ecosistema Local Offline (I.E. Sorapa)
-        Server["Computadora Servidor Local (Repositorio Centralizado CE03)"]
-        AP["Access Points Wi-Fi (VLAN Estudiantes/Docentes)"]
-        App["Celulares de Estudiantes / Docentes (YatiqApp)"]
+        Server["🖥️ Servidor Local (CE03 Gateway)<br>(Repositorio y Hosting de APK)"]:::local
+        AP["📶 Access Points Wi-Fi Local<br>(VLAN Estudiantes y Docentes)"]:::local
+        App["📱 Celulares Estudiantes (YatiqApp)<br>(Inferencia y Almacén Vectorial)"]:::app
     end
 
     %% Ingesta (Entrada)
-    PE --> |1. Exportación manual offline de textos a JSON/DB| Server
-    Server --> |2. Distribución Wi-Fi LAN local| AP
-    AP --> |3. Descarga de base de datos vectorial local| App
+    PE --> |1. Ingesta offline de textos curriculares| Server
+    Server --> |2. Distribución en red local| AP
+    AP --> |3. Descarga de APK y base RAG| App
 
     %% Reporte (Salida)
-    App --> |4. Logs analíticos cifrados en reposo (AES-256)| Server
-    Server --> |5. Carga diferida manual en UGEL Chucuito (Juli)| ES
+    App --> |4. Logs de uso cifrados (AES-256)| Server
+    Server --> |5. Carga diferida manual en UGEL Juli| ES
 ```
 
 #### 3. Privacidad y Seguridad desde el Diseño (Sandbox Local y Ley N° 29733)
 ```mermaid
 graph TD
-    classDef safe fill:#e2f0d9,stroke:#385723,stroke-width:2px;
-    classDef danger fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
+    classDef safe fill:#dcfce7,stroke:#16a34a,stroke-width:2.5px,color:#14532d,font-weight:bold;
+    classDef danger fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b;
+    classDef sand fill:#f8fafc,stroke:#38bdf8,stroke-width:2px,color:#0369a1;
 
-    Audio["Audio de Voz del Menor"] --> Sandbox["Sandbox Seguro de la Aplicación Android (Celular)"]
+    Audio["🗣️ Entrada de Audio del Menor"] --> Sandbox["🔒 Sandbox Seguro de Android (YatiqApp)"]:::sand
     
-    subgraph Sandbox de YatiqApp
-        STT[" Whisper STT (Local)"]
-        RAG[" Búsqueda Vectorial Local (SQLite)"]
-        LLM[" Inferencia SLM (Gemma-2B Local)"]
-        TTS[" Síntesis Piper TTS (Local)"]
+    subgraph Sandbox local del Smartphone
+        STT[" Whisper STT Local"]
+        RAG[" Búsqueda RAG en SQLite Vectorial"]
+        LLM[" Inferencia SLM Gemma-2B"]
+        TTS[" Piper TTS Sintetizador Local"]
     end
 
-    Sandbox --> Cripto["Cifrado de Logs de Uso (AES-256)"]:::safe
-    Sandbox --x Internet["Servidores Cloud Externos / Nube Pública"]:::danger
-
-    style Sandbox fill:#f8fafc,stroke:#38bdf8,stroke-width:2px;
+    Sandbox --> Cripto["✅ Cifrado de Logs en Reposo (AES-256)"]:::safe
+    Sandbox --x Internet["🚫 Transmisión de Voz / Datos a Internet"]:::danger
 ```
 
 #### 4. Sostenibilidad y Escalabilidad Horizontal de TI
 ```mermaid
 graph TD
-    classDef node fill:#f1f5f9,stroke:#64748b;
-    
-    Server["Computadora Servidor (CE03) <br> Rol: Solo Repositorio y Hosting de APK <br> Carga de Procesador: Mínima"]:::node
+    classDef server fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b;
+    classDef mobile fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef note fill:#fff3dc,stroke:#ea580c,stroke-width:1.5px,color:#7c2d12;
+
+    Server["🖥️ Servidor de la Escuela (CE03)<br>Carga de CPU: Mínima<br>(Rol: Distribución de Archivos)"]:::server
     
     subgraph Nodos de Inferencia Descentralizados (Edge Computing)
-        C1["Celular Estudiante 1 <br> Inferencia On-Device"]:::node
-        C2["Celular Estudiante 2 <br> Inferencia On-Device"]:::node
-        C3["Celular Estudiante N <br> Inferencia On-Device"]:::node
+        C1["📱 Celular Estudiante 1<br>Procesa su propia IA"]:::mobile
+        C2["📱 Celular Estudiante 2<br>Procesa su propia IA"]:::mobile
+        C3["📱 Celular Estudiante N<br>Procesa su propia IA"]:::mobile
     end
 
-    Server --> |Distribución Única de Archivos| C1
-    Server --> |Distribución Única de Archivos| C2
-    Server --> |Distribución Única de Archivos| C3
+    Server --> |Distribución Única de APK| C1
+    Server --> |Distribución Única de APK| C2
+    Server --> |Distribución Única de APK| C3
 
-    %% Nota de escalabilidad
-    Note["Escalabilidad Horizontal Infinita a Costo Marginal Cero: <br> El procesamiento de la IA es absorbido por los dispositivos de los usuarios. <br> Añadir 10,000 usuarios concurrentes no requiere servidores cloud adicionales."]
+    Note["💡 NOTA DE ESCALABILIDAD:<br>Al ejecutar la inferencia de la IA localmente, el procesamiento se distribuye.<br>Añadir usuarios adicionales tiene costo de infraestructura S/. 0.00 para la escuela."]:::note
 ```
 
 ## 3. Rúbrica de Evaluación
