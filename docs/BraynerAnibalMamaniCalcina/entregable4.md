@@ -1,7 +1,7 @@
-# CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema
+# CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema - YatiqApp: Aprendizaje de Aimara y Quechua
 
 ## 1. Descripción
-El presente entregable documenta las estrategias de **Aseguramiento de Calidad, Operación del Servidor y Planes de Evolución** del sistema **CopIA** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias).
+El presente entregable documenta las estrategias de **Aseguramiento de Calidad, Operación del Servidor y Planes de Evolución** del sistema **YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias).
 
 El propósito de este entregable es garantizar la estabilidad, robustez y sostenibilidad del software a través de:
 1. **Validación de Calidad (Testing):** Ejecución de una matriz de pruebas que verifique el correcto funcionamiento de los módulos del traductor, comparador y asistente.
@@ -16,7 +16,7 @@ El propósito de este entregable es garantizar la estabilidad, robustez y sosten
 ### 🏷️ Portada
 | Campo | Detalle |
 | :--- | :--- |
-| **🚀 Proyecto** | CopIA / LNT-IA |
+| **🚀 Proyecto** | YatiqApp: Aprendizaje de Aimara y Quechua |
 | **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
 | **📦 Entregable** | Entregable 4: Calidad, Operación y Evolución del Sistema |
 | **👤 Responsable** | Brayner Anibal Mamani Calcina |
@@ -24,7 +24,7 @@ El propósito de este entregable es garantizar la estabilidad, robustez y sosten
 ---
 
 ### 🎯 Resumen Ejecutivo
-La fase de calidad y operación de **CopIA** consolida la robustez de la aplicación web y móvil. Se ha implementado un pipeline de validaciones que blinda al sistema ante caídas del servidor de inferencia o fallas de red, y se ha diseñado una matriz de pruebas automatizables para el aseguramiento del software.
+La fase de calidad y operación de **YatiqApp** consolida la robustez de la aplicación web y móvil. Se ha implementado un pipeline de validaciones que blinda al sistema ante caídas del servidor de inferencia o fallas de red, y se ha diseñado una matriz de pruebas automatizables para el aseguramiento del software.
 
 > [!NOTE]
 > ### 🔍 Hallazgos y Resultados de Calidad:
@@ -183,4 +183,5 @@ El sistema cumple con los criterios de calidad de software y operaciones exigido
 * Documenta detalladamente los mecanismos de tolerancia a fallos, validaciones y seguridad informática.
 * Proporciona un manual técnico de instalación y despliegue autoportante.
 * Diseña un plan de mantenimiento y evolución escalable a mediano y largo plazo.
+
 

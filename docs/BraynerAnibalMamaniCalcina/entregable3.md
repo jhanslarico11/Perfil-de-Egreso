@@ -1,7 +1,7 @@
-# CE023 - Entregable 3: Sistema de Software Funcional Integrado
+# CE023 - Entregable 3: Sistema de Software Funcional Integrado - YatiqApp: Aprendizaje de Aimara y Quechua
 
 ## 1. Descripción
-El presente entregable describe la integración, el funcionamiento y la arquitectura del **Sistema de Software Funcional Integrado CopIA** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). 
+El presente entregable describe la integración, el funcionamiento y la arquitectura del **Sistema de Software Funcional Integrado YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). 
 
 El propósito de este entregable es validar la correcta unificación y comunicación de los tres componentes tecnológicos desarrollados para el sistema:
 1. **Frontend Móvil (Flutter):** Interfaz para el usuario final (comunidades nativas) que permite traducir por voz y texto en tiempo real.
@@ -17,7 +17,7 @@ La integración de estos módulos resuelve la desconexión típica entre interfa
 ### 🏷️ Portada
 | Campo | Detalle |
 | :--- | :--- |
-| **🚀 Proyecto** | CopIA / LNT-IA |
+| **🚀 Proyecto** | YatiqApp: Aprendizaje de Aimara y Quechua |
 | **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
 | **📦 Entregable** | Entregable 3: Sistema de Software Funcional Integrado |
 | **👤 Responsable** | Brayner Anibal Mamani Calcina |
@@ -25,7 +25,7 @@ La integración de estos módulos resuelve la desconexión típica entre interfa
 ---
 
 ### 🎯 Resumen Ejecutivo
-El sistema funcional **CopIA** ha sido desplegado e integrado satisfactoriamente. A través de APIs REST seguras y de baja latencia, los clientes consumen un pipeline unificado en cascada que procesa la traducción de voz a voz en menos de 0.8 segundos.
+El sistema funcional **YatiqApp** ha sido desplegado e integrado satisfactoriamente. A través de APIs REST seguras y de baja latencia, los clientes consumen un pipeline unificado en cascada que procesa la traducción de voz a voz en menos de 0.8 segundos.
 
 > [!NOTE]
 > ### 🔍 Hitos de la Integración Funcional:
@@ -84,7 +84,7 @@ La pantalla principal web permite la traducción rápida por texto o mediante gr
 
 ![Dashboard Principal](dashboard_principal.png)
 
-*Figura 1: Interfaz web de CopIA en `http://localhost:8080/` mostrando el panel interactivo y el monitoreo de recursos.*
+*Figura 1: Interfaz web de YatiqApp en `http://localhost:8080/` mostrando el panel interactivo y el monitoreo de recursos.*
 
 ##### 2. Inferencia y Conversión de Voz a Voz (Español a Aimara)
 Ejemplo real de inferencia interactiva: el usuario ingresa texto en español y recibe de forma instantánea la transcripción textual y la síntesis hablada en lengua aimara.
@@ -189,4 +189,5 @@ El sistema cumple con los criterios de evaluación del producto de integración 
 * Presenta una arquitectura modular funcionalmente integrada de 3 componentes.
 * Incorpora evidencias y capturas reales del sistema en funcionamiento local.
 * Documenta la estructura del código, puertos, endpoints y esquemas de red.
+
 

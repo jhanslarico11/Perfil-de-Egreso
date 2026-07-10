@@ -1,9 +1,9 @@
-# CE022 - Entregable 2: Plataforma de Datos del Sistema
+# CE022 - Entregable 2: Plataforma de Datos del Sistema - YatiqApp: Aprendizaje de Aimara y Quechua
 
 ## 1. Descripción
-El presente entregable documenta el diseño, la arquitectura y la implementación de la **Plataforma de Datos del Sistema CopIA** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). 
+El presente entregable documenta el diseño, la arquitectura y la implementación de la **Plataforma de Datos del Sistema YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). 
 
-La persistencia de datos es un pilar crítico en CopIA. Resuelve tres problemas fundamentales del ciclo de vida del software:
+La persistencia de datos es un pilar crítico en YatiqApp. Resuelve tres problemas fundamentales del ciclo de vida del software:
 1. **Administración de Credenciales y Sesiones:** Almacena de forma segura los accesos de administradores y personal técnico encargado del monitoreo del sistema.
 2. **Orquestación de Procesamiento Asíncrono (Colas de Trabajo):** Dado que el proceso de fine-tuning (entrenamiento de adaptadores LoRA) para los modelos de lenguaje neuronal (NLLB-200) consume gran cantidad de recursos GPU y tiempo, se requiere una plataforma de colas persistentes que organice, ejecute y reporte el estado de los trabajos de entrenamiento en segundo plano.
 3. **Optimización del Rendimiento (Caché y Semáforos):** Implementa almacenamiento en caché para respuestas repetitivas de traducción, estadísticas del servidor y cerraduras lógicas (mutex) que controlan que solo un proceso a la vez acceda a los recursos críticos de la GPU local.
@@ -15,7 +15,7 @@ La persistencia de datos es un pilar crítico en CopIA. Resuelve tres problemas 
 ### 🏷️ Portada
 | Campo | Detalle |
 | :--- | :--- |
-| **🚀 Proyecto** | CopIA / LNT-IA |
+| **🚀 Proyecto** | YatiqApp: Aprendizaje de Aimara y Quechua |
 | **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
 | **📦 Entregable** | Entregable 2: Plataforma de Datos del Sistema |
 | **👤 Responsable** | Brayner Anibal Mamani Calcina |
@@ -23,7 +23,7 @@ La persistencia de datos es un pilar crítico en CopIA. Resuelve tres problemas 
 ---
 
 ### 🎯 Resumen Ejecutivo
-Este documento recopila la especificación técnica de la capa de datos de **CopIA**. Tras analizar las necesidades de portabilidad, simplicidad de instalación y la naturaleza local del despliegue del hardware de inferencia GPU, se optó por una arquitectura de base de datos embebida utilizando **SQLite 3** como motor principal de persistencia de la aplicación web administrativa (Laravel).
+Este documento recopila la especificación técnica de la capa de datos de **YatiqApp**. Tras analizar las necesidades de portabilidad, simplicidad de instalación y la naturaleza local del despliegue del hardware de inferencia GPU, se optó por una arquitectura de base de datos embebida utilizando **SQLite 3** como motor principal de persistencia de la aplicación web administrativa (Laravel).
 
 > [!NOTE]
 > ### 🔍 Hallazgos y Decisiones Clave de Datos:
@@ -180,13 +180,7 @@ Se escogió **SQLite 3** como motor principal de base de datos debido a las sigu
 ##### 2. Patrón de Acceso a Datos: ORM Eloquent y Query Builder
 El backend Laravel interactúa con SQLite a través del mapeo objeto-relacional (ORM) **Eloquent**. Este implementa el patrón *Active Record*, donde cada tabla de la base de datos se corresponde con un modelo en PHP (`User`, `Job`, etc.). Esto permite realizar consultas seguras, libres de inyección SQL, mediante abstracción de código orientado a objetos:
 ```php
-// Ejemplo de inserción automática de sesión mediante el ORM
-$user = User::where('email', $request->email)->first();
-```
-
----
-
-#### 📖 Sección 3: Diccionario de Datos del Sistema
+// Ejemplo de inserc#### 📖 Sección 3: Diccionario de Datos del Sistema
 
 ##### Tabla: `users`
 Almacena las credenciales de acceso para los administradores que gestionan la plataforma.
@@ -258,3 +252,4 @@ El diseño cumple con los requisitos del estándar de arquitectura de datos de s
 * Mapea un modelo entidad-relación normalizado (3NF).
 * Justifica técnicamente el uso del motor embebido para portabilidad.
 * Documenta el diccionario de datos físico completo incluyendo restricciones e índices.
+

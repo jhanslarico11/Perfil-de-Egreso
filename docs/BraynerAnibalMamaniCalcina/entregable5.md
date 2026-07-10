@@ -1,9 +1,9 @@
-# CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
+# CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final - YatiqApp: Aprendizaje de Aimara y Quechua
 
 ## 1. Descripción
-El presente entregable documenta el material de soporte, la estructura discursiva y los guiones técnicos diseñados para la **Presentación, Video Pitch y Sustentación Final** del sistema **CopIA** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias).
+El presente entregable documenta el material de soporte, la estructura discursiva y los guiones técnicos diseñados para la **Presentación, Video Pitch y Sustentación Final** del sistema **YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias).
 
-El propósito de este entregable es estructurar y sintetizar el valor técnico y social de CopIA ante el jurado calificador de la universidad, resolviendo tres objetivos de comunicación:
+El propósito de este entregable es estructurar y sintetizar el valor técnico y social de YatiqApp ante el jurado calificador de la universidad, resolviendo tres objetivos de comunicación:
 1. **Estructura del Video Pitch:** Un guión de 3 a 5 minutos diseñado para enganchar al evaluador, explicar la problemática lingüística y demostrar la solución de software de forma concisa.
 2. **Guía de Demostración en Vivo (Demo Path):** Un guión técnico paso a paso que asegura que el expositor pueda recorrer todas las funcionalidades críticas del sistema (traducción de voz, model arena y reportes) sin contratiempos.
 3. **Estructura de las Diapositivas (Pitch Deck):** El diseño conceptual diapositiva por diapositiva que detalla los aspectos de ingeniería de software (arquitectura, base de datos y calidad) evaluados en la línea **CE02**.
@@ -13,15 +13,17 @@ El propósito de este entregable es estructurar y sintetizar el valor técnico y
 ## 2. Plantilla del Producto
 
 ### 🏷️ Portada
-* **Título del Proyecto:** CopIA
-* **Línea de Evaluación:** CE02: Ingeniería de Software
-* **Entregable:** Entregable 5: Presentación, Video pitch y Sustentación Final
-* **Responsable:** Brayner Anibal Mamani Calcina
+| Campo | Detalle |
+| :--- | :--- |
+| **🚀 Proyecto** | YatiqApp: Aprendizaje de Aimara y Quechua |
+| **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
+| **📦 Entregable** | Entregable 5: Presentación, Video pitch y Sustentación Final |
+| **👤 Responsable** | Brayner Anibal Mamani Calcina |
 
 ---
 
 ### 🎯 Resumen Ejecutivo
-Este documento proporciona las herramientas necesarias para la defensa del proyecto **CopIA**. La demostración en vivo utiliza capturas reales del sistema en funcionamiento para ilustrar la interactividad del traductor de voz y la rigurosidad científica de la comparación de modelos.
+Este documento proporciona las herramientas necesarias para la defensa del proyecto **YatiqApp**. La demostración en vivo utiliza capturas reales del sistema en funcionamiento para ilustrar la interactividad del traductor de voz y la rigurosidad científica de la comparación de modelos.
 
 > [!NOTE]
 > ### 🔍 Hitos de la Estrategia de Sustentación:
@@ -39,22 +41,24 @@ Este documento proporciona las herramientas necesarias para la defensa del proye
 El video pitch tiene una duración sugerida de **3 a 5 minutos** y sigue la estructura clásica de un pitch de tecnología:
 
 ##### Guión y Tiempos del Video Pitch
-1. **El Gancho (0:00 - 0:30):**
-   - *Discurso:* "¿Sabían que en el Perú y Bolivia más de 4 millones de personas hablan lenguas originarias como el aimara y el quechua, pero están excluidos del 95% del ecosistema digital? Hoy les presento CopIA, el primer asistente conversacional inteligente por voz en lenguas originarias."
-2. **El Problema (0:30 - 1:00):**
-   - *Discurso:* "Las tecnologías actuales como Google Translate o Siri ignoran las lenguas andinas. Traducir voz a voz requiere pipelines complejos de Inteligencia Artificial que suelen ser muy lentos en servidores estándar."
-3. **La Solución (1:00 - 1:30):**
-   - *Discurso:* "CopIA resuelve esto mediante una arquitectura híbrida de 3 capas. Conectamos una app móvil rápida en Flutter a un microservicio en FastAPI que carga en CPU/GPU tres modelos de aprendizaje profundo: Whisper para transcribir, NLLB-200 con adaptadores LoRA para traducir y MMS para sintetizar la voz de forma natural."
-4. **Demostración en Vivo (1:30 - 3:00):**
-   - *Acción:* Muestre en pantalla la traducción interactiva y el Model Arena (ver Sección 2).
-5. **Cierre y Llamada a la Acción (3:00 - 3:30):**
-   - *Discurso:* "CopIA es una solución autoportante, portable y científicamente validada que revaloriza nuestra cultura. Estamos listos para escalar a lenguas amazónicas. Muchas gracias."
+| Fase / Tiempo | Tipo | Guión y Acciones del Video Pitch |
+| :--- | :--- | :--- |
+| **⏱️ 0:00 - 0:30** | **📢 El Gancho** | *Discurso:* "¿Sabían que en el Perú y Bolivia más de 4 millones de personas hablan lenguas originarias como el aimara y el quechua, pero están excluidos del 95% del ecosistema digital? Hoy les presento YatiqApp, el primer asistente conversacional inteligente por voz en lenguas originarias." |
+| **⏱️ 0:30 - 1:00** | **❌ El Problema** | *Discurso:* "Las tecnologías actuales como Google Translate o Siri ignoran las lenguas andinas. Traducir voz a voz requiere pipelines complejos de Inteligencia Artificial que suelen ser muy lentos en servidores estándar." |
+| **⏱️ 1:00 - 1:30** | **💡 La Solución** | *Discurso:* "YatiqApp resuelve esto mediante una arquitectura híbrida de 3 capas. Conectamos una app móvil rápida en Flutter a un microservicio en FastAPI que carga en CPU/GPU tres modelos de aprendizaje profundo: Whisper para transcribir, NLLB-200 con adaptadores LoRA para traducir y MMS para sintetizar la voz de forma natural." |
+| **⏱️ 1:30 - 3:00** | **🖥️ Demo en Vivo** | *Acción:* Muestre en pantalla la traducción interactiva y el Model Arena (ver Sección 2). |
+| **⏱️ 3:00 - 3:30** | **🚀 Cierre** | *Discurso:* "YatiqApp es una solución autoportante, portable y científicamente validada que revaloriza nuestra cultura. Estamos listos para escalar a lenguas amazónicas. Muchas gracias." |
 
 ---
 
 #### 🏗️ Sección 2: Guía de Demostración del Sistema Funcional (Walkthrough Script)
 
 Esta guía detalla el recorrido exacto por las interfaces para realizar una demo funcional e impecable:
+
+![Guía del Recorrido Funcional](recorrido.png)
+
+<details>
+<summary>💻 Código Fuente del Diagrama (Mermaid)</summary>
 
 ```mermaid
 graph LR
@@ -63,13 +67,16 @@ graph LR
     P3 --> P4[Paso 4: Reportes Loss]
     P4 --> P5[Paso 5: App Móvil]
 ```
+</details>
 
 ##### Recorrido Paso a Paso de la Demo
-* **Paso 1: Lanzamiento de Vistas:** Muestre el dashboard principal de CopIA en `http://localhost:8080/`. Explique la disposición del menú.
-* **Paso 2: Traducción Interactiva:** Escriba o hable la frase `"Quiero aprender aimara."`. Al presionar el botón de traducción, resalte cómo el sistema retorna `"Aymar yatiqañ munta."` y reproduzca el audio WAV generado por el sintetizador MMS.
-* **Paso 3: Arena de Modelos:** Vaya a la pestaña de comparación (`/compare`), envíe una frase de prueba y muestre cómo el adaptador LoRA supera ampliamente al modelo base en métricas ChrF++ y BLEU.
-* **Paso 4: Reportes de Pérdida:** Muestre la gráfica interactiva en `/reports` donde se detalla la curva de convergencia de pérdida de entrenamiento (Loss curve) que sustenta científicamente la precisión del modelo.
-* **Paso 5: Cliente Móvil:** Abra el emulador con la aplicación en Flutter y demuestre cómo consume la misma API para guardar traducciones en el historial local.
+| Paso | Acción | Descripción Detallada del Recorrido |
+| :--- | :--- | :--- |
+| **👣 Paso 1** | **Lanzamiento de Vistas** | Muestre el dashboard principal de YatiqApp en `http://localhost:8080/`. Explique la disposición del menú. |
+| **👣 Paso 2** | **Traducción Interactiva** | Escriba o hable la frase `"Quiero aprender aimara."`. Al presionar el botón de traducción, resalte cómo el sistema retorna `"Aymar yatiqañ munta."` y reproduzca el audio WAV generado por el sintetizador MMS. |
+| **👣 Paso 3** | **Arena de Modelos** | Vaya a la pestaña de comparación (`/compare`), envíe una frase de prueba y muestre cómo el adaptador LoRA supera ampliamente al modelo base en métricas ChrF++ y BLEU. |
+| **👣 Paso 4** | **Reportes de Pérdida** | Muestre la gráfica interactiva en `/reports` donde se detalla la curva de convergencia de pérdida de entrenamiento (Loss curve) que sustenta científicamente la precisión del modelo. |
+| **👣 Paso 5** | **Cliente Móvil** | Abra el emulador con la aplicación en Flutter y demuestre cómo consume la misma API para guardar traducciones en el historial local. |
 
 ---
 
@@ -77,21 +84,15 @@ graph LR
 
 Estructura conceptual recomendada para las diapositivas de sustentación del proyecto ante el jurado:
 
-- **Diapositiva 1: Portada y Presentación**
-  - *Título:* CopIA: Asistente Conversacional Inteligente para la Preservación y Traducción de Lenguas Originarias.
-  - *Subtítulo:* Ingeniería de Software (Línea CE02).
-- **Diapositiva 2: Planteamiento del Problema**
-  - Exclusión lingüística digital y brecha de acceso a la información en comunidades andinas.
-- **Diapositiva 3: Arquitectura del Sistema (3-Tier Cascade)**
-  - Presentación del diagrama de componentes de software (Flutter - Laravel - FastAPI).
-- **Diapositiva 4: Plataforma de Datos (SQLite)**
-  - Explicación del diccionario de datos y el uso de colas SQLite (`jobs`) para entrenamientos asíncronos eficientes.
-- **Diapositiva 5: Modelos Neuronales SOTA**
-  - Detalle del pipeline inferencial local (Whisper ASR + NLLB-200 LoRA NMT + Meta MMS TTS).
-- **Diapositiva 6: Aseguramiento de Calidad y Pruebas**
-  - Presentación de la matriz de pruebas funcionales aprobadas y el preprocesamiento tolerante a fallos.
-- **Diapositiva 7: Conclusiones y Trabajo Futuro**
-  - Escalabilidad a la nube (AWS), soporte de lenguas amazónicas y cuantización para ejecución en dispositivos de borde.
+| Diapositiva | Título / Foco | Contenido y Detalles del Soporte Visual |
+| :--- | :--- | :--- |
+| **🎴 Diapositiva 1** | **Portada y Presentación** | **Título:** YatiqApp: Asistente Conversacional Inteligente para la Preservación y Traducción de Lenguas Originarias.<br>**Subtítulo:** Ingeniería de Software (Línea CE02). |
+| **🎴 Diapositiva 2** | **Planteamiento del Problema** | Exclusión lingüística digital y brecha de acceso a la información en comunidades andinas. |
+| **🎴 Diapositiva 3** | **Arquitectura (3-Tier Cascade)** | Presentación del diagrama de componentes de software (Flutter - Laravel - FastAPI). |
+| **🎴 Diapositiva 4** | **Plataforma de Datos (SQLite)** | Explicación del diccionario de datos y el uso de colas SQLite (`jobs`) para entrenamientos asíncronos eficientes. |
+| **🎴 Diapositiva 5** | **Modelos Neuronales SOTA** | Detalle del pipeline inferencial local (Whisper ASR + NLLB-200 LoRA NMT + Meta MMS TTS). |
+| **🎴 Diapositiva 6** | **Aseguramiento de Calidad** | Presentación de la matriz de pruebas funcionales aprobadas y el preprocesamiento tolerante a fallos. |
+| **🎴 Diapositiva 7** | **Conclusiones y Futuro** | Escalabilidad a la nube (AWS), soporte de lenguas amazónicas y cuantización para ejecución en dispositivos de borde. |
 
 ---
 
@@ -118,4 +119,5 @@ El material estructurado en este documento satisface los requerimientos de la l�
 * Presenta una estructura organizada para el video pitch con tiempos asignados.
 * Contiene una guía de demostración paso a paso basada en el software funcional real.
 * Define el guión conceptual y los anexos gráficos para el diapositivo de la sustentación.
+
 

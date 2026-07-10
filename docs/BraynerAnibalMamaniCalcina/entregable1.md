@@ -1,9 +1,9 @@
-# CE021 - Entregable 1: Requerimientos y Diseño del Sistema
+# CE021 - Entregable 1: YatiqApp: Aprendizaje de Aimara y Quechua - Requerimientos y Diseño
 
 ## 1. Descripción
-El presente entregable documenta la especificación de requerimientos y el diseño arquitectónico de **CopIA** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). El propósito del sistema es cerrar la brecha de inclusión digital para los hablantes de las lenguas andinas **Aymara** y **Quechua** en el Perú y Bolivia. 
+El presente entregable documenta la especificación de requerimientos y el diseño arquitectónico de **YatiqApp** (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). El propósito del sistema es cerrar la brecha de inclusión digital para los hablantes de las lenguas andinas **Aymara** y **Quechua** en el Perú y Bolivia, facilitando tanto el aprendizaje de estos idiomas como la traducción bidireccional en tiempo real.
 
-CopIA resuelve este problema mediante un traductor bidireccional y un asistente conversacional inteligente por voz (tipo Siri/Alexa). La plataforma combina inferencia local optimizada por GPU (usando modelos de aprendizaje profundo para el reconocimiento de voz, traducción neuronal y síntesis de voz) con APIs de LLM externas (Gemini y OpenAI) para ofrecer un agente educativo y conversacional interactivo con latencia ultrabaja.
+YatiqApp resuelve este problema mediante un traductor bidireccional y un asistente conversacional inteligente por voz (tipo Siri/Alexa). La plataforma combina inferencia local optimizada por GPU (usando modelos de aprendizaje profundo para el reconocimiento de voz, traducción neuronal y síntesis de voz) con APIs de LLM externas (Gemini y OpenAI) para ofrecer un agente educativo y conversacional interactivo con latencia ultrabaja.
 
 ---
 
@@ -12,20 +12,20 @@ CopIA resuelve este problema mediante un traductor bidireccional y un asistente 
 ### 🏷️ Portada
 | Campo | Detalle |
 | :--- | :--- |
-| **🚀 Proyecto** | CopIA |
+| **🚀 Proyecto** | YatiqApp: Aprendizaje de Aimara y Quechua |
 | **🎓 Línea de Evaluación** | CE02: Ingeniería de Software |
 | **📦 Entregable** | Entregable 1: Requerimientos y Diseño del Sistema |
 | **👤 Responsable** | Brayner Anibal Mamani Calcina |
 
 ### 🎯 Resumen Ejecutivo
-Este entregable presenta el análisis de requerimientos y el diseño del sistema **CopIA**, una plataforma de traducción y asistencia inteligente por voz en Aymara y Quechua.
+Este entregable presenta el análisis de requerimientos y el diseño del sistema **YatiqApp**, una plataforma de traducción y asistencia inteligente por voz en Aymara y Quechua.
 
 > [!NOTE]
 > ### 🔍 Hallazgos clave de esta fase:
 > 
-> 1. **🧠 Necesidad de Inferencia Híbrida**: Para lograr un asistente interactivo inteligente en tiempo real, se diseñó una arquitectura que desacopla la transcripción, traducción y síntesis (ejecutadas localmente) de la generación lógica de respuestas (ejecutada mediante APIs LLM eficientes como Gemini 1.5 Flash).
-> 2. **⚡ Optimización de Latencia**: La latencia en la CPU era inaceptable (~10s por consulta). El diseño arquitectónico exige el uso de la GPU local (NVIDIA CUDA con hardware RTX 5060) para los pipelines inferenciales (Whisper ASR, NLLB NMT, y MMS TTS), reduciendo el tiempo de respuesta a <0.5 segundos.
-> 3. **🛡️ Robustez y Tolerancia a Fallos**: Se diseñó un sistema de fallbacks locales que permite que la traducción y la síntesis continúen operando de manera offline (traducción directa) aun cuando no haya conexión a Internet para las APIs de Inteligencia Artificial.
+> 1. **🧠 Inferencia Híbrida Inteligente:** Para lograr un asistente interactivo inteligente en tiempo real, se diseñó una arquitectura que desacopla la transcripción, traducción y síntesis (ejecutadas localmente) de la generación lógica de respuestas (ejecutada mediante APIs LLM eficientes como Gemini 1.5 Flash).
+> 2. **⚡ Aceleración por Hardware GPU:** La latencia en la CPU era inaceptable (~10s por consulta). El diseño arquitectónico exige el uso de la GPU local (NVIDIA CUDA con hardware RTX 5060) para los pipelines inferenciales (Whisper ASR, NLLB NMT, y MMS TTS), reduciendo el tiempo de respuesta a <0.5 segundos.
+> 3. **🛡️ Robustez y Operación Offline:** Se diseñó un sistema de fallbacks locales que permite que la traducción y la síntesis continúen operando de manera offline (traducción directa) aun cuando no haya conexión a Internet para las APIs de Inteligencia Artificial.
 
 ---
 
@@ -42,6 +42,10 @@ Este entregable presenta el análisis de requerimientos y el diseño del sistema
 | **`RF-04`** | Asistente de Voz Conversacional | El sistema debe responder preguntas conversacionales del usuario en español mediante Gemini API, traduciendo y hablando la respuesta en la lengua originaria seleccionada. | 🔴 Alta |
 | **`RF-05`** | Fallback de Respuestas Locales | Si no se detectan credenciales de APIs de LLM externas, el sistema debe operar en modo offline de traducción directa y responder usando heurísticas conversacionales locales. | 🟡 Media |
 | **`RF-06`** | Historial Local de Consultas | La interfaz debe registrar y almacenar de manera persistente las últimas traducciones en el dispositivo del usuario. | 🟢 Baja |
+| **`RF-07`** | Selector de Dialectos y Variedades | El usuario debe poder configurar y seleccionar variedades dialectales específicas de Aymara y Quechua para afinar la traducción. | 🟡 Media |
+| **`RF-08`** | Lecciones e Interactividad (LMS) | El sistema debe proveer módulos de vocabulario y ejercicios interactivos para facilitar el aprendizaje progresivo de las lenguas. | 🟡 Media |
+| **`RF-09`** | Comparador de Modelos (Arena) | La interfaz administrativa debe permitir la evaluación en paralelo de traducciones de diferentes versiones del modelo de IA. | 🟢 Baja |
+| **`RF-10`** | Monitoreo Estadístico de Inferencia | El sistema debe recopilar y graficar el tiempo de inferencia de cada etapa y el Loss Value histórico de los entrenamientos. | 🟢 Baja |
 
 ##### Requerimientos No Funcionales (RNF)
 | ID | Nombre | Descripción | Métrica |
@@ -50,12 +54,15 @@ Este entregable presenta el análisis de requerimientos y el diseño del sistema
 | **`RNF-02`** | Escalabilidad del Backend | El servidor backend debe ser construido de forma asíncrona sobre FastAPI para manejar solicitudes concurrentes de múltiples dispositivos móviles. | `🔄 Concurrente (Async)` |
 | **`RNF-03`** | Portabilidad y Diseño UX | El frontend debe ser desarrollado en Flutter para garantizar consistencia visual y rendimiento fluido en sistemas Android y iOS. | `📱 Multiplataforma` |
 | **`RNF-04`** | Seguridad de Datos | Los tokens de acceso y API Keys sensibles deben cargarse de forma segura a través de variables de entorno `.env` en el servidor backend. | `🔒 Encriptación / Env` |
+| **`RNF-05`** | Disponibilidad Offline de Contenido | Las lecciones interactivas descargadas deben poder visualizarse en la app móvil sin conexión activa a internet. | `💾 100% Offline (Local)` |
+| **`RNF-06`** | Tiempo de Síntesis del Audio | La generación del archivo WAV a partir del texto por el sintetizador MMS no debe exceder los 400 milisegundos. | `⏱️ < 400ms` |
+| **`RNF-07`** | Bajo Consumo de Recursos del Cliente | La aplicación móvil Flutter debe mantener un consumo de memoria RAM inferior a 150MB durante la reproducción de audios. | `🧠 < 150MB RAM` |
 
 ---
 
 #### 🏗️ Sección 2: Diseño de Arquitectura del Sistema
 
-La arquitectura de **CopIA** sigue un patrón de **Microservicios Híbridos**. Consiste en un Frontend desacoplado (App Móvil en Flutter y Web App) que se comunica mediante solicitudes HTTP REST con un Backend de FastAPI. El backend actúa como orquestador y cargador de los modelos de aprendizaje profundo en la GPU local empleando la biblioteca PyTorch.
+La arquitectura de **YatiqApp** sigue un patrón de **Microservicios Híbridos**. Consiste en un Frontend desacoplado (App Móvil en Flutter y Web App) que se comunica mediante solicitudes HTTP REST con un Backend de FastAPI. El backend actúa como orquestador y cargador de los modelos de aprendizaje profundo en la GPU local empleando la biblioteca PyTorch.
 
 ##### Diagrama de Arquitectura de Bloques (C4 Model - Nivel 2)
 
@@ -192,7 +199,7 @@ OPENAI_API_KEY=sk-proj-YourOpenAIApiKeyHere
 ---
 
 ## 3. Rúbrica de Evaluación
-*   **Completitud**: Todos los requerimientos funcionales y no funcionales se alinean con la solución de software CopIA.
+*   **Completitud**: Todos los requerimientos funcionales y no funcionales se alinean con la solución de software YatiqApp.
 *   **Modelado Estructurado**: El diagrama C4 y el diagrama de secuencia Mermaid detallan con precisión el flujo de llamadas de red y lógica de IA.
 *   **Viabilidad**: El diseño e implementación técnica están basados en componentes ya integrados y validados sobre hardware con aceleración de GPU CUDA.
 
