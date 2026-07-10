@@ -180,25 +180,109 @@ Para garantizar la viabilidad y el éxito del proyecto, se ha realizado un anál
 El análisis estratégico evidencia que el mayor cuello de botella es de carácter técnico (rendimiento en hardware restrictivo). Al mitigar el riesgo RT-01 y RT-02 mediante ingeniería de optimización avanzada (cuantización y ejecución nativa en el borde), se viabiliza la arquitectura offline, lo que a su vez minimiza los riesgos de costos y dependencia externa analizados en el Caso de Negocio.
 
 ### Anexos
-A continuación se presentan los diagramas de soporte para el diagnóstico organizacional y alineamiento estratégico:
+A continuación se presentan los diagramas estructurados y detallados del proyecto en notación Mermaid para mayor entendimiento y diferenciación visual:
 
-#### 1. Diagnóstico Organizacional
-![Diagnóstico Organizacional](../assets/ce01/diagnostico_organizacional.svg)
+#### 1. Árbol de Problemas (Relación Causa-Efecto)
+```mermaid
+graph TD
+    %% Efectos (Nivel Superior)
+    E1["Efecto Final: Rezago y deserción en el autoaprendizaje bilingüe en zonas rurales"]
+    E2["Efecto Indirecto: Aislamiento cognitivo y digital de los estudiantes de secundaria"]
+    
+    %% Problema Central
+    PC["PROBLEMA CENTRAL: Dificultad para resolver consultas pedagógicas bilingües en la I.E. Sorapa sin conectividad"]
+    
+    %% Causas (Nivel Inferior)
+    C1["Causa 1: Inexistencia de red de banda ancha en Sorapa (Juli)"]
+    C2["Causa 2: Dispositivos de gama baja (RAM <= 4GB) de estudiantes/padres"]
+    C3["Causa 3: Escasez de material pedagógico interactivo en Aymara y Quechua Collao"]
 
-#### 2. Árbol de Problemas
-![Árbol de Problemas](../assets/ce01/arbol_problemas.svg)
+    E1 --- E2
+    E2 --- PC
+    PC --- C1
+    PC --- C2
+    PC --- C3
+    
+    style PC fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
+    style C1 fill:#f1f5f9,stroke:#64748b;
+    style C2 fill:#f1f5f9,stroke:#64748b;
+    style C3 fill:#f1f5f9,stroke:#64748b;
+```
 
-#### 3. FODA Tecnológico de YatiqApp
-![Matriz FODA](../assets/ce01/foda_yatiqapp.svg)
+#### 2. Alineamiento Estratégico
+```mermaid
+graph TD
+    subgraph Internacional
+        ODS4["ODS 4: Educación de Calidad"]
+        ODS10["ODS 10: Reducción de Desigualdades"]
+    end
 
-#### 4. Alineamiento Estratégico Multivel
-![Alineamiento Estratégico](../assets/ce01/alineamiento_estrategico.svg)
+    subgraph Nacional
+        PCM["Política Nacional de Transformación Digital (PCM)"]
+        MINEDU["Plan Nacional de Educación Intercultural Bilingüe (MINEDU)"]
+    end
 
-#### 5. Roadmap Tecnológico y de Ejecución (Retrospectiva)
-![Roadmap Estratégico](../assets/ce01/roadmap_estrategico.svg)
+    subgraph Regional y Local
+        PDRC["Plan de Desarrollo Regional Concertado (PDRC Puno)"]
+        IES["I.E. Agropecuario Sorapa (Juli)"]
+    end
 
-#### 6. Matriz de Evaluación de Riesgos Estratégicos
-![Matriz de Riesgos](../assets/ce01/matriz_riesgos_estrategicos.svg)
+    ODS4 --> MINEDU
+    ODS10 --> PCM
+    MINEDU --> PDRC
+    PCM --> IES
+    PDRC --> IES
+    
+    %% Solución
+    IES --> Yatiq["YatiqApp: Edge Computing + On-Device AI"]
+    
+    style Yatiq fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+```
+
+#### 3. Roadmap Tecnológico y de Ejecución (Mayo - Julio 2026)
+```mermaid
+gantt
+    title Roadmap de Desarrollo - YatiqApp
+    dateFormat  YYYY-MM-DD
+    axisFormat %d-%b
+    
+    section Ingesta
+    Curación de Contenidos EIB          :done, a1, 2026-05-18, 2026-05-29
+    
+    section IA Core
+    Base local SQLite & RAG            :done, a2, 2026-06-01, 2026-06-12
+    Optimización SLM (Gemma-2B)        :done, a3, 2026-06-01, 2026-06-12
+    
+    section Móvil
+    Desarrollo App Flutter / Bindings  :done, a4, 2026-06-15, 2026-06-26
+    Pruebas de latencia y OOM          :done, a5, 2026-06-22, 2026-07-03
+    
+    section Cierre
+    Piloto en I.E. Sorapa              :active, a6, 2026-06-29, 2026-07-17
+    Documentación y Sustentación       :descr, a7, 2026-07-13, 2026-07-17
+```
+
+#### 4. Matriz de Evaluación de Riesgos Estratégicos
+```mermaid
+graph TD
+    %% Clasificación de criticidad
+    classDef crit fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
+    classDef high fill:#ffedd5,stroke:#f97316,stroke-width:2px;
+    classDef med fill:#fef9c3,stroke:#eab308,stroke-width:2px;
+
+    R1["RT-01: OOM en Celulares (RAM <= 4GB)"]:::crit
+    R2["RT-02: Latencia Excesiva de Respuesta"]:::high
+    R3["RD-01: Alucinación de Datos y Sesgo Dialectal"]:::high
+    R4["RD-02: Baja Precisión en STT (Ruido de Aula)"]:::med
+    R5["RO-01: Brecha de Distribución del Software"]:::med
+    R6["RO-02: Resistencia Cultural a la IA"]:::med
+
+    R1 --- R2
+    R2 --- R3
+    R3 --- R4
+    R4 --- R5
+    R5 --- R6
+```
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

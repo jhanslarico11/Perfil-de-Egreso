@@ -126,19 +126,89 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
   * **Mitigación Inicial:** Establecer en la documentación de TI una línea base de requerimientos mínimos de hardware (ej. Android 8.0 o superior, arquitectura ARM64 y mínimo 3 GB de RAM total).
 
 ### Anexos
-A continuación se presentan los diagramas de soporte para el Business Case del proyecto:
+A continuación se presentan los diagramas estructurados y detallados en notación Mermaid para mayor claridad del caso de negocio:
 
 #### 1. Árbol de Objetivos
-![Árbol de Objetivos](../assets/ce01/arbol_objetivos.svg)
+```mermaid
+graph TD
+    %% Fines (Nivel Superior)
+    F1["Fin 1: Elevar el nivel de autoaprendizaje y razonamiento en alumnos bilingües"]
+    F2["Fin 2: Promover la inclusión y la revalorización de lenguas originarias"]
 
-#### 2. Business Case Canvas
-![Business Case Canvas](../assets/ce01/business_case_canvas.svg)
+    %% Propósito Central
+    PC["PROPÓSITO: Desarrollar un prototipo de asistente inteligente offline bilingüe para secundaria"]
+
+    %% Medios (Nivel Inferior)
+    M1["Medio 1: Servidor local preexistente y red offline de soporte (CE03)"]
+    M2["Medio 2: SLM optimizado (cuantización a 4 bits, RAM < 1.5 GB)"]
+    M3["Medio 3: Interfaz móvil (Flutter) interactiva por voz y texto"]
+
+    F1 --- F2
+    F2 --- PC
+    PC --- M1
+    PC --- M2
+    PC --- M3
+    
+    style PC fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    style M1 fill:#f1f5f9,stroke:#64748b;
+    style M2 fill:#f1f5f9,stroke:#64748b;
+    style M3 fill:#f1f5f9,stroke:#64748b;
+```
+
+#### 2. Canvas Simplificado del Caso de Negocio (Business Case)
+```mermaid
+graph LR
+    subgraph Entrada
+        P["Problema: Aislamiento geográfico y falta de material pedagógico interactivo bilingüe"]
+        I["Inversión: S/. 3,500.00 de desarrollo (Autofinanciado por tesistas)"]
+    end
+
+    subgraph Proceso
+        S["Solución: YatiqApp con On-Device AI (Inferencia local)"]
+    end
+
+    subgraph Salidas
+        B["Beneficios: Costo de datos S/. 0.00 y Costo Cloud S/. 0.00"]
+        V["Valor Social: Reducción del 99.7% en tiempo de espera del alumno"]
+    end
+
+    P --> S
+    I --> S
+    S --> B
+    S --> V
+
+    style S fill:#d4f1f9,stroke:#00a3c4,stroke-width:2px;
+```
 
 #### 3. Comparación de Alternativas de TI
-![Comparación de Alternativas](../assets/ce01/comparacion_alternativas.svg)
+```mermaid
+graph TD
+    classDef selected fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    classDef normal fill:#f1f5f9,stroke:#64748b;
 
-#### 4. Análisis de Costo-Beneficio
-![Costo Beneficio](../assets/ce01/costo_beneficio.svg)
+    A["Alternativa A: Cloud-based AI<br>(Puntaje: 13)<br>Dependencia de Red"]:::normal
+    B["Alternativa B: Servidor Local<br>(Puntaje: 14)<br>Movilidad Restringida"]:::normal
+    C["Alternativa C: On-Device AI Embebida<br>(Puntaje: 18)<br>Independencia Total (Seleccionada)"]:::selected
+
+    A --- B
+    B --- C
+```
+
+#### 4. Relación Costo-Beneficio
+```mermaid
+graph TD
+    Inversion["Inversión de Desarrollo (S/. 3,500.00)"]
+    
+    subgraph Beneficios Tangibles (Ahorro Recurrente)
+        A1["Costo de Reducción de Datos: S/. 0.00 para la escuela"]
+        A2["Costo de Servidores Cloud: S/. 0.00 mensuales"]
+        A3["Reutilización de Celulares y Servidores Preexistentes (S/. 0.00 en Hardware Nuevo)"]
+    end
+
+    Inversion --> A1
+    Inversion --> A2
+    Inversion --> A3
+```
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

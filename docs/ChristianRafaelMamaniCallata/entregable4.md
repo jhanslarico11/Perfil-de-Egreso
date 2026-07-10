@@ -94,25 +94,82 @@ Inicio ──> Detecta Duda ──> Realiza Consulta por Voz a YatiqApp ──> 
 El análisis comparativo demuestra que la automatización mediante Edge Computing transforma un proceso reactivo y centralizado en uno proactivo, distribuido y altamente eficiente. Al liberar al docente de la carga operativa de responder consultas conceptuales repetitivas o de traducción, este puede enfocar el tiempo de la sesión en el desarrollo de competencias críticas y personalizadas, elevando el desempeño organizacional de las escuelas bilingües en Puno sin demandar presupuesto del Estado para infraestructura de red.
 
 ### Anexos
-A continuación se presentan los diagramas del modelado y comparación de procesos AS-IS y TO-BE:
+A continuación se presentan los diagramas del modelado y reingeniería de procesos en notación Mermaid:
 
-#### 1. Diagrama BPMN - Proceso Actual (AS-IS)
-![BPMN As-Is](../assets/ce01/bpmn_as_is.svg)
+#### 1. Diagrama de Secuencia del Proceso Actual (AS-IS)
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Alumno as Estudiante Bilingüe
+    actor Docente as Docente de Aula
+    
+    Note over Alumno: Sesión de autoaprendizaje
+    Alumno ->> Alumno: Detecta duda conceptual en el texto (Castellano/Aymara)
+    Alumno ->> Docente: Solicita ayuda (Levanta la mano)
+    Note over Alumno: Bloqueo de aprendizaje (Espera de ~18 min de media en cola)
+    Docente ->> Alumno: Acude a la carpeta del estudiante
+    Docente ->> Alumno: Realiza traducción y explica concepto en tiempo real
+    Alumno ->> Alumno: Resuelve duda y continúa la lectura
+```
 
-#### 2. Diagrama de Roles (Swimlane AS-IS)
-![Swimlane As-Is](../assets/ce01/swimlane_as_is.svg)
+#### 2. Cuello de Botella Operativo en Aula Multigrado (Docente Single-Thread)
+```mermaid
+graph TD
+    classDef block fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
+    classDef proc fill:#ffedd5,stroke:#f97316,stroke-width:2px;
 
-#### 3. Cuello de Botella Operativo del Docente (Single-Thread)
-![Cuello de Botella Docente](../assets/ce01/cuello_botella_docente.svg)
+    E1["Estudiante 1 (Grado 1)"] --> Queue["Fila de Consultas (Cola de Espera)"]
+    E2["Estudiante 2 (Grado 2)"] --> Queue
+    E3["Estudiante 3 (Grado 3)"] --> Queue
+    
+    Queue --> Doc["Docente (Servidor de Hilo Único)"]:::block
+    Doc --> Current["Atendiendo Consulta de Estudiante 4 (Procesamiento Activo)"]:::proc
+    
+    style Queue stroke-dasharray: 5 5;
+```
 
-#### 4. Diagrama BPMN - Proceso Rediseñado (TO-BE)
-![BPMN To-Be](../assets/ce01/bpmn_to_be.svg)
+#### 3. Diagrama de Secuencia del Proceso Propuesto con YatiqApp (TO-BE)
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Alumno as Estudiante Bilingüe
+    participant App as YatiqApp (Local AI On-Device)
+    actor Docente as Docente de Aula
+    
+    Alumno ->> Alumno: Detecta duda conceptual en el texto
+    Alumno ->> App: Realiza consulta por voz hablada (Aymara/Quechua)
+    Note over App: Inferencia local en 2.2s (STT + RAG + SLM + TTS)
+    App -->> Alumno: Emite respuesta por voz y texto en lengua materna
+    
+    alt ¿Consulta no resuelta / Escenario Complejo?
+        Alumno ->> Docente: Solicita soporte (Segunda instancia)
+        Docente ->> Alumno: Brinda retroalimentación personalizada de segundo nivel
+    end
+```
 
-#### 5. Diagrama de Roles Rediseñado (Swimlane TO-BE)
-![Swimlane To-Be](../assets/ce01/swimlane_to_be.svg)
+#### 4. Comparación de Indicadores de Eficiencia Operativa
+```mermaid
+graph LR
+    subgraph Proceso AS-IS (Línea Base)
+        W1["Espera: 18 minutos de media"]
+        D1["Disponibilidad: 5 horas diarias (Colegio)"]
+        C1["Costo Datos: Variable / Alto (Planes de datos)"]
+    end
 
-#### 6. Comparación de Indicadores Clave de Eficiencia
-![Comparación de Indicadores](../assets/ce01/comparacion_indicadores.svg)
+    subgraph Proceso TO-BE (Propuesto)
+        W2["Espera: < 2.5 segundos (Local)"]
+        D2["Disponibilidad: 24 horas / 7 días (Offline)"]
+        C2["Costo Datos: S/. 0.00 (Edge Computing)"]
+    end
+
+    W1 --> |Reducción del 99.7%| W2
+    D1 --> |Soporte Ubicuo en el Hogar| D2
+    C1 --> |Reducción del 100% en Datos| C2
+
+    style W2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    style D2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    style C2 fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+```
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

@@ -104,31 +104,103 @@ Al contrario de los sistemas cloud tradicionales, donde un incremento masivo de 
 El diseño modular de la aplicación móvil (utilizando abstracciones de software) garantiza que la capa de IA sea intercambiable en el futuro. Si la comunidad científica lanza un nuevo Modelo de Lenguaje Pequeño (SLM) más eficiente que Gemma o Phi-3 (por ejemplo, modelos de menos de 1B de parámetros con mayor compresión sintáctica para lenguas aglutinantes como el Quechua), la aplicación móvil podrá recibir dicho binario como una actualización de archivos transparente, extendiendo el ciclo de vida útil del sistema y permitiendo que opere en smartphones aún más antiguos o de especificaciones inferiores.
 
 ### Anexos
-A continuación se presentan los diagramas que detallan la propuesta de solución TIC integrada, seguridad y arquitectura:
+A continuación se presentan los diagramas de arquitectura, interoperabilidad y seguridad en notación Mermaid:
 
-#### 1. Arquitectura On-Device de YatiqApp
-![Arquitectura On-Device](../assets/ce01/arquitectura_on_device.svg)
+#### 1. Arquitectura On-Device de Tres Capas (YatiqApp)
+```mermaid
+graph TD
+    subgraph Capa de Presentación (UI/UX)
+        UI["Interfaz Móvil en Flutter (Captura de Voz y Renderizado de Texto)"]
+    end
 
-#### 2. Propuesta de Solución TIC Integrada (Entorno Completo)
-![Arquitectura TIC Integrada](../assets/ce01/arquitectura_tic_integrada.svg)
+    subgraph Capa de Inferencia Local (AI Engine)
+        Whisper["Whisper Tiny Quantized (ASR / STT)"]
+        SLM["Gemma-2B / Phi-3-mini cuantizados a 4 bits"]
+        Piper["Piper Speech (Synthesis / TTS)"]
+    end
 
-#### 3. Interoperabilidad Diferida con el MINEDU (SIAGIE/ESCALE)
-![Interoperabilidad Diferida](../assets/ce01/interoperabilidad_diferida.svg)
+    subgraph Capa de Persistencia Embebida (Data)
+        DB["SQLite Vectorial Embebida (Embeddings de Lecciones Escolares)"]
+    end
 
-#### 4. Privacidad desde el Diseño (Cumplimiento de la Ley N° 29733)
-![Privacidad desde el Diseño](../assets/ce01/privacidad_diseno.svg)
+    %% Flujo de datos
+    UI --> |Audio WAV| Whisper
+    Whisper --> |Texto Transcrito| SLM
+    SLM --> |Búsqueda de Contexto| DB
+    DB --> |Contexto Relevante (RAG)| SLM
+    SLM --> |Respuesta Generada| Piper
+    Piper --> |Audio WAV Sintetizado| UI
 
-#### 5. Funcionamiento del Motor RAG Offline Embebido
-![RAG Offline](../assets/ce01/rag_offline.svg)
+    style UI fill:#f1f5f9,stroke:#64748b;
+    style DB fill:#fff3dc,stroke:#ea580c;
+    style SLM fill:#d4f1f9,stroke:#00a3c4,stroke-width:2px;
+```
 
-#### 6. Procesamiento de Voz Local (STT/TTS Local)
-![STT/TTS Local](../assets/ce01/stt_tts_local.svg)
+#### 2. Interoperabilidad Diferida con el Ecosistema MINEDU (SIAGIE/ESCALE)
+```mermaid
+graph TD
+    subgraph Ecosistema Centralizado (MINEDU)
+        PE["PerúEduca / Repositorio EIB (Textos Curriculares)"]
+        ES["Sistema ESCALE / Dashboard Regional DRE Puno"]
+    end
 
-#### 7. Estructura de Persistencia Local (SQLite Embebida)
-![Sqlite Local](../assets/ce01/sqlite_local.svg)
+    subgraph Ecosistema Local Offline (I.E. Sorapa)
+        Server["Computadora Servidor Local (Repositorio Centralizado CE03)"]
+        AP["Access Points Wi-Fi (VLAN Estudiantes/Docentes)"]
+        App["Celulares de Estudiantes / Docentes (YatiqApp)"]
+    end
 
-#### 8. Sostenibilidad y Escalabilidad Horizontal Offline
-![Escalabilidad Offline](../assets/ce01/escalabilidad_offline.svg)
+    %% Ingesta (Entrada)
+    PE --> |1. Exportación manual offline de textos a JSON/DB| Server
+    Server --> |2. Distribución Wi-Fi LAN local| AP
+    AP --> |3. Descarga de base de datos vectorial local| App
+
+    %% Reporte (Salida)
+    App --> |4. Logs analíticos cifrados en reposo (AES-256)| Server
+    Server --> |5. Carga diferida manual en UGEL Chucuito (Juli)| ES
+```
+
+#### 3. Privacidad y Seguridad desde el Diseño (Sandbox Local y Ley N° 29733)
+```mermaid
+graph TD
+    classDef safe fill:#e2f0d9,stroke:#385723,stroke-width:2px;
+    classDef danger fill:#fee2e2,stroke:#ef4444,stroke-width:2px;
+
+    Audio["Audio de Voz del Menor"] --> Sandbox["Sandbox Seguro de la Aplicación Android (Celular)"]
+    
+    subgraph Sandbox de YatiqApp
+        STT[" Whisper STT (Local)"]
+        RAG[" Búsqueda Vectorial Local (SQLite)"]
+        LLM[" Inferencia SLM (Gemma-2B Local)"]
+        TTS[" Síntesis Piper TTS (Local)"]
+    end
+
+    Sandbox --> Cripto["Cifrado de Logs de Uso (AES-256)"]:::safe
+    Sandbox --x Internet["Servidores Cloud Externos / Nube Pública"]:::danger
+
+    style Sandbox fill:#f8fafc,stroke:#38bdf8,stroke-width:2px;
+```
+
+#### 4. Sostenibilidad y Escalabilidad Horizontal de TI
+```mermaid
+graph TD
+    classDef node fill:#f1f5f9,stroke:#64748b;
+    
+    Server["Computadora Servidor (CE03) <br> Rol: Solo Repositorio y Hosting de APK <br> Carga de Procesador: Mínima"]:::node
+    
+    subgraph Nodos de Inferencia Descentralizados (Edge Computing)
+        C1["Celular Estudiante 1 <br> Inferencia On-Device"]:::node
+        C2["Celular Estudiante 2 <br> Inferencia On-Device"]:::node
+        C3["Celular Estudiante N <br> Inferencia On-Device"]:::node
+    end
+
+    Server --> |Distribución Única de Archivos| C1
+    Server --> |Distribución Única de Archivos| C2
+    Server --> |Distribución Única de Archivos| C3
+
+    %% Nota de escalabilidad
+    Note["Escalabilidad Horizontal Infinita a Costo Marginal Cero: <br> El procesamiento de la IA es absorbido por los dispositivos de los usuarios. <br> Añadir 10,000 usuarios concurrentes no requiere servidores cloud adicionales."]
+```
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

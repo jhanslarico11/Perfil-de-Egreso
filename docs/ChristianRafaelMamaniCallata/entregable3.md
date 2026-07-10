@@ -156,25 +156,110 @@ El ciclo de desarrollo core del backend de IA y de la app móvil se gestionará 
 * **Incremento de Producto Esperado (Mínimo Producto Viable - MVP):** Al finalizar el Sprint 4, el equipo dispondrá de un archivo `.apk` compilado y estable, capaz de ejecutarse en frío dentro de un dispositivo Android de pruebas, procesar una pregunta por voz en lengua originaria, buscar la respuesta semánticamente en su base local y reproducir la respuesta mediante audio, todo sin emitir un solo byte de datos a internet.
 
 ### Anexos
-A continuación se presentan los diagramas de soporte para la gestión del proyecto:
+A continuación se presentan los diagramas de soporte de gestión del proyecto en notación Mermaid:
 
-#### 1. Project Charter (Acta de Constitución)
-![Project Charter](../assets/ce01/project_charter.svg)
+#### 1. Estructura del Project Charter (Acta de Constitución)
+```mermaid
+graph TD
+    subgraph Actores Clave
+        S["Sponsor: Equipo de Tesistas (Autofinanciación)"]
+        A["Asesor Técnico: Docente de Ingeniería de Sistemas"]
+        B["Beneficiarios: Estudiantes y Docentes de la I.E. Sorapa"]
+    end
 
-#### 2. WBS / EDT (Estructura de Desglose del Trabajo)
-![WBS / EDT](../assets/ce01/wbs_yatiqapp.svg)
+    subgraph Límites del Proyecto
+        Obj["Objetivo: Inferencia SLM local < 2.5s en RAM <= 4GB"]
+        Rest["Restricción: Presupuesto máx S/. 3,500.00 y 2 meses de plazo"]
+        Exc["Fuera de Alcance: Soporte iOS y provisión física de celulares"]
+    end
 
-#### 3. Gantt de 8 Semanas (Calendario Real)
-![Gantt 8 Semanas](../assets/ce01/gantt_8_semanas.svg)
+    S --> Obj
+    A --> Obj
+    B --> Obj
+    Obj --> Rest
+    Obj --> Exc
+```
 
-#### 4. Matriz de Asignación de Responsabilidades (RACI)
-![Matriz RACI](../assets/ce01/raci_yatiqapp.svg)
+#### 2. Estructura de Desglose del Trabajo (WBS / EDT)
+```mermaid
+graph TD
+    WBS["1.0 Asistente Inteligente Offline YatiqApp"]
+    
+    W1["1.1 Ingesta y Gestión de Datos"]
+    W2["1.2 Ingeniería de IA y Optimización"]
+    W3["1.3 Desarrollo de Software Móvil"]
+    W4["1.4 Pruebas, Despliegue y Piloto"]
+    W5["1.5 Gestión del Proyecto"]
 
-#### 5. Matriz de Gestión de Interesados (Stakeholders)
-![Matriz de Interesados](../assets/ce01/matriz_interesados.svg)
+    WBS --> W1
+    WBS --> W2
+    WBS --> W3
+    WBS --> W4
+    WBS --> W5
 
-#### 6. Plan de Comunicaciones del Proyecto
-![Plan de Comunicaciones](../assets/ce01/comunicaciones.svg)
+    W1 --> W11["1.1.1 Recopilación de Textos MINEDU"]
+    W1 --> W12["1.1.2 Limpieza y Tokenización de Data"]
+
+    W2 --> W21["1.2.1 Almacén de Vectores RAG Local"]
+    W2 --> W22["1.2.2 Cuantización SLM a 4 bits"]
+
+    W3 --> W31["1.3.1 Bindings C++ Inferencia Local"]
+    W3 --> W32["1.3.2 Implementación Whisper STT / Piper TTS"]
+    W3 --> W33["1.3.3 Interfaz Móvil Android en Flutter"]
+
+    W4 --> W41["1.4.1 Pruebas OOM y Latencia"]
+    W4 --> W42["1.4.2 Prueba Piloto en Sorapa"]
+
+    W5 --> W51["1.5.1 Redacción de Informes"]
+    W5 --> W52["1.5.2 Aprobación y Sustentación"]
+```
+
+#### 3. Secuencia de Actividades y Ruta Crítica
+```mermaid
+graph LR
+    A1["A1: Curación Contenidos (W1-2)"] --> A2["A2: Base Local RAG (W3-4)"]
+    A1 --> A3["A3: Modelo Liviano (W3-4)"]
+    A2 --> A4["A4: Prototipo Móvil (W5-6)"]
+    A3 --> A4
+    A4 --> A5["A5: Pruebas Celulares (W5-7)"]
+    A5 --> A6["A6: Piloto en Sorapa (W7-8)"]
+    A6 --> A7["A7: Documentación Final (W8)"]
+
+    style A1 fill:#ffd2d2,stroke:#ef4444;
+    style A2 fill:#ffd2d2,stroke:#ef4444;
+    style A4 fill:#ffd2d2,stroke:#ef4444;
+    style A5 fill:#ffd2d2,stroke:#ef4444;
+    style A6 fill:#ffd2d2,stroke:#ef4444;
+    style A7 fill:#ffd2d2,stroke:#ef4444;
+```
+
+#### 4. Estructura de Roles de Gestión (CE01, CE02, CE03)
+```mermaid
+graph TD
+    classDef roles fill:#f8fafc,stroke:#38bdf8,stroke-width:2px;
+
+    R1["Christian (CE01): Gestión de TI<br>Responsable de EDT, Cronograma, Procesos y Caso de Negocio"]:::roles
+    R2["Brayner (CE02): Ingeniería de Software<br>Responsable de Código, IA, API y Modelo Relacional"]:::roles
+    R3["Anyelo (CE03): Infraestructura<br>Responsable de Red Local, Seguridad y Servidor Físico"]:::roles
+```
+
+#### 5. Matriz de Interesados (Stakeholders)
+```mermaid
+graph LR
+    subgraph Alto Interés / Alto Poder
+        UGEL["UGEL Chucuito (Juli)"]
+        Dir["Dirección de la I.E. Sorapa"]
+    end
+
+    subgraph Alto Interés / Bajo Poder
+        Doc["Docentes de Secundaria Sorapa"]
+        Est["Estudiantes Bilingües Sorapa"]
+    end
+
+    UGEL --> |Supervisión y Aprobación| Dir
+    Dir --> |Acompañamiento| Doc
+    Doc --> |Guía en el uso de la IA| Est
+```
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
