@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">Topologia profesional de red para la I.E. Agropecuario Sorapa</title>
+  <desc id="desc">Diagrama tecnico de red con zona WAN, perimetro, cuarto de comunicaciones, switch, patch panel, VLAN, servidor, access points y areas usuarias.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8f7}
+      .zone{fill:#ffffff;stroke:#c7d2cc;stroke-width:2;rx:18}
+      .zone2{fill:#eef5f2;stroke:#b8cbc3;stroke-width:2;rx:18}
+      .wan{fill:#e8f0f7;stroke:#7d9bb8;stroke-width:3;rx:12}
+      .core{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:12}
+      .device{fill:#ffffff;stroke:#40514b;stroke-width:3;rx:10}
+      .endpoint{fill:#f4f7f5;stroke:#62746d;stroke-width:2;rx:10}
+      .vlan10{fill:#dceee9;stroke:#2f6f66;stroke-width:3;rx:10}
+      .vlan20{fill:#e7f0dc;stroke:#6b8d4f;stroke-width:3;rx:10}
+      .vlan30{fill:#eef0dc;stroke:#9a8a3a;stroke-width:3;rx:10}
+      .vlan40{fill:#e7e4f2;stroke:#6d5a94;stroke-width:3;rx:10}
+      .vlan50{fill:#f2e7e2;stroke:#a56f59;stroke-width:3;rx:10}
+      .title{font-family:Arial,sans-serif;font-size:34px;font-weight:700;fill:#1f2b27}
+      .subtitle{font-family:Arial,sans-serif;font-size:18px;fill:#44524d}
+      .zoneTitle{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#28342f}
+      .label{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#25302c}
+      .small{font-family:Arial,sans-serif;font-size:15px;fill:#38443f}
+      .tiny{font-family:Arial,sans-serif;font-size:13px;fill:#4b5a54}
+      .line{stroke:#47786f;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .trunk{stroke:#2f6f66;stroke-width:5;fill:none;marker-end:url(#arrow)}
+      .access{stroke:#6b7d75;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .wifi{stroke:#9a8a3a;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowGold)}
+      .power{stroke:#7c8790;stroke-width:2;fill:none;stroke-dasharray:6 6}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#47786f"/></marker>
+    <marker id="arrowGold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9a8a3a"/></marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="980"/>
+  <text class="title" x="60" y="56">Topologia de red propuesta - I.E. Agropecuario Sorapa</text>
+  <text class="subtitle" x="60" y="86">Diseno LAN rural con router perimetral, switch administrable, patch panel, VLAN y cobertura Wi-Fi controlada.</text>
+
+  <rect class="zone" x="45" y="120" width="270" height="235"/>
+  <text class="zoneTitle" x="70" y="154">Zona WAN</text>
+  <rect class="wan" x="85" y="190" width="190" height="82"/>
+  <text class="label" x="129" y="225">Internet</text>
+  <text class="small" x="116" y="250">Proveedor local</text>
+
+  <rect class="zone" x="355" y="120" width="300" height="235"/>
+  <text class="zoneTitle" x="382" y="154">Perimetro de red</text>
+  <rect class="core" x="405" y="185" width="200" height="96"/>
+  <text class="label" x="455" y="219">Router</text>
+  <text class="small" x="424" y="244">NAT + firewall basico</text>
+  <text class="tiny" x="434" y="264">Gateway VLAN 10/20/30/40/50</text>
+
+  <rect class="zone2" x="695" y="120" width="760" height="300"/>
+  <text class="zoneTitle" x="725" y="154">Cuarto de comunicaciones - Direccion/Administracion</text>
+  <rect class="core" x="735" y="195" width="225" height="105"/>
+  <text class="label" x="778" y="231">Switch L2/L3</text>
+  <text class="small" x="771" y="256">Gigabit 16/24 puertos</text>
+  <text class="tiny" x="779" y="278">Trunk 802.1Q + puertos access</text>
+
+  <rect class="device" x="1030" y="195" width="200" height="105"/>
+  <text class="label" x="1076" y="231">Patch Panel</text>
+  <text class="small" x="1071" y="256">Cat 6 etiquetado</text>
+  <text class="tiny" x="1072" y="278">Puntos fisicos por ambiente</text>
+
+  <rect class="device" x="1245" y="195" width="170" height="105"/>
+  <text class="label" x="1296" y="231">UPS</text>
+  <text class="small" x="1278" y="256">1000/1500 VA</text>
+  <text class="tiny" x="1273" y="278">Energia protegida</text>
+
+  <rect class="vlan40" x="900" y="330" width="235" height="62"/>
+  <text class="label" x="934" y="356">Servidor local</text>
+  <text class="small" x="920" y="378">Archivos, SIAGIE y backups</text>
+
+  <path class="line" d="M275 231 H405"/>
+  <text class="tiny" x="316" y="218">WAN</text>
+  <path class="trunk" d="M605 233 H735"/>
+  <text class="tiny" x="628" y="218">Trunk 802.1Q</text>
+  <path class="trunk" d="M960 247 H1030"/>
+  <text class="tiny" x="975" y="232">LAN</text>
+  <path class="power" d="M1330 300 C1280 335 1050 320 1018 330"/>
+  <path class="power" d="M1330 300 C1250 355 890 315 845 300"/>
+
+  <rect class="zone" x="45" y="470" width="1410" height="390"/>
+  <text class="zoneTitle" x="75" y="505">Ambientes y segmentos de red</text>
+
+  <rect class="vlan10" x="85" y="545" width="235" height="120"/>
+  <text class="label" x="120" y="578">VLAN 10</text>
+  <text class="small" x="114" y="604">Administrativa</text>
+  <text class="tiny" x="112" y="628">192.168.10.0/24</text>
+  <text class="tiny" x="108" y="648">Direccion y Secretaria</text>
+
+  <rect class="vlan20" x="365" y="545" width="235" height="120"/>
+  <text class="label" x="400" y="578">VLAN 20</text>
+  <text class="small" x="412" y="604">Academica</text>
+  <text class="tiny" x="392" y="628">192.168.20.0/24</text>
+  <text class="tiny" x="399" y="648">Aula de innovacion</text>
+
+  <rect class="vlan30" x="645" y="545" width="235" height="120"/>
+  <text class="label" x="680" y="578">VLAN 30</text>
+  <text class="small" x="685" y="604">Docentes Wi-Fi</text>
+  <text class="tiny" x="672" y="628">192.168.30.0/24</text>
+  <text class="tiny" x="683" y="648">SSID Docentes</text>
+
+  <rect class="vlan40" x="925" y="545" width="235" height="120"/>
+  <text class="label" x="960" y="578">VLAN 40</text>
+  <text class="small" x="974" y="604">Gestion TI</text>
+  <text class="tiny" x="952" y="628">192.168.40.0/24</text>
+  <text class="tiny" x="957" y="648">Router, switch, AP, servidor</text>
+
+  <rect class="vlan50" x="1205" y="545" width="210" height="120"/>
+  <text class="label" x="1238" y="578">VLAN 50</text>
+  <text class="small" x="1248" y="604">Invitados</text>
+  <text class="tiny" x="1232" y="628">192.168.50.0/24</text>
+  <text class="tiny" x="1234" y="648">Opcional y limitado</text>
+
+  <rect class="endpoint" x="90" y="725" width="102" height="64"/>
+  <text class="small" x="116" y="750">Direccion</text>
+  <text class="tiny" x="111" y="772">PC cableada</text>
+  <rect class="endpoint" x="210" y="725" width="102" height="64"/>
+  <text class="small" x="232" y="750">Secretaria</text>
+  <text class="tiny" x="223" y="772">SIAGIE/actas</text>
+
+  <rect class="endpoint" x="405" y="725" width="150" height="64"/>
+  <text class="small" x="426" y="750">Aula innovacion</text>
+  <text class="tiny" x="422" y="772">PCs academicas</text>
+
+  <rect class="endpoint" x="675" y="725" width="170" height="64"/>
+  <text class="small" x="705" y="750">AP Docentes</text>
+  <text class="tiny" x="701" y="772">Wi-Fi autorizado</text>
+
+  <rect class="endpoint" x="955" y="725" width="175" height="64"/>
+  <text class="small" x="985" y="750">Gestion de red</text>
+  <text class="tiny" x="977" y="772">administracion tecnica</text>
+
+  <rect class="endpoint" x="1225" y="725" width="170" height="64"/>
+  <text class="small" x="1260" y="750">AP Invitados</text>
+  <text class="tiny" x="1252" y="772">internet limitado</text>
+
+  <path class="access" d="M1130 300 C1130 455 205 420 205 545"/>
+  <path class="access" d="M1130 300 C1130 455 483 420 483 545"/>
+  <path class="wifi" d="M1130 300 C1130 455 763 420 763 545"/>
+  <path class="access" d="M1018 392 C1020 460 1042 492 1042 545"/>
+  <path class="wifi" d="M1130 300 C1190 450 1310 470 1310 545"/>
+
+  <path class="access" d="M203 665 V725"/>
+  <path class="access" d="M482 665 V725"/>
+  <path class="wifi" d="M762 665 V725"/>
+  <path class="access" d="M1042 665 V725"/>
+  <path class="wifi" d="M1310 665 V725"/>
+
+  <rect class="zone" x="65" y="890" width="1370" height="52"/>
+  <text class="small" x="90" y="922">Leyenda: enlaces verdes = cableado estructurado / trunk; enlaces grises = puertos de acceso; enlaces punteados = cobertura Wi-Fi; VLAN 50 es opcional y no debe acceder a recursos administrativos.</text>
+</svg>

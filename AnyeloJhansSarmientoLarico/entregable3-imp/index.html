@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Asistente virtual offline para estudiantes bilingües en entornos rurales de Puno">
+      
+      
+        <meta name="author" content="Equipo YatiqApp">
+      
+      
+      
+        <link rel="prev" href="../entregable2-imp/">
+      
+      
+        <link rel="next" href="../../ChristianRafaelMamaniCallata/entregable1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/yatiqapp-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos - YatiqApp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ce0332-ce0333-entregable-3-implementacion-y-control-de-centro-de-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="YatiqApp" class="md-header__button md-logo" aria-label="YatiqApp" data-md-component="logo">
+      
+  <img src="../../assets/yatiqapp-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YatiqApp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../entregable1/" class="md-tabs__link">
+          
+  
+  
+  Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ChristianRafaelMamaniCallata/entregable1/" class="md-tabs__link">
+          
+  
+  
+  Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BraynerAnibalMamaniCalcina/entregable1/" class="md-tabs__link">
+          
+  
+  
+  Brayner Anibal Mamani Calcina (CE02: Software)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YatiqApp" class="md-nav__button md-logo" aria-label="YatiqApp" data-md-component="logo">
+      
+  <img src="../../assets/yatiqapp-logo.png" alt="logo">
+
+    </a>
+    YatiqApp
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0311 - Entregable 1: Diseño de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0321 - Entregable 2: Planificación de Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0331 - Entregable 3: Diseño de Centro de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable1-imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0312-CE0313 - Entregable 1: Implementación y Testing de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable2-imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0322-CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-ejecutivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen Ejecutivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alcance-del-entregable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alcance del Entregable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alcance del Entregable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incluye" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incluye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-incluye" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No incluye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supuestos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-fisica-del-micro-centro-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación Física del Micro Centro de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-servidor-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración del Servidor Local
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicios-implementados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servicios Implementados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-local-de-yatiqapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repositorio Local de YatiqApp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-y-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Almacenamiento y Backup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sla-realista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLA Realista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoreo-y-procedimientos-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoreo y Procedimientos Operativos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eficiencia-energetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eficiencia Energética
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-de-operacion-y-continuidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control de Operación y Continuidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusiones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recomendaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrica-de-evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rúbrica de Evaluación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0113 - Entregable 2: Business Case del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0121-CE0125 - Entregable 3: Plan de Gestión del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0131-CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0141-CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brayner Anibal Mamani Calcina (CE02: Software)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Brayner Anibal Mamani Calcina (CE02: Software)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BraynerAnibalMamaniCalcina/entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE021 - Entregable 1: Requerimientos y Diseño del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BraynerAnibalMamaniCalcina/entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE022 - Entregable 2: Plataforma de Datos del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BraynerAnibalMamaniCalcina/entregable3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE023 - Entregable 3: Sistema de Software Funcional Integrado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BraynerAnibalMamaniCalcina/entregable4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BraynerAnibalMamaniCalcina/entregable5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ce0332-ce0333-entregable-3-implementacion-y-control-de-centro-de-datos">CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos</h1>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Universidad</td>
+<td>Universidad Peruana Unión</td>
+</tr>
+<tr>
+<td>Escuela Profesional</td>
+<td>Ingeniería de Sistemas</td>
+</tr>
+<tr>
+<td>Asignatura</td>
+<td>Perfil de Egreso 2026</td>
+</tr>
+<tr>
+<td>Línea</td>
+<td>CE03 Infraestructura Tecnológica</td>
+</tr>
+<tr>
+<td>Proyecto</td>
+<td>YatiqApp</td>
+</tr>
+<tr>
+<td>Caso de estudio</td>
+<td>I.E. Agropecuario Sorapa</td>
+</tr>
+<tr>
+<td>Entregable</td>
+<td>CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos</td>
+</tr>
+<tr>
+<td>Código de competencia</td>
+<td>CE0332-CE0333</td>
+</tr>
+<tr>
+<td>Responsable</td>
+<td>Anyelo Jhans Sarmiento Larico</td>
+</tr>
+<tr>
+<td>Semestre</td>
+<td>2026-I</td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Julio de 2026</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Fotografía de la I.E. Agropecuario Sorapa" src="../../assets/colegio_sorapa.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Información</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Institución</td>
+<td>I.E. Agropecuario Sorapa</td>
+</tr>
+<tr>
+<td>Distrito</td>
+<td>Juli</td>
+</tr>
+<tr>
+<td>Provincia</td>
+<td>Chucuito</td>
+</tr>
+<tr>
+<td>Región</td>
+<td>Puno</td>
+</tr>
+<tr>
+<td>Gestión</td>
+<td>Pública</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Secundaria</td>
+</tr>
+<tr>
+<td>Área</td>
+<td>Rural</td>
+</tr>
+<tr>
+<td>Estudiantes</td>
+<td>32 aprox.</td>
+</tr>
+<tr>
+<td>Docentes</td>
+<td>9 aprox.</td>
+</tr>
+<tr>
+<td>Secciones</td>
+<td>5 aprox.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="descripcion">Descripción</h2>
+<p>Este entregable documenta la implementación y control operativo del micro centro de datos que soporta YatiqApp en la I.E. Agropecuario Sorapa. El centro no ejecuta IA ni aloja nube; administra repositorio, backups, versiones, continuidad y monitoreo básico para operación offline.</p>
+<h2 id="resumen-ejecutivo">Resumen Ejecutivo</h2>
+<p>La implementación organiza rack mural, router, switch, patch panel, UPS, servidor local, disco externo y AP. El servidor mantiene la estructura <code>/YatiqApp</code> para APK, contenidos, modelos optimizados, RAG, backups, manuales, evidencias y actualizaciones. El SLA es realista: disponibilidad en horario escolar, recuperación de contenidos en menos de 4 horas, revisión semanal de backups y mantenimiento preventivo mensual.</p>
+<h2 id="alcance-del-entregable">Alcance del Entregable</h2>
+<h3 id="incluye">Incluye</h3>
+<ul>
+<li>Infraestructura de soporte para YatiqApp.</li>
+<li>Micro centro de datos, servidor local y repositorio.</li>
+<li>Seguridad, backup, distribución offline y operación rural.</li>
+<li>SLA, monitoreo, eficiencia energética y continuidad.</li>
+</ul>
+<h3 id="no-incluye">No incluye</h3>
+<ul>
+<li>Desarrollo completo de la app móvil.</li>
+<li>Entrenamiento completo del modelo IA.</li>
+<li>Inferencia cloud.</li>
+<li>Ejecución de IA en el servidor.</li>
+<li>Integración directa con SIAGIE.</li>
+<li>Despliegue nacional.</li>
+</ul>
+<h3 id="supuestos">Supuestos</h3>
+<ul>
+<li>El colegio cuenta con conectividad limitada o intermitente.</li>
+<li>Los estudiantes y docentes pueden usar celulares Android.</li>
+<li>YatiqApp funciona offline.</li>
+<li>El servidor local funciona como repositorio.</li>
+<li>Internet se usa solo de forma eventual.</li>
+</ul>
+<h3 id="restricciones">Restricciones</h3>
+<ul>
+<li>Presupuesto limitado.</li>
+<li>Hardware básico.</li>
+<li>Energía eléctrica variable.</li>
+<li>Pocos equipos tecnológicos.</li>
+<li>Contexto rural.</li>
+</ul>
+<h2 id="instalacion-fisica-del-micro-centro-de-datos">Instalación Física del Micro Centro de Datos</h2>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Implementación</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rack mural</td>
+<td>Router, switch y patch panel organizados.</td>
+<td>Etiquetado y llave.</td>
+</tr>
+<tr>
+<td>UPS</td>
+<td>Alimenta equipos críticos.</td>
+<td>Prueba mensual.</td>
+</tr>
+<tr>
+<td>Servidor local</td>
+<td>Conectado por Ethernet al switch.</td>
+<td>IP fija y acceso restringido.</td>
+</tr>
+<tr>
+<td>Disco externo</td>
+<td>Conectado solo para backup.</td>
+<td>Custodia bajo llave.</td>
+</tr>
+<tr>
+<td>AP</td>
+<td>Ubicados para cobertura escolar.</td>
+<td>Prueba de señal.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuracion-del-servidor-local">Configuración del Servidor Local</h2>
+<div class="highlight"><pre><span></span><code>/YatiqApp
+  /APK
+  /Contenidos
+    /Quechua
+    /Aymara
+    /Castellano
+  /Modelos
+  /RAG
+  /Backups
+  /Manuales
+  /Evidencias
+  /Actualizaciones
+</code></pre></div>
+<p><img alt="Repositorio YatiqApp" src="../../assets/ce03/repositorio_yatiqapp.svg" /></p>
+<h2 id="servicios-implementados">Servicios Implementados</h2>
+<table>
+<thead>
+<tr>
+<th>Servicio</th>
+<th>Función</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carpeta compartida APK</td>
+<td>Distribuir instalador Android.</td>
+<td>Versionado y checksum.</td>
+</tr>
+<tr>
+<td>Carpeta contenidos</td>
+<td>Recursos Quechua, Aymara y castellano.</td>
+<td>Validación docente.</td>
+</tr>
+<tr>
+<td>Carpeta modelos</td>
+<td>Modelos optimizados para distribución.</td>
+<td>No se ejecutan en servidor.</td>
+</tr>
+<tr>
+<td>Carpeta RAG</td>
+<td>Recursos de base de conocimiento.</td>
+<td>Uso por paquete local.</td>
+</tr>
+<tr>
+<td>Backup</td>
+<td>Copias del repositorio.</td>
+<td>Disco externo.</td>
+</tr>
+<tr>
+<td>Manuales</td>
+<td>Guías docentes y técnicas.</td>
+<td>Acceso de lectura.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repositorio-local-de-yatiqapp">Repositorio Local de YatiqApp</h2>
+<p>El repositorio permite actualización offline, recuperación de contenidos, control de versiones y distribución local. Los celulares descargan o reciben paquetes desde la LAN; después, YatiqApp opera en el dispositivo Android sin Internet.</p>
+<p><img alt="Control versiones YatiqApp" src="../../assets/ce03/control_versiones_yatiqapp.svg" /></p>
+<h2 id="almacenamiento-y-backup">Almacenamiento y Backup</h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Frecuencia</th>
+<th>Medio</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backup de APK y contenidos</td>
+<td>Semanal</td>
+<td>Disco externo</td>
+<td>Responsable TIC</td>
+</tr>
+<tr>
+<td>Backup de evidencias</td>
+<td>Semanal</td>
+<td>Disco externo</td>
+<td>Docente encargado</td>
+</tr>
+<tr>
+<td>Copia mensual</td>
+<td>Mensual</td>
+<td>Disco externo bajo llave</td>
+<td>Dirección</td>
+</tr>
+<tr>
+<td>Prueba de restauración</td>
+<td>Mensual</td>
+<td>Carpeta temporal</td>
+<td>Responsable TIC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sla-realista">SLA Realista</h2>
+<table>
+<thead>
+<tr>
+<th>Compromiso</th>
+<th>Meta</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disponibilidad</td>
+<td>Horario escolar</td>
+<td>Responsable TIC o docente encargado</td>
+</tr>
+<tr>
+<td>Recuperación de contenidos</td>
+<td>Menos de 4 horas</td>
+<td>Responsable TIC</td>
+</tr>
+<tr>
+<td>Revisión de backups</td>
+<td>Semanal</td>
+<td>Responsable TIC</td>
+</tr>
+<tr>
+<td>Mantenimiento preventivo</td>
+<td>Mensual</td>
+<td>Dirección y TIC</td>
+</tr>
+<tr>
+<td>Soporte de actualización</td>
+<td>Por campaña</td>
+<td>Docentes</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="SLA YatiqApp" src="../../assets/ce03/sla_yatiqapp.svg" /></p>
+<h2 id="monitoreo-y-procedimientos-operativos">Monitoreo y Procedimientos Operativos</h2>
+<table>
+<thead>
+<tr>
+<th>Procedimiento</th>
+<th>Frecuencia</th>
+<th>Evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revisar espacio en disco</td>
+<td>Semanal</td>
+<td>Captura o registro.</td>
+</tr>
+<tr>
+<td>Verificar backup</td>
+<td>Semanal</td>
+<td>Bitácora.</td>
+</tr>
+<tr>
+<td>Probar acceso al repositorio</td>
+<td>Semanal</td>
+<td>Ping/acceso carpeta.</td>
+</tr>
+<tr>
+<td>Revisar UPS</td>
+<td>Mensual</td>
+<td>Registro de prueba.</td>
+</tr>
+<tr>
+<td>Limpiar rack</td>
+<td>Mensual</td>
+<td>Registro de mantenimiento.</td>
+</tr>
+<tr>
+<td>Actualizar paquetes</td>
+<td>Según versión</td>
+<td>Acta de actualización.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Operación microcentro YatiqApp" src="../../assets/ce03/operacion_microcentro_yatiqapp.svg" /></p>
+<h2 id="eficiencia-energetica">Eficiencia Energética</h2>
+<p>El micro centro usa equipos de bajo consumo, apagado seguro fuera de horario si corresponde, UPS dimensionada a la carga real y mantenimiento de ventilación. No requiere climatización industrial.</p>
+<p><img alt="Eficiencia microcentro YatiqApp" src="../../assets/ce03/eficiencia_microcentro_yatiqapp.svg" /></p>
+<h2 id="control-de-operacion-y-continuidad">Control de Operación y Continuidad</h2>
+<p>La continuidad se basa en copias verificadas, estructura ordenada, responsable definido, procedimientos simples y repositorio recuperable en una PC temporal si falla el servidor.</p>
+<p><img alt="Continuidad microcentro YatiqApp" src="../../assets/ce03/continuidad_microcentro_yatiqapp.svg" /></p>
+<h2 id="conclusiones">Conclusiones</h2>
+<ol>
+<li>El micro centro implementado sostiene operación offline de YatiqApp.</li>
+<li>El servidor local funciona como repositorio y no ejecuta IA.</li>
+<li>La estructura <code>/YatiqApp</code> ordena APK, contenidos, RAG y backups.</li>
+<li>El SLA es realista para horario escolar rural.</li>
+<li>Los backups semanales protegen recursos educativos.</li>
+<li>El control de versiones evita distribuir paquetes incorrectos.</li>
+<li>La eficiencia energética se logra con equipos básicos y UPS.</li>
+<li>Los procedimientos reducen dependencia de soporte externo.</li>
+</ol>
+<h2 id="recomendaciones">Recomendaciones</h2>
+<ol>
+<li>Mantener la estructura de carpetas sin cambios improvisados.</li>
+<li>Registrar toda versión nueva de APK y contenidos.</li>
+<li>Probar restauración antes de borrar versiones antiguas.</li>
+<li>Conectar disco externo solo durante backup.</li>
+<li>Mantener manual impreso de recuperación.</li>
+<li>Revisar UPS y ventilación cada mes.</li>
+<li>Evitar servicios innecesarios en el servidor.</li>
+<li>Actualizar paquetes durante horarios planificados.</li>
+</ol>
+<h2 id="anexos">Anexos</h2>
+<table>
+<thead>
+<tr>
+<th>Anexo</th>
+<th>Recurso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><img alt="Repositorio YatiqApp" src="../../assets/ce03/repositorio_yatiqapp.svg" /></td>
+</tr>
+<tr>
+<td>B</td>
+<td><img alt="Control versiones YatiqApp" src="../../assets/ce03/control_versiones_yatiqapp.svg" /></td>
+</tr>
+<tr>
+<td>C</td>
+<td><img alt="Operación microcentro YatiqApp" src="../../assets/ce03/operacion_microcentro_yatiqapp.svg" /></td>
+</tr>
+<tr>
+<td>D</td>
+<td><img alt="SLA YatiqApp" src="../../assets/ce03/sla_yatiqapp.svg" /></td>
+</tr>
+<tr>
+<td>E</td>
+<td><img alt="Eficiencia microcentro YatiqApp" src="../../assets/ce03/eficiencia_microcentro_yatiqapp.svg" /></td>
+</tr>
+<tr>
+<td>F</td>
+<td><img alt="Continuidad microcentro YatiqApp" src="../../assets/ce03/continuidad_microcentro_yatiqapp.svg" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencias">Referencias</h2>
+<p>International Organization for Standardization. (2022). <em>ISO/IEC 27002:2022 Information security controls</em>. ISO.</p>
+<p>Telecommunications Industry Association. (2019). <em>ANSI/TIA-569 telecommunications pathways and spaces</em>. TIA.</p>
+<p>Android Developers. (2026). <em>Android Developers documentation</em>. Google.</p>
+<p>SQLite Consortium. (2026). <em>SQLite documentation</em>. SQLite.</p>
+<h2 id="rubrica-de-evaluacion">Rúbrica de Evaluación</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio Oficial</th>
+<th>Evidencia en el Entregable</th>
+<th>Nivel</th>
+<th>Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implementación de micro centro</td>
+<td>Rack, UPS, servidor, disco y AP documentados.</td>
+<td>Excelente</td>
+<td>Es proporcional y operativo para Sorapa.</td>
+</tr>
+<tr>
+<td>Operación de repositorio</td>
+<td>Estructura <code>/YatiqApp</code>, versiones y backups.</td>
+<td>Excelente</td>
+<td>Soporta distribución offline de la app.</td>
+</tr>
+<tr>
+<td>SLA y continuidad</td>
+<td>Metas de horario escolar y recuperación.</td>
+<td>Excelente</td>
+<td>Define controles realistas y medibles.</td>
+</tr>
+<tr>
+<td>Control y monitoreo</td>
+<td>Procedimientos, eficiencia y anexos SVG.</td>
+<td>Excelente</td>
+<td>Facilita operación por responsable local.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

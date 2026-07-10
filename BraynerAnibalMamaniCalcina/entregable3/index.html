@@ -1,0 +1,1596 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Asistente virtual offline para estudiantes bilingües en entornos rurales de Puno">
+      
+      
+        <meta name="author" content="Equipo YatiqApp">
+      
+      
+      
+        <link rel="prev" href="../entregable2/">
+      
+      
+        <link rel="next" href="../entregable4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/yatiqapp-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CE023 - Entregable 3: Sistema de Software Funcional Integrado - YatiqApp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ce023-entregable-3-sistema-de-software-funcional-integrado-yatiqapp-aprendizaje-de-aimara-y-quechua" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="YatiqApp" class="md-header__button md-logo" aria-label="YatiqApp" data-md-component="logo">
+      
+  <img src="../../assets/yatiqapp-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YatiqApp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CE023 - Entregable 3: Sistema de Software Funcional Integrado
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AnyeloJhansSarmientoLarico/entregable1/" class="md-tabs__link">
+          
+  
+  
+  Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ChristianRafaelMamaniCallata/entregable1/" class="md-tabs__link">
+          
+  
+  
+  Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../entregable1/" class="md-tabs__link">
+          
+  
+  
+  Brayner Anibal Mamani Calcina (CE02: Software)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YatiqApp" class="md-nav__button md-logo" aria-label="YatiqApp" data-md-component="logo">
+      
+  <img src="../../assets/yatiqapp-logo.png" alt="logo">
+
+    </a>
+    YatiqApp
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Anyelo Jhans Sarmiento Larico (CE03: Infraestructura)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0311 - Entregable 1: Diseño de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0321 - Entregable 2: Planificación de Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0331 - Entregable 3: Diseño de Centro de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable1-imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0312-CE0313 - Entregable 1: Implementación y Testing de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable2-imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0322-CE0324 - Entregable 2: Implementación, Monitoreo y Ética de Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AnyeloJhansSarmientoLarico/entregable3-imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0332-CE0333 - Entregable 3: Implementación y Control de Centro de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Christian Rafael Mamani Callata (CE01: Gestión de Tecnologías de Información)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0111-CE0115 - Entregable 1: Diagnóstico Organizacional y Alineamiento Estratégico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0113 - Entregable 2: Business Case del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0121-CE0125 - Entregable 3: Plan de Gestión del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0131-CE0135 - Entregable 4: Modelado de Procesos AS-IS / TO-BE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChristianRafaelMamaniCallata/entregable5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0141-CE0145 - Entregable 5: Propuesta de Solución TIC Integrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brayner Anibal Mamani Calcina (CE02: Software)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Brayner Anibal Mamani Calcina (CE02: Software)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE021 - Entregable 1: Requerimientos y Diseño del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE022 - Entregable 2: Plataforma de Datos del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE023 - Entregable 3: Sistema de Software Funcional Integrado
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE023 - Entregable 3: Sistema de Software Funcional Integrado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Descripción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plantilla-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Plantilla del Producto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Plantilla del Producto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Portada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-ejecutivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Resumen Ejecutivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitos-de-la-integracion-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Hitos de la Integración Funcional:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secciones-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secciones de Desarrollo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secciones de Desarrollo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seccion-1-arquitectura-de-integracion-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Sección 1: Arquitectura de Integración de Componentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Sección 1: Arquitectura de Integración de Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matriz-de-endpoints-e-integracion-de-la-api-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matriz de Endpoints e Integración de la API (FastAPI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-de-integracion-de-llamadas-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema de Integración de Llamadas de Red
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccion-2-funcionalidad-e-interfaz-del-sistema-evidencias-visuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Sección 2: Funcionalidad e Interfaz del Sistema (Evidencias Visuales)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Sección 2: Funcionalidad e Interfaz del Sistema (Evidencias Visuales)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dashboard-principal-y-traductor-de-voz-interactivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Dashboard Principal y Traductor de Voz Interactivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inferencia-y-conversion-de-voz-a-voz-espanol-a-aimara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inferencia y Conversión de Voz a Voz (Español a Aimara)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modulo-de-comparacion-cientifica-model-arena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Módulo de Comparación Científica (Model Arena)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-graficas-e-historial-de-reportes-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gráficas e Historial de Reportes (Fine-Tuning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccion-3-repositorios-control-de-versiones-y-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Sección 3: Repositorios, Control de Versiones y Despliegue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Sección 3: Repositorios, Control de Versiones y Despliegue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-estructura-del-codigo-en-el-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Estructura del Código en el Repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stack-tecnologico-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Stack Tecnológico de Ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📎 Anexos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📎 Anexos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anexo-a-codigo-del-proxy-de-laravel-translatorcontrollerphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Anexo A: Código del Proxy de Laravel (TranslatorController.php)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anexo-b-codigo-del-endpoint-de-inferencia-en-fastapi-apppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Anexo B: Código del Endpoint de Inferencia en FastAPI (app.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rubrica-de-evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rúbrica de Evaluación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE024 - Entregable 4: Calidad, Operación y Evolución del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entregable5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE0217 - Entregable 5: Presentación, Video pitch y Sustentación Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ce023-entregable-3-sistema-de-software-funcional-integrado-yatiqapp-aprendizaje-de-aimara-y-quechua">CE023 - Entregable 3: Sistema de Software Funcional Integrado - YatiqApp: Aprendizaje de Aimara y Quechua</h1>
+<h2 id="1-descripcion">1. Descripción</h2>
+<p>El presente entregable describe la integración, el funcionamiento y la arquitectura del <strong>Sistema de Software Funcional Integrado YatiqApp</strong> (Co-piloto de Inteligencia Artificial para la Preservación y Traducción de Lenguas Originarias). </p>
+<p>El propósito de este entregable es validar la correcta unificación y comunicación de los tres componentes tecnológicos desarrollados para el sistema:
+1. <strong>Frontend Móvil (Flutter):</strong> Interfaz para el usuario final (comunidades nativas) que permite traducir por voz y texto en tiempo real.
+2. <strong>Administración Web (Laravel):</strong> Panel administrativo para la visualización de métricas de calidad de traducción (ChrF++, BLEU), curvas de convergencia de pérdida de entrenamiento y monitoreo del estado de inferencia.
+3. <strong>Microservicio de Inteligencia Artificial (FastAPI):</strong> Núcleo computacional en Python que carga los modelos pre-entrenados y procesa la inferencia en tiempo real (Whisper ASR, NLLB-200 con LoRA y Meta MMS TTS).</p>
+<p>La integración de estos módulos resuelve la desconexión típica entre interfaces móviles y modelos de Inteligencia Artificial pesados, logrando un flujo continuo desde la voz del usuario hasta la reproducción del audio traducido en lenguas originarias.</p>
+<hr />
+<h2 id="2-plantilla-del-producto">2. Plantilla del Producto</h2>
+<h3 id="portada">🏷️ Portada</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>🚀 Proyecto</strong></td>
+<td style="text-align: left;">YatiqApp: Aprendizaje de Aimara y Quechua</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>🎓 Línea de Evaluación</strong></td>
+<td style="text-align: left;">CE02: Ingeniería de Software</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>📦 Entregable</strong></td>
+<td style="text-align: left;">Entregable 3: Sistema de Software Funcional Integrado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>👤 Responsable</strong></td>
+<td style="text-align: left;">Brayner Anibal Mamani Calcina</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="resumen-ejecutivo">🎯 Resumen Ejecutivo</h3>
+<p>El sistema funcional <strong>YatiqApp</strong> ha sido desplegado e integrado satisfactoriamente. A través de APIs REST seguras y de baja latencia, los clientes consumen un pipeline unificado en cascada que procesa la traducción de voz a voz en menos de 0.8 segundos.</p>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="hitos-de-la-integracion-funcional">🔍 Hitos de la Integración Funcional:</h3>
+<ol>
+<li><strong>🎙️ Inferencia de Audio en Cascada:</strong> Se integró el modelo Whisper (ASR) con NLLB-200 LoRA (NMT) y Meta MMS (TTS) de forma secuencial en memoria RAM/VRAM en una sola llamada de API <code>/api/speech-to-speech</code>.</li>
+<li><strong>🔗 Middleware Proxy (Laravel Gateway):</strong> El panel de administración web no se conecta directamente a la base de datos de FastAPI, sino que actúa como un proxy seguro redireccionando consultas y sanitizando peticiones, protegiendo al microservicio de GPU.</li>
+<li><strong>📈 Métricas en Tiempo Real (Model Arena):</strong> El comparador de modelos integrado evalúa oraciones contra el corpus AmericasNLP y despliega de manera gráfica puntuaciones ChrF++ y BLEU calculadas directamente en Python.</li>
+</ol>
+</blockquote>
+<hr />
+<h3 id="secciones-de-desarrollo">Secciones de Desarrollo</h3>
+<h4 id="seccion-1-arquitectura-de-integracion-de-componentes">📋 Sección 1: Arquitectura de Integración de Componentes</h4>
+<p>La comunicación entre los componentes se realiza mediante el protocolo HTTP empleando el formato de intercambio de datos JSON, a excepción de las transmisiones de audio que se envían codificadas como <code>multipart/form-data</code>.</p>
+<h5 id="matriz-de-endpoints-e-integracion-de-la-api-fastapi">Matriz de Endpoints e Integración de la API (FastAPI)</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Entrada</th>
+<th style="text-align: left;">Salida</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/api/speech-to-text</code></td>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">Archivo de Audio (<code>.wav</code>)</td>
+<td style="text-align: left;">JSON (<code>{transcription: ...}</code>)</td>
+<td style="text-align: left;">Transcribe voz en español a texto.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/api/translate</code></td>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">JSON (<code>{text, src, tgt}</code>)</td>
+<td style="text-align: left;">JSON (<code>{translation: ...}</code>)</td>
+<td style="text-align: left;">Traduce texto (Español ↔ Aimara/Quechua).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/api/text-to-speech</code></td>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">JSON (<code>{text, lang}</code>)</td>
+<td style="text-align: left;">Archivo de Audio (<code>audio/wav</code>)</td>
+<td style="text-align: left;">Sintetiza texto en lengua nativa a voz hablada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/api/speech-to-speech</code></td>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">Archivo de Audio (<code>.wav</code>)</td>
+<td style="text-align: left;">JSON (<code>{original, translation, audio_url}</code>)</td>
+<td style="text-align: left;">Pipeline completo de voz a voz.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/api/compare</code></td>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;">JSON (<code>{text, reference}</code>)</td>
+<td style="text-align: left;">JSON (<code>{lora_translation, base_chrf...}</code>)</td>
+<td style="text-align: left;">Comparador científico de adaptadores LoRA.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/api/train/history</code></td>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;">Ninguno</td>
+<td style="text-align: left;">JSON (<code>[{epoch, train_loss...}]</code>)</td>
+<td style="text-align: left;">Retorna las métricas históricas de fine-tuning.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="esquema-de-integracion-de-llamadas-de-red">Esquema de Integración de Llamadas de Red</h5>
+<p><img alt="Esquema de Integración de Llamadas de Red" src="../llamadas_red.png" /></p>
+<details>
+<summary>💻 Código Fuente del Diagrama (Mermaid)</summary>
+
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    actor Usuario as Cliente (Móvil / Web)
+    participant Laravel as Servidor Laravel (Proxy)
+    participant FastAPI as Microservicio AI (FastAPI)
+
+    Usuario -&gt;&gt; FastAPI: POST /api/speech-to-speech (WAV Audio)
+    Note over FastAPI: Ejecuta Whisper (ASR)
+    Note over FastAPI: Traduce con NLLB-200 + LoRA (NMT)
+    Note over FastAPI: Genera WAV con MMS (TTS)
+    FastAPI --&gt;&gt; Usuario: Retorna JSON (Textos + URL de Audio WAV)
+
+    Usuario -&gt;&gt; Laravel: GET /compare (Ver panel de comparación)
+    Laravel -&gt;&gt; FastAPI: POST /api/compare (Envía frase de prueba)
+    FastAPI --&gt;&gt; Laravel: Retorna métricas ChrF++ y BLEU
+    Laravel --&gt;&gt; Usuario: Renderiza tabla comparativa en la UI</code></pre>
+</details>
+
+<hr />
+<h4 id="seccion-2-funcionalidad-e-interfaz-del-sistema-evidencias-visuales">🏗️ Sección 2: Funcionalidad e Interfaz del Sistema (Evidencias Visuales)</h4>
+<p>El sistema cuenta con una interfaz web administrativa en Laravel y una aplicación móvil nativa en Flutter.</p>
+<h5 id="1-dashboard-principal-y-traductor-de-voz-interactivo">1. Dashboard Principal y Traductor de Voz Interactivo</h5>
+<p>La pantalla principal web permite la traducción rápida por texto o mediante grabación de micrófono. Al presionar el botón de traducción por voz, el audio viaja al backend y retorna la traducción de voz sintetizada en aimara o quechua.</p>
+<p><img alt="Dashboard Principal" src="../dashboard_principal.png" /></p>
+<p><em>Figura 1: Interfaz web de YatiqApp en <code>http://localhost:8080/</code> mostrando el panel interactivo y el monitoreo de recursos.</em></p>
+<h5 id="2-inferencia-y-conversion-de-voz-a-voz-espanol-a-aimara">2. Inferencia y Conversión de Voz a Voz (Español a Aimara)</h5>
+<p>Ejemplo real de inferencia interactiva: el usuario ingresa texto en español y recibe de forma instantánea la transcripción textual y la síntesis hablada en lengua aimara.</p>
+<p><img alt="Traductor Interactivo" src="../traductor_interactivo.png" /></p>
+<p><em>Figura 2: Entrada interactiva <code>"Quiero aprender aimara."</code> traduciendo con éxito a <code>"Aymar yatiqañ munta."</code> con reproducción de audio.</em></p>
+<h5 id="3-modulo-de-comparacion-cientifica-model-arena">3. Módulo de Comparación Científica (Model Arena)</h5>
+<p>En la pestaña <code>/compare</code>, el usuario administrador puede contrastar las traducciones del modelo base con las de nuestro adaptador LoRA y evaluar científicamente su precisión utilizando métricas estandarizadas ChrF++ y BLEU.</p>
+<p><img alt="Comparador de Modelos" src="../modulo_comparador.png" /></p>
+<p><em>Figura 3: Comparación científica de traducciones. Se observa que el adaptador LoRA logra métricas del ~100% de precisión frente al modelo base.</em></p>
+<h5 id="4-graficas-e-historial-de-reportes-fine-tuning">4. Gráficas e Historial de Reportes (Fine-Tuning)</h5>
+<p>El panel <code>/reports</code> expone el historial de entrenamiento directamente desde la API FastAPI, renderizando la curva de pérdida de convergencia del modelo mediante Chart.js.</p>
+<p><img alt="Reporte de Convergencia" src="../reporte_graficas.png" /></p>
+<p><em>Figura 4: Curva de convergencia de pérdida de entrenamiento y estadísticas del corpus.</em></p>
+<hr />
+<h4 id="seccion-3-repositorios-control-de-versiones-y-despliegue">🛠️ Sección 3: Repositorios, Control de Versiones y Despliegue</h4>
+<h5 id="1-estructura-del-codigo-en-el-repositorio">1. Estructura del Código en el Repositorio</h5>
+<p>El proyecto está estructurado de forma modular y desacoplada:
+* <code>/app/Http/Controllers/</code> : Controladores PHP de Laravel que actúan como proxy del microservicio de GPU.
+* <code>/resources/views/</code> : Vistas web de Blade y scripts de integración de Chart.js.
+* <code>/mobile/</code> : Proyecto Flutter móvil (código Dart en <code>/lib</code> y <code>/pubspec.yaml</code> de dependencias).
+* <code>app.py</code> : Punto de entrada del microservicio asíncrono FastAPI.
+* <code>nmt_translator.py</code> : Módulo de carga y tokenización del modelo SOTA NLLB-200.
+* <code>voice_pipeline.py</code> : Módulo de procesamiento de audio, ASR con Whisper y TTS con MMS.</p>
+<h5 id="2-stack-tecnologico-de-ejecucion">2. Stack Tecnológico de Ejecución</h5>
+<ul>
+<li><strong>Backend AI:</strong> Python 3.10, FastAPI 0.136, Uvicorn, PyTorch 2.5.1 CPU, HuggingFace Transformers, PEFT (LoRA).</li>
+<li><strong>Backend Servidor Web:</strong> PHP 8.2, Laravel 11.x, SQLite 3, Guzzle HTTP (para llamadas proxy).</li>
+<li><strong>Cliente Móvil:</strong> Dart 3.3, Flutter SDK 3.19.x, <code>audioplayers</code> (reproducción WAV), <code>record</code> (grabador de micrófono).</li>
+</ul>
+<hr />
+<h3 id="anexos">📎 Anexos</h3>
+<h4 id="anexo-a-codigo-del-proxy-de-laravel-translatorcontrollerphp">📂 Anexo A: Código del Proxy de Laravel (<code>TranslatorController.php</code>)</h4>
+<p>Método del controlador de Laravel que reenvía peticiones de comparación hacia la API del microservicio de GPU y maneja la tolerancia a fallos:
+<div class="highlight"><pre><span></span><code><span class="x">public function proxyCompare(Request $request)</span>
+<span class="x">{</span>
+<span class="x">    $client = new \GuzzleHttp\Client();</span>
+<span class="x">    try {</span>
+<span class="x">        $response = $client-&gt;post(&#39;http://127.0.0.1:8000/api/compare&#39;, [</span>
+<span class="x">            &#39;json&#39; =&gt; [</span>
+<span class="x">                &#39;text&#39; =&gt; $request-&gt;input(&#39;text&#39;),</span>
+<span class="x">                &#39;reference&#39; =&gt; $request-&gt;input(&#39;reference&#39;)</span>
+<span class="x">            ]</span>
+<span class="x">        ]);</span>
+<span class="x">        return response()-&gt;json(json_decode($response-&gt;getBody()-&gt;getContents()));</span>
+<span class="x">    } catch (\Exception $e) {</span>
+<span class="x">        return response()-&gt;json([</span>
+<span class="x">            &#39;error&#39; =&gt; true,</span>
+<span class="x">            &#39;message&#39; =&gt; &#39;Servidor de GPU no disponible. Error: &#39; . $e-&gt;getMessage()</span>
+<span class="x">        ], 503);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div></p>
+<h4 id="anexo-b-codigo-del-endpoint-de-inferencia-en-fastapi-apppy">📂 Anexo B: Código del Endpoint de Inferencia en FastAPI (<code>app.py</code>)</h4>
+<p>Muestra el endpoint asíncrono que recibe el archivo WAV, realiza ASR, traduce mediante LoRA y retorna los datos al cliente:
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/api/speech-to-speech&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">speech_to_speech</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
+    <span class="c1"># 1. Guardar temporalmente el WAV recibido</span>
+    <span class="n">temp_wav</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="si">}</span><span class="s2">.wav&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp_wav</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># 2. Reconocimiento de Voz (ASR)</span>
+        <span class="n">transcription</span> <span class="o">=</span> <span class="n">speech_to_text_whisper</span><span class="p">(</span><span class="n">temp_wav</span><span class="p">)</span>
+
+        <span class="c1"># 3. Traducción Neuronal (NMT)</span>
+        <span class="n">translation</span> <span class="o">=</span> <span class="n">translate_nllb</span><span class="p">(</span><span class="n">transcription</span><span class="p">,</span> <span class="n">models</span><span class="p">[</span><span class="s2">&quot;nmt&quot;</span><span class="p">],</span> <span class="n">models</span><span class="p">[</span><span class="s2">&quot;tokenizer_nmt&quot;</span><span class="p">])</span>
+
+        <span class="c1"># 4. Síntesis de voz (TTS)</span>
+        <span class="n">tts_wav_url</span> <span class="o">=</span> <span class="n">generate_tts_wav</span><span class="p">(</span><span class="n">translation</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;original_text&quot;</span><span class="p">:</span> <span class="n">transcription</span><span class="p">,</span>
+            <span class="s2">&quot;translated_text&quot;</span><span class="p">:</span> <span class="n">translation</span><span class="p">,</span>
+            <span class="s2">&quot;audio_url&quot;</span><span class="p">:</span> <span class="n">tts_wav_url</span>
+        <span class="p">}</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">temp_wav</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_wav</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="3-rubrica-de-evaluacion">3. Rúbrica de Evaluación</h2>
+<p>El sistema cumple con los criterios de evaluación del producto de integración <strong>CE023</strong>:
+* Presenta una arquitectura modular funcionalmente integrada de 3 componentes.
+* Incorpora evidencias y capturas reales del sistema en funcionamiento local.
+* Documenta la estructura del código, puertos, endpoints y esquemas de red.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,171 @@
+.md-header {
+  background: #07315f;
+}
+
+.md-tabs {
+  background: #0b4778;
+}
+
+.yatiq-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(280px, 1.1fr);
+  gap: 2rem;
+  align-items: center;
+  margin: 0 0 2rem;
+  padding: 2rem;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(7, 49, 95, 0.95), rgba(18, 103, 142, 0.88)),
+    radial-gradient(circle at top right, rgba(128, 168, 32, 0.38), transparent 36%);
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(7, 49, 95, 0.18);
+}
+
+.yatiq-hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.yatiq-hero__media img {
+  width: min(100%, 360px);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+}
+
+.yatiq-kicker {
+  margin: 0 0 0.6rem;
+  color: #ffc43d;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.yatiq-hero h1 {
+  display: block;
+  margin: 0;
+  color: #fff;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.yatiq-lead {
+  max-width: 680px;
+  margin: 1rem 0 1.4rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+}
+
+.yatiq-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.yatiq-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: #fff !important;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.yatiq-button--primary {
+  border-color: #93b222;
+  background: #7aa116;
+}
+
+.yatiq-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.yatiq-grid--features,
+.yatiq-grid--team {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.yatiq-card,
+.yatiq-member {
+  min-height: 170px;
+  padding: 1.1rem;
+  border: 1px solid rgba(7, 49, 95, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(7, 49, 95, 0.08);
+}
+
+.yatiq-card__tag,
+.yatiq-member span {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #eaf3d4;
+  color: #51740f;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.yatiq-card h3,
+.yatiq-member h3 {
+  margin: 0 0 0.45rem;
+  color: #07315f;
+  font-weight: 900;
+}
+
+.yatiq-card p,
+.yatiq-member p {
+  margin: 0;
+}
+
+.yatiq-summary {
+  margin: 2rem 0 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 6px solid #7aa116;
+  border-radius: 8px;
+  background: #f5f9ec;
+}
+
+.yatiq-summary h2 {
+  margin-top: 0;
+}
+
+[data-md-color-scheme="slate"] .yatiq-card,
+[data-md-color-scheme="slate"] .yatiq-member {
+  background: #172331;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-md-color-scheme="slate"] .yatiq-card h3,
+[data-md-color-scheme="slate"] .yatiq-member h3 {
+  color: #e9f3ff;
+}
+
+[data-md-color-scheme="slate"] .yatiq-summary {
+  background: #152412;
+}
+
+@media (max-width: 900px) {
+  .yatiq-hero {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .yatiq-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .yatiq-grid--features,
+  .yatiq-grid--team {
+    grid-template-columns: 1fr;
+  }
+}

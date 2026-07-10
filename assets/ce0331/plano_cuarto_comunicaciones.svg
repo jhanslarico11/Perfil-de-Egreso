@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+  <title id="title">Plano superior del cuarto de comunicaciones</title>
+  <desc id="desc">Plano simple con puerta, rack mural, mesa de servidor, UPS, extintor, ventilacion y zona libre de mantenimiento.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8faf9}.wall{fill:#fff;stroke:#303b37;stroke-width:8}.item{fill:#e8f0ed;stroke:#4b5b55;stroke-width:3;rx:8}.safe{fill:#f1f5f2;stroke:#7a8a83;stroke-width:3;stroke-dasharray:10 8}.door{stroke:#8a6b45;stroke-width:5;fill:none}.red{fill:#c65f4a}.label{font-family:Arial,sans-serif;font-size:20px;fill:#25302c}.title{font-family:Arial,sans-serif;font-size:30px;font-weight:700;fill:#1f2b27}.small{font-family:Arial,sans-serif;font-size:16px;fill:#38443f}
+    </style>
+  </defs>
+  <rect class="bg" width="1100" height="760"/>
+  <text class="title" x="55" y="55">Plano del cuarto de comunicaciones</text>
+  <rect class="wall" x="120" y="105" width="860" height="560"/>
+  <path class="door" d="M120 560 H240 A120 120 0 0 0 120 440"/>
+  <text class="label" x="145" y="610">Puerta con llave</text>
+  <rect class="item" x="180" y="150" width="260" height="80"/>
+  <text class="label" x="240" y="198">Rack mural</text>
+  <text class="small" x="210" y="222">Router, switch y patch panel</text>
+  <rect class="item" x="620" y="150" width="250" height="115"/>
+  <text class="label" x="675" y="198">Ventilacion</text>
+  <text class="small" x="655" y="226">Ventana protegida o rejilla</text>
+  <rect class="item" x="595" y="430" width="280" height="115"/>
+  <text class="label" x="635" y="480">Mesa de servidor</text>
+  <text class="small" x="628" y="508">PC servidor y disco externo</text>
+  <rect class="item" x="455" y="520" width="100" height="82"/>
+  <text class="label" x="485" y="568">UPS</text>
+  <rect class="red" x="180" y="390" width="58" height="98" rx="8"/>
+  <text class="label" x="150" y="520">Extintor</text>
+  <rect class="safe" x="300" y="275" width="500" height="210"/>
+  <text class="label" x="428" y="385">Zona libre de mantenimiento</text>
+  <text class="small" x="438" y="414">Espacio para revisar cables y equipos</text>
+  <text class="small" x="120" y="705">Criterio: ambiente pequeno, seco, ventilado, con circulacion suficiente y acceso restringido.</text>
+</svg>
