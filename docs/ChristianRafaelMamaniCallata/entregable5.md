@@ -114,17 +114,17 @@ graph TD
     classDef data fill:#fff3dc,stroke:#ea580c,stroke-width:2.5px,color:#9a3412,font-weight:bold;
 
     subgraph Capa de Presentación (UI/UX)
-        UI["📱 Interfaz Móvil en Flutter<br>(Captura de Voz y Renderizado de Texto)"]:::present
+        UI["Interfaz Móvil en Flutter<br>(Captura de Voz y Renderizado de Texto)"]:::present
     end
 
     subgraph Capa de Inferencia Local (AI Engine)
-        Whisper["🗣️ Whisper STT (Quantized)<br>(Procesamiento de Voz a Texto)"]:::engine
-        SLM["🤖 Gemma-2B / Phi-3-mini<br>(Modelo de Lenguaje Cuantizado 4 bits)"]:::engine
-        Piper["🗣️ Piper TTS (Nativo C++)<br>(Síntesis de Texto a Voz)"]:::engine
+        Whisper["Whisper STT (Quantized)<br>(Procesamiento de Voz a Texto)"]:::engine
+        SLM["Gemma-2B / Phi-3-mini<br>(Modelo de Lenguaje Cuantizado 4 bits)"]:::engine
+        Piper["Piper TTS (Nativo C++)<br>(Síntesis de Texto a Voz)"]:::engine
     end
 
     subgraph Capa de Persistencia Embebida (Data)
-        DB["📦 SQLite Vectorial Embebida<br>(Base de Datos Local y Contexto RAG)"]:::data
+        DB["SQLite Vectorial Embebida<br>(Base de Datos Local y Contexto RAG)"]:::data
     end
 
     %% Flujo de datos
@@ -144,14 +144,14 @@ graph TD
     classDef app fill:#dcfce7,stroke:#16a34a,stroke-width:2.5px,color:#14532d;
 
     subgraph Ecosistema Centralizado (MINEDU)
-        PE["📖 PerúEduca / Repositorio EIB<br>(Textos Curriculares Oficiales)"]:::central
-        ES["📊 Sistema ESCALE / SIAGIE<br>(Analítica Académica y Matrículas)"]:::central
+        PE["PerúEduca / Repositorio EIB<br>(Textos Curriculares Oficiales)"]:::central
+        ES["Sistema ESCALE / SIAGIE<br>(Analítica Académica y Matrículas)"]:::central
     end
 
     subgraph Ecosistema Local Offline (I.E. Sorapa)
-        Server["🖥️ Servidor Local (CE03 Gateway)<br>(Repositorio y Hosting de APK)"]:::local
-        AP["📶 Access Points Wi-Fi Local<br>(VLAN Estudiantes y Docentes)"]:::local
-        App["📱 Celulares Estudiantes (YatiqApp)<br>(Inferencia y Almacén Vectorial)"]:::app
+        Server["Servidor Local (CE03 Gateway)<br>(Repositorio y Hosting de APK)"]:::local
+        AP["Access Points Wi-Fi Local<br>(VLAN Estudiantes y Docentes)"]:::local
+        App["Celulares Estudiantes (YatiqApp)<br>(Inferencia y Almacén Vectorial)"]:::app
     end
 
     %% Ingesta (Entrada)
@@ -171,7 +171,7 @@ graph TD
     classDef danger fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b;
     classDef sand fill:#f8fafc,stroke:#38bdf8,stroke-width:2px,color:#0369a1;
 
-    Audio["🗣️ Entrada de Audio del Menor"] --> Sandbox["🔒 Sandbox Seguro de Android (YatiqApp)"]:::sand
+    Audio["Entrada de Audio del Menor"] --> Sandbox["Sandbox Seguro de Android (YatiqApp)"]:::sand
     
     subgraph Sandbox local del Smartphone
         STT[" Whisper STT Local"]
@@ -180,8 +180,8 @@ graph TD
         TTS[" Piper TTS Sintetizador Local"]
     end
 
-    Sandbox --> Cripto["✅ Cifrado de Logs en Reposo (AES-256)"]:::safe
-    Sandbox --x Internet["🚫 Transmisión de Voz / Datos a Internet"]:::danger
+    Sandbox --> Cripto["Cifrado de Logs en Reposo (AES-256)"]:::safe
+    Sandbox --x Internet["Transmisión de Voz / Datos a Internet"]:::danger
 ```
 
 #### 4. Sostenibilidad y Escalabilidad Horizontal de TI
@@ -191,19 +191,19 @@ graph TD
     classDef mobile fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
     classDef note fill:#fff3dc,stroke:#ea580c,stroke-width:1.5px,color:#7c2d12;
 
-    Server["🖥️ Servidor de la Escuela (CE03)<br>Carga de CPU: Mínima<br>(Rol: Distribución de Archivos)"]:::server
+    Server["Servidor de la Escuela (CE03)<br>Carga de CPU: Mínima<br>(Rol: Distribución de Archivos)"]:::server
     
     subgraph Nodos de Inferencia Descentralizados (Edge Computing)
-        C1["📱 Celular Estudiante 1<br>Procesa su propia IA"]:::mobile
-        C2["📱 Celular Estudiante 2<br>Procesa su propia IA"]:::mobile
-        C3["📱 Celular Estudiante N<br>Procesa su propia IA"]:::mobile
+        C1["Celular Estudiante 1<br>Procesa su propia IA"]:::mobile
+        C2["Celular Estudiante 2<br>Procesa su propia IA"]:::mobile
+        C3["Celular Estudiante N<br>Procesa su propia IA"]:::mobile
     end
 
     Server --> |Distribución Única de APK| C1
     Server --> |Distribución Única de APK| C2
     Server --> |Distribución Única de APK| C3
 
-    Note["💡 NOTA DE ESCALABILIDAD:<br>Al ejecutar la inferencia de la IA localmente, el procesamiento se distribuye.<br>Añadir usuarios adicionales tiene costo de infraestructura S/. 0.00 para la escuela."]:::note
+    Note["NOTA DE ESCALABILIDAD:<br>Al ejecutar la inferencia de la IA localmente, el procesamiento se distribuye.<br>Añadir usuarios adicionales tiene costo de infraestructura S/. 0.00 para la escuela."]:::note
 ```
 
 ## 3. Rúbrica de Evaluación

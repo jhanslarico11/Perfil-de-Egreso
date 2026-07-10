@@ -100,13 +100,13 @@ A continuación se presentan los diagramas del modelado y reingeniería de proce
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Alumno as 🎒 Estudiante Bilingüe
-    actor Docente as 👨‍🏫 Docente de Aula
+    actor Alumno as Estudiante Bilingüe
+    actor Docente as Docente de Aula
     
     Note over Alumno: Sesión de autoaprendizaje presencial
     Alumno ->> Alumno: Detecta duda conceptual en el texto (Castellano/Aymara)
     Alumno ->> Docente: Solicita ayuda (Levanta la mano)
-    Note over Alumno: 🛑 BLOQUEO DE APRENDIZAJE<br>(Espera de ~18 min de media en cola)
+    Note over Alumno: BLOQUEO DE APRENDIZAJE<br>(Espera de ~18 min de media en cola)
     Docente ->> Alumno: Acude a la carpeta del estudiante
     Docente ->> Alumno: Realiza traducción y explica concepto en tiempo real
     Alumno ->> Alumno: Resuelve duda y continúa la lectura
@@ -119,12 +119,12 @@ graph TD
     classDef proc fill:#ffedd5,stroke:#f97316,stroke-width:2px,color:#9a3412;
     classDef stu fill:#f1f5f9,stroke:#475569,stroke-width:1.5px,color:#1e293b;
 
-    E1["🎒 Estudiante 1 (Grado 1)"]:::stu --> Queue[" Fila de Consultas (Cola de Espera)"]
-    E2["🎒 Estudiante 2 (Grado 2)"]:::stu --> Queue
-    E3["🎒 Estudiante 3 (Grado 3)"]:::stu --> Queue
+    E1["Estudiante 1 (Grado 1)"]:::stu --> Queue[" Fila de Consultas (Cola de Espera)"]
+    E2["Estudiante 2 (Grado 2)"]:::stu --> Queue
+    E3["Estudiante 3 (Grado 3)"]:::stu --> Queue
     
-    Queue --> Doc["👨‍🏫 Docente (Servidor de Hilo Único)"]:::block
-    Doc --> Current["⏳ Atendiendo Consulta de Estudiante 4 (Procesamiento Activo)"]:::proc
+    Queue --> Doc["Docente (Servidor de Hilo Único)"]:::block
+    Doc --> Current["Atendiendo Consulta de Estudiante 4 (Procesamiento Activo)"]:::proc
     
     style Queue stroke-dasharray: 5 5;
 ```
@@ -133,13 +133,13 @@ graph TD
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Alumno as 🎒 Estudiante Bilingüe
-    participant App as 📱 YatiqApp (Local AI On-Device)
-    actor Docente as 👨‍🏫 Docente de Aula
+    actor Alumno as Estudiante Bilingüe
+    participant App as YatiqApp (Local AI On-Device)
+    actor Docente as Docente de Aula
     
     Alumno ->> Alumno: Detecta duda conceptual en el texto
     Alumno ->> App: Realiza consulta por voz hablada (Aymara/Quechua)
-    Note over App: ⚡ INFERENCIA LOCAL EN 2.2 SEGUNDOS<br>(STT + RAG + SLM + TTS)
+    Note over App: INFERENCIA LOCAL EN 2.2 SEGUNDOS<br>(STT + RAG + SLM + TTS)
     App -->> Alumno: Emite respuesta por voz y texto en lengua materna
     
     alt ¿Consulta no resuelta / Escenario Complejo?
@@ -155,15 +155,15 @@ graph LR
     classDef tobe fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#14532d,font-weight:bold;
 
     subgraph PROCESO AS-IS (LÍNEA BASE)
-        W1["⏳ Espera:<br>18 minutos de media"]:::asis
-        D1["🕒 Disponibilidad:<br>5 horas diarias (Colegio)"]:::asis
-        C1["📶 Costo Datos:<br>Variable / Alto (Planes)"]:::asis
+        W1["Espera:<br>18 minutos de media"]:::asis
+        D1["Disponibilidad:<br>5 horas diarias (Colegio)"]:::asis
+        C1["Costo Datos:<br>Variable / Alto (Planes)"]:::asis
     end
 
     subgraph PROCESO TO-BE (YATIQAPP)
-        W2["⚡ Espera:<br>< 2.5 segundos (Local)"]:::tobe
-        D2["🕒 Disponibilidad:<br>24 horas / 7 días (Offline)"]:::tobe
-        C2["📶 Costo Datos:<br>S/. 0.00 (Edge Computing)"]:::tobe
+        W2["Espera:<br>< 2.5 segundos (Local)"]:::tobe
+        D2["Disponibilidad:<br>24 horas / 7 días (Offline)"]:::tobe
+        C2["Costo Datos:<br>S/. 0.00 (Edge Computing)"]:::tobe
     end
 
     W1 --> |Reducción del 99.7%| W2

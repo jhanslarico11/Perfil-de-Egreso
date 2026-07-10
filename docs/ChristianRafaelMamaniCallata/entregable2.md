@@ -135,14 +135,14 @@ graph TD
     classDef medio fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b;
 
     %% Nodos
-    F1["🎯 Fin Mayor:<br>Elevar comprensión conceptual y autoaprendizaje bilingüe en Sorapa"]:::fin
-    F2["🎯 Fin Secundario:<br>Promover inclusión educativa y revalorización de lenguas originarias"]:::fin
+    F1["Fin Mayor:<br>Elevar comprensión conceptual y autoaprendizaje bilingüe en Sorapa"]:::fin
+    F2["Fin Secundario:<br>Promover inclusión educativa y revalorización de lenguas originarias"]:::fin
 
-    PC["💡 PROPÓSITO CENTRAL:<br>Desarrollar asistente inteligente offline (Quechua/Aymara) para celulares"]:::prop
+    PC["PROPÓSITO CENTRAL:<br>Desarrollar asistente inteligente offline (Quechua/Aymara) para celulares"]:::prop
 
-    M1["⚙️ Medio 1:<br>Servidor local preexistente y red offline de distribución (CE03)"]:::medio
-    M2["⚙️ Medio 2:<br>SLM optimizado (Cuantización a 4 bits, RAM < 1.5 GB)"]:::medio
-    M3["⚙️ Medio 3:<br>Interfaz móvil (Flutter) con soporte de interacción por voz"]:::medio
+    M1["Medio 1:<br>Servidor local preexistente y red offline de distribución (CE03)"]:::medio
+    M2["Medio 2:<br>SLM optimizado (Cuantización a 4 bits, RAM < 1.5 GB)"]:::medio
+    M3["Medio 3:<br>Interfaz móvil (Flutter) con soporte de interacción por voz"]:::medio
 
     %% Enlaces
     F1 --- F2
@@ -160,17 +160,17 @@ graph LR
     classDef out fill:#dcfce7,stroke:#4ade80,stroke-width:2px,color:#14532d;
 
     subgraph INSUMOS Y COSTOS
-        P["🚨 Problema:<br>Aislamiento geográfico y falta de conectividad"]:::in
-        I["💰 Inversión Inicial:<br>S/. 3,500.00 de desarrollo (Tesistas)"]:::in
+        P["Problema:<br>Aislamiento geográfico y falta de conectividad"]:::in
+        I["Inversión Inicial:<br>S/. 3,500.00 de desarrollo (Tesistas)"]:::in
     end
 
     subgraph MOTOR SOLUCIÓN
-        S["⚙️ YatiqApp:<br>Edge Computing + On-Device AI"]:::proc
+        S["YatiqApp:<br>Edge Computing + On-Device AI"]:::proc
     end
 
     subgraph VALOR GENERADO
-        B["✅ Beneficios Tangibles:<br>Costo Datos S/. 0.00 y Costo Cloud S/. 0.00"]:::out
-        V["✅ Valor Intangible:<br>Respuesta en 2.2s y disponibilidad 24/7"]:::out
+        B["Beneficios Tangibles:<br>Costo Datos S/. 0.00 y Costo Cloud S/. 0.00"]:::out
+        V["Valor Intangible:<br>Respuesta en 2.2s y disponibilidad 24/7"]:::out
     end
 
     P --> S
@@ -185,9 +185,9 @@ graph TD
     classDef sel fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#14532d,font-weight:bold;
     classDef nor fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#475569;
 
-    A["☁️ Alternativa A:<br>Cloud-based AI (Puntaje: 13)<br>Requiere conexión HTTPS activa"]:::nor
-    B["🖥️ Alternativa B:<br>Servidor Local (Puntaje: 14)<br>Movilidad restringida al aula"]:::nor
-    C["📱 Alternativa C:<br>On-Device AI Embebida (Puntaje: 18)<br>100% Autónoma e independiente (Seleccionada)"]:::sel
+    A["Alternativa A:<br>Cloud-based AI (Puntaje: 13)<br>Requiere conexión HTTPS activa"]:::nor
+    B["Alternativa B:<br>Servidor Local (Puntaje: 14)<br>Movilidad restringida al aula"]:::nor
+    C["Alternativa C:<br>On-Device AI Embebida (Puntaje: 18)<br>100% Autónoma e independiente (Seleccionada)"]:::sel
 
     A --- B
     B --- C
@@ -199,12 +199,12 @@ graph TD
     classDef root fill:#f3e8ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6;
     classDef benefit fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
 
-    Inversion["💳 Inversión Única:<br>Desarrollo y Dataset EIB (S/. 3,500.00)"]:::root
+    Inversion["Inversión Única:<br>Desarrollo y Dataset EIB (S/. 3,500.00)"]:::root
     
     subgraph Ahorros Recurrentes (Costo Operativo Cero)
-        A1["📶 Datos Móviles:<br>S/. 0.00 para la escuela"]:::benefit
-        A2["☁️ Suscripciones Cloud:<br>S/. 0.00 por tokens/servidores"]:::benefit
-        A3["🖥️ Infraestructura Física:<br>S/. 0.00 al reutilizar red local (CE03)"]:::benefit
+        A1["Datos Móviles:<br>S/. 0.00 para la escuela"]:::benefit
+        A2["Suscripciones Cloud:<br>S/. 0.00 por tokens/servidores"]:::benefit
+        A3["Infraestructura Física:<br>S/. 0.00 al reutilizar red local (CE03)"]:::benefit
     end
 
     Inversion --> A1

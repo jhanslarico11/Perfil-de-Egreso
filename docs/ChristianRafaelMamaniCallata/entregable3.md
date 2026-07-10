@@ -165,15 +165,15 @@ graph TD
     classDef limit fill:#fff3dc,stroke:#ea580c,stroke-width:2px,color:#9a3412;
 
     subgraph ACTORES CLAVE
-        S["👤 Sponsor:<br>Equipo de Tesistas (Autofinanciación)"]:::actor
-        A["👤 Asesor Técnico:<br>Docente de Ingeniería de Sistemas"]:::actor
-        B["👥 Beneficiarios:<br>Estudiantes y Docentes de la I.E. Sorapa"]:::actor
+        S["Sponsor:<br>Equipo de Tesistas (Autofinanciación)"]:::actor
+        A["Asesor Técnico:<br>Docente de Ingeniería de Sistemas"]:::actor
+        B["Beneficiarios:<br>Estudiantes y Docentes de la I.E. Sorapa"]:::actor
     end
 
     subgraph PARÁMETROS DEL PROYECTO
-        Obj["🎯 Objetivo Principal:<br>Inferencia local (SLM) < 2.5s en celulares (RAM <= 4GB)"]:::limit
-        Rest["⚠️ Restricciones Técnicas:<br>Presupuesto de S/. 3,500.00 y plazo de 2 meses"]:::limit
-        Exc["🚫 Fuera de Alcance:<br>Distribución física de teléfonos y soporte para iOS"]:::limit
+        Obj["Objetivo Principal:<br>Inferencia local (SLM) < 2.5s en celulares (RAM <= 4GB)"]:::limit
+        Rest["Restricciones Técnicas:<br>Presupuesto de S/. 3,500.00 y plazo de 2 meses"]:::limit
+        Exc["Fuera de Alcance:<br>Distribución física de teléfonos y soporte para iOS"]:::limit
     end
 
     S --> Obj
@@ -190,13 +190,13 @@ graph TD
     classDef phase fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
     classDef task fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b;
 
-    WBS["🚀 1.0 ASISTENTE OFFLINE YATIQAPP"]:::root
+    WBS["1.0 ASISTENTE OFFLINE YATIQAPP"]:::root
     
-    W1["📂 1.1 Ingesta de Datos (EIB)"]:::phase
-    W2["📂 1.2 Ingeniería de IA"]:::phase
-    W3["📂 1.3 Desarrollo de Software"]:::phase
-    W4["📂 1.4 Pruebas y Despliegue"]:::phase
-    W5["📂 1.5 Gestión del Proyecto"]:::phase
+    W1["1.1 Ingesta de Datos (EIB)"]:::phase
+    W2["1.2 Ingeniería de IA"]:::phase
+    W3["1.3 Desarrollo de Software"]:::phase
+    W4["1.4 Pruebas y Despliegue"]:::phase
+    W5["1.5 Gestión del Proyecto"]:::phase
 
     WBS --> W1
     WBS --> W2
@@ -204,21 +204,21 @@ graph TD
     WBS --> W4
     WBS --> W5
 
-    W1 --> W11["📄 1.1.1 Ingesta de textos MINEDU"]:::task
-    W1 --> W12["📄 1.1.2 Limpieza y tokenización"]:::task
+    W1 --> W11["1.1.1 Ingesta de textos MINEDU"]:::task
+    W1 --> W12["1.1.2 Limpieza y tokenización"]:::task
 
-    W2 --> W21["📄 1.2.1 Embeddings RAG local"]:::task
-    W2 --> W22["📄 1.2.2 Cuantización SLM (4 bits)"]:::task
+    W2 --> W21["1.2.1 Embeddings RAG local"]:::task
+    W2 --> W22["1.2.2 Cuantización SLM (4 bits)"]:::task
 
-    W3 --> W31["📄 1.3.1 Bindings C++ nativos"]:::task
-    W3 --> W32["📄 1.3.2 Módulos STT / TTS locales"]:::task
-    W3 --> W33["📄 1.3.3 Interfaz Flutter Android"]:::task
+    W3 --> W31["1.3.1 Bindings C++ nativos"]:::task
+    W3 --> W32["1.3.2 Módulos STT / TTS locales"]:::task
+    W3 --> W33["1.3.3 Interfaz Flutter Android"]:::task
 
-    W4 --> W41["📄 1.4.1 Pruebas de estrés y RAM"]:::task
-    W4 --> W42["📄 1.4.2 Prueba piloto en Sorapa"]:::task
+    W4 --> W41["1.4.1 Pruebas de estrés y RAM"]:::task
+    W4 --> W42["1.4.2 Prueba piloto en Sorapa"]:::task
 
-    W5 --> W51["📄 1.5.1 Informes de Tesis"]:::task
-    W5 --> W52["📄 1.5.2 Sustentación Final"]:::task
+    W5 --> W51["1.5.1 Informes de Tesis"]:::task
+    W5 --> W52["1.5.2 Sustentación Final"]:::task
 ```
 
 #### 3. Red de Actividades y Ruta Crítica
@@ -227,13 +227,13 @@ graph LR
     classDef critical fill:#fee2e2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d,font-weight:bold;
     classDef done fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
 
-    A1["✅ A1: Curación Datos<br>(Semanas 1-2)"]:::done --> A2["✅ A2: RAG Local<br>(Semanas 3-4)"]:::done
-    A1 --> A3["✅ A3: Selección SLM<br>(Semanas 3-4)"]:::done
-    A2 --> A4["✅ A4: Prototipo Flutter<br>(Semanas 5-6)"]:::done
+    A1["A1: Curación Datos<br>(Semanas 1-2)"]:::done --> A2["A2: RAG Local<br>(Semanas 3-4)"]:::done
+    A1 --> A3["A3: Selección SLM<br>(Semanas 3-4)"]:::done
+    A2 --> A4["A4: Prototipo Flutter<br>(Semanas 5-6)"]:::done
     A3 --> A4
-    A4 --> A5["✅ A5: Pruebas RAM<br>(Semanas 5-7)"]:::done
-    A5 --> A6["🚀 A6: Piloto Sorapa<br>(Semanas 7-8 - Ruta Crítica)"]:::critical
-    A6 --> A7["🚀 A7: Cierre/Tesis<br>(Semana 8 - Ruta Crítica)"]:::critical
+    A4 --> A5["A5: Pruebas RAM<br>(Semanas 5-7)"]:::done
+    A5 --> A6["A6: Piloto Sorapa<br>(Semanas 7-8 - Ruta Crítica)"]:::critical
+    A6 --> A7["A7: Cierre/Tesis<br>(Semana 8 - Ruta Crítica)"]:::critical
 
     style A6 stroke-width:3px;
     style A7 stroke-width:3px;
@@ -244,9 +244,9 @@ graph LR
 graph TD
     classDef role fill:#e2f0d9,stroke:#15803d,stroke-width:2px,color:#14532d;
 
-    R1["🙋‍♂️ Christian (CE01): Gestión de TI<br>Responsable de EDT, Cronograma, Presupuesto y BPMN"]:::role
-    R2["🙋‍♂️ Brayner (CE02): Ingeniería de Software<br>Responsable de Inferencia C++, Modelo de IA y Flutter"]:::role
-    R3["🙋‍♂️ Anyelo (CE03): Infraestructura de Red<br>Responsable de Servidor Físico, Access Points y Seguridad"]:::role
+    R1["Christian (CE01): Gestión de TI<br>Responsable de EDT, Cronograma, Presupuesto y BPMN"]:::role
+    R2["Brayner (CE02): Ingeniería de Software<br>Responsable de Inferencia C++, Modelo de IA y Flutter"]:::role
+    R3["Anyelo (CE03): Infraestructura de Red<br>Responsable de Servidor Físico, Access Points y Seguridad"]:::role
 ```
 
 #### 5. Matriz de Interesados (Stakeholders)
@@ -256,13 +256,13 @@ graph LR
     classDef highInterest fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
 
     subgraph ALTO PODER / ALTO INTERÉS
-        UGEL["🏢 UGEL Chucuito (Juli)"]:::highPower
-        Dir["🏫 Dirección I.E. Sorapa"]:::highPower
+        UGEL["UGEL Chucuito (Juli)"]:::highPower
+        Dir["Dirección I.E. Sorapa"]:::highPower
     end
 
     subgraph BAJO PODER / ALTO INTERÉS
-        Doc["👨‍🏫 Docentes de Secundaria"]:::highInterest
-        Est["🎒 Estudiantes Bilingües"]:::highInterest
+        Doc["Docentes de Secundaria"]:::highInterest
+        Est["Estudiantes Bilingües"]:::highInterest
     end
 
     UGEL --> |Supervisión y soporte institucional| Dir

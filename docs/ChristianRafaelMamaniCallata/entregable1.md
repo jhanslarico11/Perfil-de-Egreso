@@ -190,14 +190,14 @@ graph TD
     classDef cause fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b;
 
     %% Nodos
-    E1["📉 Efecto Final:<br>Rezago y deserción en el autoaprendizaje bilingüe en zonas rurales"]:::effect
-    E2["🚪 Efecto Indirecto:<br>Aislamiento cognitivo y digital de los estudiantes de secundaria"]:::effect
+    E1["Efecto Final:<br>Rezago y deserción en el autoaprendizaje bilingüe en zonas rurales"]:::effect
+    E2["Efecto Indirecto:<br>Aislamiento cognitivo y digital de los estudiantes de secundaria"]:::effect
     
-    PC["🛑 PROBLEMA CENTRAL:<br>Dificultad para resolver consultas pedagógicas bilingües en la I.E. Sorapa sin conectividad"]:::problem
+    PC["PROBLEMA CENTRAL:<br>Dificultad para resolver consultas pedagógicas bilingües en la I.E. Sorapa sin conectividad"]:::problem
     
-    C1["🔌 Causa 1:<br>Inexistencia de red de banda ancha en Sorapa (Juli)"]:::cause
-    C2["📱 Causa 2:<br>Dispositivos de gama baja (RAM <= 4GB) de estudiantes"]:::cause
-    C3["📚 Causa 3:<br>Escasez de material pedagógico interactivo bilingüe (Aymara/Quechua)"]:::cause
+    C1["Causa 1:<br>Inexistencia de red de banda ancha en Sorapa (Juli)"]:::cause
+    C2["Causa 2:<br>Dispositivos de gama baja (RAM <= 4GB) de estudiantes"]:::cause
+    C3["Causa 3:<br>Escasez de material pedagógico interactivo bilingüe (Aymara/Quechua)"]:::cause
 
     %% Enlaces
     E1 --- E2
@@ -216,22 +216,22 @@ graph TD
     classDef sol fill:#dcfce7,stroke:#15803d,stroke-width:3px,color:#14532d,font-weight:bold;
 
     subgraph Nivel Internacional
-        ODS4["🌐 ODS 4:<br>Educación de Calidad"]:::int
-        ODS10["⚖️ ODS 10:<br>Reducción de Desigualdades"]:::int
+        ODS4["ODS 4:<br>Educación de Calidad"]:::int
+        ODS10["ODS 10:<br>Reducción de Desigualdades"]:::int
     end
 
     subgraph Nivel Nacional
-        PCM["🏛️ PCM:<br>Política Nacional de Transformación Digital"]:::nac
-        MINEDU["📖 MINEDU:<br>Plan Nacional de Educación Intercultural Bilingüe"]:::nac
+        PCM["PCM:<br>Política Nacional de Transformación Digital"]:::nac
+        MINEDU["MINEDU:<br>Plan Nacional de Educación Intercultural Bilingüe"]:::nac
     end
 
     subgraph Nivel Regional y Local
-        PDRC["🏔️ PDRC Puno:<br>Mejora del Razonamiento Escolar"]:::reg
-        IES["🏫 I.E. Agropecuario Sorapa:<br>Caso de Estudio (Juli, Puno)"]:::reg
+        PDRC["PDRC Puno:<br>Mejora del Razonamiento Escolar"]:::reg
+        IES["I.E. Agropecuario Sorapa:<br>Caso de Estudio (Juli, Puno)"]:::reg
     end
 
     %% Solución
-    Yatiq["🤖 YatiqApp:<br>Solución Edge Computing + IA On-Device"]:::sol
+    Yatiq["YatiqApp:<br>Solución Edge Computing + IA On-Device"]:::sol
 
     ODS4 --> MINEDU
     ODS10 --> PCM
@@ -272,12 +272,12 @@ graph TD
     classDef high fill:#ffedd5,stroke:#f97316,stroke-width:2px,color:#9a3412;
     classDef med fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#854d0e;
 
-    R1["🚨 RT-01: OOM en RAM <= 4GB<br>(Impacto Crítico / Probabilidad Alta)"]:::crit
-    R2["⚠️ RT-02: Latencia Excesiva de Respuesta<br>(Impacto Alto / Probabilidad Media)"]:::high
-    R3["⚠️ RD-01: Alucinación de Datos y Sesgo Dialectal<br>(Impacto Alto / Probabilidad Media)"]:::high
-    R4["⚡ RD-02: Baja Precisión en STT (Ruido de Aula)<br>(Impacto Medio / Probabilidad Alta)"]:::med
-    R5["📡 RO-01: Brecha de Distribución del Software<br>(Impacto Medio / Probabilidad Alta)"]:::med
-    R6["🤝 RO-02: Resistencia Cultural a la IA<br>(Impacto Alto / Probabilidad Baja)"]:::med
+    R1["RT-01: OOM en RAM <= 4GB<br>(Impacto Crítico / Probabilidad Alta)"]:::crit
+    R2["RT-02: Latencia Excesiva de Respuesta<br>(Impacto Alto / Probabilidad Media)"]:::high
+    R3["RD-01: Alucinación de Datos y Sesgo Dialectal<br>(Impacto Alto / Probabilidad Media)"]:::high
+    R4["RD-02: Baja Precisión en STT (Ruido de Aula)<br>(Impacto Medio / Probabilidad Alta)"]:::med
+    R5["RO-01: Brecha de Distribución del Software<br>(Impacto Medio / Probabilidad Alta)"]:::med
+    R6["RO-02: Resistencia Cultural a la IA<br>(Impacto Alto / Probabilidad Baja)"]:::med
 
     R1 --- R2
     R2 --- R3
