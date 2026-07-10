@@ -180,7 +180,25 @@ Para garantizar la viabilidad y el éxito del proyecto, se ha realizado un anál
 El análisis estratégico evidencia que el mayor cuello de botella es de carácter técnico (rendimiento en hardware restrictivo). Al mitigar el riesgo RT-01 y RT-02 mediante ingeniería de optimización avanzada (cuantización y ejecución nativa en el borde), se viabiliza la arquitectura offline, lo que a su vez minimiza los riesgos de costos y dependencia externa analizados en el Caso de Negocio.
 
 ### Anexos
-*(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
+A continuación se presentan los diagramas de soporte para el diagnóstico organizacional y alineamiento estratégico:
+
+#### 1. Diagnóstico Organizacional
+![Diagnóstico Organizacional](../assets/ce01/diagnostico_organizacional.svg)
+
+#### 2. Árbol de Problemas
+![Árbol de Problemas](../assets/ce01/arbol_problemas.svg)
+
+#### 3. FODA Tecnológico de YatiqApp
+![Matriz FODA](../assets/ce01/foda_yatiqapp.svg)
+
+#### 4. Alineamiento Estratégico Multivel
+![Alineamiento Estratégico](../assets/ce01/alineamiento_estrategico.svg)
+
+#### 5. Roadmap Tecnológico y de Ejecución (Retrospectiva)
+![Roadmap Estratégico](../assets/ce01/roadmap_estrategico.svg)
+
+#### 6. Matriz de Evaluación de Riesgos Estratégicos
+![Matriz de Riesgos](../assets/ce01/matriz_riesgos_estrategicos.svg)
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

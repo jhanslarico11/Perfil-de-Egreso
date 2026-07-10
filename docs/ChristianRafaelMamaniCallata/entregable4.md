@@ -94,7 +94,25 @@ Inicio ──> Detecta Duda ──> Realiza Consulta por Voz a YatiqApp ──> 
 El análisis comparativo demuestra que la automatización mediante Edge Computing transforma un proceso reactivo y centralizado en uno proactivo, distribuido y altamente eficiente. Al liberar al docente de la carga operativa de responder consultas conceptuales repetitivas o de traducción, este puede enfocar el tiempo de la sesión en el desarrollo de competencias críticas y personalizadas, elevando el desempeño organizacional de las escuelas bilingües en Puno sin demandar presupuesto del Estado para infraestructura de red.
 
 ### Anexos
-*(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
+A continuación se presentan los diagramas del modelado y comparación de procesos AS-IS y TO-BE:
+
+#### 1. Diagrama BPMN - Proceso Actual (AS-IS)
+![BPMN As-Is](../assets/ce01/bpmn_as_is.svg)
+
+#### 2. Diagrama de Roles (Swimlane AS-IS)
+![Swimlane As-Is](../assets/ce01/swimlane_as_is.svg)
+
+#### 3. Cuello de Botella Operativo del Docente (Single-Thread)
+![Cuello de Botella Docente](../assets/ce01/cuello_botella_docente.svg)
+
+#### 4. Diagrama BPMN - Proceso Rediseñado (TO-BE)
+![BPMN To-Be](../assets/ce01/bpmn_to_be.svg)
+
+#### 5. Diagrama de Roles Rediseñado (Swimlane TO-BE)
+![Swimlane To-Be](../assets/ce01/swimlane_to_be.svg)
+
+#### 6. Comparación de Indicadores Clave de Eficiencia
+![Comparación de Indicadores](../assets/ce01/comparacion_indicadores.svg)
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

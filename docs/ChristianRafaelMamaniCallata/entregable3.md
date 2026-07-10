@@ -156,7 +156,25 @@ El ciclo de desarrollo core del backend de IA y de la app móvil se gestionará 
 * **Incremento de Producto Esperado (Mínimo Producto Viable - MVP):** Al finalizar el Sprint 4, el equipo dispondrá de un archivo `.apk` compilado y estable, capaz de ejecutarse en frío dentro de un dispositivo Android de pruebas, procesar una pregunta por voz en lengua originaria, buscar la respuesta semánticamente en su base local y reproducir la respuesta mediante audio, todo sin emitir un solo byte de datos a internet.
 
 ### Anexos
-*(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
+A continuación se presentan los diagramas de soporte para la gestión del proyecto:
+
+#### 1. Project Charter (Acta de Constitución)
+![Project Charter](../assets/ce01/project_charter.svg)
+
+#### 2. WBS / EDT (Estructura de Desglose del Trabajo)
+![WBS / EDT](../assets/ce01/wbs_yatiqapp.svg)
+
+#### 3. Gantt de 8 Semanas (Calendario Real)
+![Gantt 8 Semanas](../assets/ce01/gantt_8_semanas.svg)
+
+#### 4. Matriz de Asignación de Responsabilidades (RACI)
+![Matriz RACI](../assets/ce01/raci_yatiqapp.svg)
+
+#### 5. Matriz de Gestión de Interesados (Stakeholders)
+![Matriz de Interesados](../assets/ce01/matriz_interesados.svg)
+
+#### 6. Plan de Comunicaciones del Proyecto
+![Plan de Comunicaciones](../assets/ce01/comunicaciones.svg)
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

@@ -104,7 +104,31 @@ Al contrario de los sistemas cloud tradicionales, donde un incremento masivo de 
 El diseño modular de la aplicación móvil (utilizando abstracciones de software) garantiza que la capa de IA sea intercambiable en el futuro. Si la comunidad científica lanza un nuevo Modelo de Lenguaje Pequeño (SLM) más eficiente que Gemma o Phi-3 (por ejemplo, modelos de menos de 1B de parámetros con mayor compresión sintáctica para lenguas aglutinantes como el Quechua), la aplicación móvil podrá recibir dicho binario como una actualización de archivos transparente, extendiendo el ciclo de vida útil del sistema y permitiendo que opere en smartphones aún más antiguos o de especificaciones inferiores.
 
 ### Anexos
-*(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
+A continuación se presentan los diagramas que detallan la propuesta de solución TIC integrada, seguridad y arquitectura:
+
+#### 1. Arquitectura On-Device de YatiqApp
+![Arquitectura On-Device](../assets/ce01/arquitectura_on_device.svg)
+
+#### 2. Propuesta de Solución TIC Integrada (Entorno Completo)
+![Arquitectura TIC Integrada](../assets/ce01/arquitectura_tic_integrada.svg)
+
+#### 3. Interoperabilidad Diferida con el MINEDU (SIAGIE/ESCALE)
+![Interoperabilidad Diferida](../assets/ce01/interoperabilidad_diferida.svg)
+
+#### 4. Privacidad desde el Diseño (Cumplimiento de la Ley N° 29733)
+![Privacidad desde el Diseño](../assets/ce01/privacidad_diseno.svg)
+
+#### 5. Funcionamiento del Motor RAG Offline Embebido
+![RAG Offline](../assets/ce01/rag_offline.svg)
+
+#### 6. Procesamiento de Voz Local (STT/TTS Local)
+![STT/TTS Local](../assets/ce01/stt_tts_local.svg)
+
+#### 7. Estructura de Persistencia Local (SQLite Embebida)
+![Sqlite Local](../assets/ce01/sqlite_local.svg)
+
+#### 8. Sostenibilidad y Escalabilidad Horizontal Offline
+![Escalabilidad Offline](../assets/ce01/escalabilidad_offline.svg)
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:

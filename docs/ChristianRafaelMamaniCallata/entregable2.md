@@ -126,7 +126,19 @@ Las alternativas fueron evaluadas bajo una escala del 1 al 5 (donde 1 es Deficie
   * **Mitigación Inicial:** Establecer en la documentación de TI una línea base de requerimientos mínimos de hardware (ej. Android 8.0 o superior, arquitectura ARM64 y mínimo 3 GB de RAM total).
 
 ### Anexos
-*(En los siguientes entregables se integrarán diagramas arquitectónicos y capturas de pantalla de la solución móvil)*
+A continuación se presentan los diagramas de soporte para el Business Case del proyecto:
+
+#### 1. Árbol de Objetivos
+![Árbol de Objetivos](../assets/ce01/arbol_objetivos.svg)
+
+#### 2. Business Case Canvas
+![Business Case Canvas](../assets/ce01/business_case_canvas.svg)
+
+#### 3. Comparación de Alternativas de TI
+![Comparación de Alternativas](../assets/ce01/comparacion_alternativas.svg)
+
+#### 4. Análisis de Costo-Beneficio
+![Costo Beneficio](../assets/ce01/costo_beneficio.svg)
 
 ## 3. Rúbrica de Evaluación
 El presente entregable ha sido elaborado considerando las siguientes competencias del perfil de egreso:
