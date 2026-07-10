@@ -202,4 +202,3 @@ OPENAI_API_KEY=sk-proj-YourOpenAIApiKeyHere
 *   **Completitud**: Todos los requerimientos funcionales y no funcionales se alinean con la solución de software YatiqApp.
 *   **Modelado Estructurado**: El diagrama C4 y el diagrama de secuencia Mermaid detallan con precisión el flujo de llamadas de red y lógica de IA.
 *   **Viabilidad**: El diseño e implementación técnica están basados en componentes ya integrados y validados sobre hardware con aceleración de GPU CUDA.
-

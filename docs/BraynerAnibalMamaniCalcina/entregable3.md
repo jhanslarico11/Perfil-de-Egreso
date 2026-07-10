@@ -189,5 +189,3 @@ El sistema cumple con los criterios de evaluación del producto de integración 
 * Presenta una arquitectura modular funcionalmente integrada de 3 componentes.
 * Incorpora evidencias y capturas reales del sistema en funcionamiento local.
 * Documenta la estructura del código, puertos, endpoints y esquemas de red.
-
-

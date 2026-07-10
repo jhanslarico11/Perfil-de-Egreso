@@ -76,7 +76,7 @@ graph LR
 | **👣 Paso 2** | **Traducción Interactiva** | Escriba o hable la frase `"Quiero aprender aimara."`. Al presionar el botón de traducción, resalte cómo el sistema retorna `"Aymar yatiqañ munta."` y reproduzca el audio WAV generado por el sintetizador MMS. |
 | **👣 Paso 3** | **Arena de Modelos** | Vaya a la pestaña de comparación (`/compare`), envíe una frase de prueba y muestre cómo el adaptador LoRA supera ampliamente al modelo base en métricas ChrF++ y BLEU. |
 | **👣 Paso 4** | **Reportes de Pérdida** | Muestre la gráfica interactiva en `/reports` donde se detalla la curva de convergencia de pérdida de entrenamiento (Loss curve) que sustenta científicamente la precisión del modelo. |
-| **👣 Paso 5** | **Cliente Móvil** | Abra el emulador con la aplicación en Flutter y demuestre cómo consume la misma API para guardar traducciones en el historial local. |
+| **👣 Paso 5** | **Demostración Móvil (Flutter)** | Proyecte la pantalla de un dispositivo físico Android (vía SCRCPY/Vysor). Hable al celular y demuestre la velocidad de respuesta, luego desconecte el internet y muestre cómo el historial local y las lecciones LMS siguen disponibles offline gracias a SQLite/Hive. |
 
 ---
 
@@ -112,12 +112,14 @@ Las siguientes capturas de pantalla reales del sistema han sido generadas y debe
 ![Reporte de Convergencia](reporte_graficas.png)
 *Anexo 3: Gráfica interactiva de convergencia de pérdida de entrenamiento.*
 
+#### 4. Evidencia de Operación en el Dispositivo Móvil (Flutter):
+*(Añadir aquí una captura de pantalla del celular)*
+*Anexo 4: Captura de la aplicación móvil corriendo en Android, mostrando el asistente conversacional interactivo y el acceso al historial offline.*
+
 ---
 
 ## 3. Rúbrica de Evaluación
 El material estructurado en este documento satisface los requerimientos de la línea **CE0217**:
 * Presenta una estructura organizada para el video pitch con tiempos asignados.
-* Contiene una guía de demostración paso a paso basada en el software funcional real.
-* Define el guión conceptual y los anexos gráficos para el diapositivo de la sustentación.
-
-
+* Contiene una guía de demostración paso a paso basada en el software funcional real, incluyendo explícitamente el uso de la **aplicación móvil nativa proyectada en vivo**.
+* Define el guión conceptual y los anexos gráficos para las diapositivas de la sustentación (cubriendo Backend, Frontend Web y Frontend Móvil).

@@ -252,4 +252,3 @@ El diseño cumple con los requisitos del estándar de arquitectura de datos de s
 * Mapea un modelo entidad-relación normalizado (3NF).
 * Justifica técnicamente el uso del motor embebido para portabilidad.
 * Documenta el diccionario de datos físico completo incluyendo restricciones e índices.
-
